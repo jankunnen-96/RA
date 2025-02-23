@@ -1,0 +1,4163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_95eee7c323c2061e96bac44682a7e2c0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_95eee7c323c2061e96bac44682a7e2c0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_95eee7c323c2061e96bac44682a7e2c0 = L.map(
+                "map_95eee7c323c2061e96bac44682a7e2c0",
+                {
+                    center: [48.8566, 2.3522],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_868318261b8b6ac76f6d86e083ee9885 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_868318261b8b6ac76f6d86e083ee9885.addTo(map_95eee7c323c2061e96bac44682a7e2c0);
+        
+    
+            var feature_group_b324b945a853ca7a7d171aed1d4d45ab = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_0b0f189170879167fcc9d075fff60374 = L.marker(
+                [6.269732449999999, -75.60255965090315],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_ae33a8fc12dcbffb692cf84d7943fa25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0b0f189170879167fcc9d075fff60374.setIcon(icon_ae33a8fc12dcbffb692cf84d7943fa25);
+        
+    
+        var popup_93467c579b5b09e2142adafec74d78b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9519abf3c1b0fa4dbfc5358525ceafe0 = $(`<div id="html_9519abf3c1b0fa4dbfc5358525ceafe0" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Medellin<br><b>Artist:</b> me<br><b>Date:</b> ZAT, 8 MRT.<br><b>Title:</b> &ME en Medellín<br><b>Full lineup:</b> me<br><br></div></div>`)[0];
+                popup_93467c579b5b09e2142adafec74d78b8.setContent(html_9519abf3c1b0fa4dbfc5358525ceafe0);
+            
+        
+
+        marker_0b0f189170879167fcc9d075fff60374.bindPopup(popup_93467c579b5b09e2142adafec74d78b8)
+        ;
+
+        
+    
+    
+            marker_0b0f189170879167fcc9d075fff60374.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2da4d9cfbf5671e82413ecab11138afd = L.marker(
+                [19.054999, 72.8692035],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_d07d712480ce2b88b8eba86f362f5dbd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2da4d9cfbf5671e82413ecab11138afd.setIcon(icon_d07d712480ce2b88b8eba86f362f5dbd);
+        
+    
+        var popup_461bd5ee64698c42c660d1f21222e5e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13073e02277eaef6948ad1b173d748d6 = $(`<div id="html_13073e02277eaef6948ad1b173d748d6" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Mumbai<br><b>Artist:</b> me<br><b>Date:</b> ZAT, 22 MRT.<br><b>Title:</b> &ME (Keine Musik) India Tour 2025<br><b>Full lineup:</b> me<br><br></div></div>`)[0];
+                popup_461bd5ee64698c42c660d1f21222e5e9.setContent(html_13073e02277eaef6948ad1b173d748d6);
+            
+        
+
+        marker_2da4d9cfbf5671e82413ecab11138afd.bindPopup(popup_461bd5ee64698c42c660d1f21222e5e9)
+        ;
+
+        
+    
+    
+            marker_2da4d9cfbf5671e82413ecab11138afd.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2b12437c64ee3eda17aadc8b5d8ad7b4 = L.marker(
+                [51.2211097, 4.3997081],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_790c219d1d538b621e06a0a615b19190 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2b12437c64ee3eda17aadc8b5d8ad7b4.setIcon(icon_790c219d1d538b621e06a0a615b19190);
+        
+    
+        var popup_6d4949a54bc1ba72cc3e084334866054 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_548279a41955532c7645397ad1e8109c = $(`<div id="html_548279a41955532c7645397ad1e8109c" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Antwerp<br><b>Artist:</b> diffrent<br><b>Date:</b> ZAT, 19 APR.<br><b>Title:</b> Zonnewende Festival 2025<br><b>Full lineup:</b> diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Antwerp<br><b>Artist:</b> benwal<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> Benwal at Garage<br><b>Full lineup:</b> benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Antwerp<br><b>Artist:</b> funktribu<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> SOLD OUT | Funk Tribu at Garage<br><b>Full lineup:</b> funktribu<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Antwerp<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> Freed with Sammy Virji (EU Tour 2025)<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_6d4949a54bc1ba72cc3e084334866054.setContent(html_548279a41955532c7645397ad1e8109c);
+            
+        
+
+        marker_2b12437c64ee3eda17aadc8b5d8ad7b4.bindPopup(popup_6d4949a54bc1ba72cc3e084334866054)
+        ;
+
+        
+    
+    
+            marker_2b12437c64ee3eda17aadc8b5d8ad7b4.bindTooltip(
+                `<div>
+                     4 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4c5dc1a5a629441541ea52bf5e310f55 = L.marker(
+                [-37.8142454, 144.9631732],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_8a6520acde2524ccc7eb72c483229924 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4c5dc1a5a629441541ea52bf5e310f55.setIcon(icon_8a6520acde2524ccc7eb72c483229924);
+        
+    
+        var popup_7a939d8a07106cf131ed6282310951a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_676d6670f25f97f5872627015951ded7 = $(`<div id="html_676d6670f25f97f5872627015951ded7" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Melbourne<br><b>Artist:</b> pegassi | funktribu | diffrent<br><b>Date:</b> VRI, 7 MRT.<br><b>Title:</b> Pitch Music & Arts - 2025<br><b>Full lineup:</b> pegassi | funktribu | diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Melbourne<br><b>Artist:</b> anotr<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> ANOTR - On A Trip - Australia 2025<br><b>Full lineup:</b> anotr<br><br></div></div>`)[0];
+                popup_7a939d8a07106cf131ed6282310951a2.setContent(html_676d6670f25f97f5872627015951ded7);
+            
+        
+
+        marker_4c5dc1a5a629441541ea52bf5e310f55.bindPopup(popup_7a939d8a07106cf131ed6282310951a2)
+        ;
+
+        
+    
+    
+            marker_4c5dc1a5a629441541ea52bf5e310f55.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cf20d736694e7a94dba023f285b89390 = L.marker(
+                [52.215933, 19.134422],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_48a626de932f99a7b2000f10ce94eb16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cf20d736694e7a94dba023f285b89390.setIcon(icon_48a626de932f99a7b2000f10ce94eb16);
+        
+    
+        var popup_cd348895abeb7ca9513a3413e63ce6f3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a83f82c60679c035085b919dba24b70a = $(`<div id="html_a83f82c60679c035085b919dba24b70a" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Poland<br><b>Artist:</b> charlottedewitte<br><b>Date:</b> VRI, 11 JUL.<br><b>Title:</b> Audioriver Festival 2025<br><b>Full lineup:</b> charlottedewitte<br><br></div></div>`)[0];
+                popup_cd348895abeb7ca9513a3413e63ce6f3.setContent(html_a83f82c60679c035085b919dba24b70a);
+            
+        
+
+        marker_cf20d736694e7a94dba023f285b89390.bindPopup(popup_cd348895abeb7ca9513a3413e63ce6f3)
+        ;
+
+        
+    
+    
+            marker_cf20d736694e7a94dba023f285b89390.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_001a409e52c96d2da843dedd01aa5833 = L.marker(
+                [50.6402809, 4.6667145],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_34c79b5592cbd84772c8ebc0d3bc72e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_001a409e52c96d2da843dedd01aa5833.setIcon(icon_34c79b5592cbd84772c8ebc0d3bc72e7);
+        
+    
+        var popup_693110686f9368a861d37da4ae8c576c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd1127bf634bfefe26f8679c13ecc38a = $(`<div id="html_bd1127bf634bfefe26f8679c13ecc38a" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belgium<br><b>Artist:</b> djheartstring | emilija | benwal | funktribu | mcr-t | diffrent<br><b>Date:</b> VRI, 6 JUN.<br><b>Title:</b> Extrema Outdoor Belgium 2025<br><b>Full lineup:</b> djheartstring | emilija | benwal | funktribu | mcr-t | diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belgium<br><b>Artist:</b> benwal<br><b>Date:</b> VRI, 21 FEB.<br><b>Title:</b> Spectra Cinema Show - Benwal / Duskus / Leo Pol / Mushu<br><b>Full lineup:</b> benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belgium<br><b>Artist:</b> benwal | malugi | emilija<br><b>Date:</b> ZON, 20 APR.<br><b>Title:</b> Garnizoen 2025<br><b>Full lineup:</b> benwal | malugi | emilija<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belgium<br><b>Artist:</b> marcrebillet | charlottedewitte | ascendantvierge | marlonhoffstadt<br><b>Date:</b> WOE, 16 JUL.<br><b>Title:</b> Dour Festival 2025<br><b>Full lineup:</b> marcrebillet | charlottedewitte | ascendantvierge | marlonhoffstadt<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belgium<br><b>Artist:</b> peggygou<br><b>Date:</b> VRI, 15 AUG.<br><b>Title:</b> WECANDANCE 2025<br><b>Full lineup:</b> peggygou<br><br></div></div>`)[0];
+                popup_693110686f9368a861d37da4ae8c576c.setContent(html_bd1127bf634bfefe26f8679c13ecc38a);
+            
+        
+
+        marker_001a409e52c96d2da843dedd01aa5833.bindPopup(popup_693110686f9368a861d37da4ae8c576c)
+        ;
+
+        
+    
+    
+            marker_001a409e52c96d2da843dedd01aa5833.bindTooltip(
+                `<div>
+                     5 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3ef3a2f49b3ab731074f0e3b1e577dc7 = L.marker(
+                [52.2434979, 5.6343227],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_574449a454a8683149a6e845addfaa4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3ef3a2f49b3ab731074f0e3b1e577dc7.setIcon(icon_574449a454a8683149a6e845addfaa4a);
+        
+    
+        var popup_401fa943bf22e5ba46bcc67a3b3a9d09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa182f56413af18b4f52fed53ff28c74 = $(`<div id="html_fa182f56413af18b4f52fed53ff28c74" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Netherlands<br><b>Artist:</b> benwal | lammer | charlottedewitte | ninakraviz | pegassi<br><b>Date:</b> VRI, 11 JUL.<br><b>Title:</b> AWAKENINGS FESTIVAL 2025<br><b>Full lineup:</b> benwal | lammer | charlottedewitte | ninakraviz | pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Netherlands<br><b>Artist:</b> malugi | lammer<br><b>Date:</b> ZAT, 26 JUL.<br><b>Title:</b> Complex Festival 2025<br><b>Full lineup:</b> malugi | lammer<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Netherlands<br><b>Artist:</b> badboombox<br><b>Date:</b> ZON, 23 MRT.<br><b>Title:</b> Contra - Season Opening with Bad Boombox<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Netherlands<br><b>Artist:</b> lammer<br><b>Date:</b> ZAT, 8 MRT.<br><b>Title:</b> Colorado Charlie x THF - Warehouse Edition (SOLD OUT)<br><b>Full lineup:</b> lammer<br><br></div></div>`)[0];
+                popup_401fa943bf22e5ba46bcc67a3b3a9d09.setContent(html_fa182f56413af18b4f52fed53ff28c74);
+            
+        
+
+        marker_3ef3a2f49b3ab731074f0e3b1e577dc7.bindPopup(popup_401fa943bf22e5ba46bcc67a3b3a9d09)
+        ;
+
+        
+    
+    
+            marker_3ef3a2f49b3ab731074f0e3b1e577dc7.bindTooltip(
+                `<div>
+                     4 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ee0d784b3d5eb4d95f94054a18ebf74d = L.marker(
+                [51.3406321, 12.3747329],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_4c87c8888f9eaf68696a915c554cd732 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ee0d784b3d5eb4d95f94054a18ebf74d.setIcon(icon_4c87c8888f9eaf68696a915c554cd732);
+        
+    
+        var popup_dabbb31bfe77f70d1668a8502d8f7a93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01179e46d53b9a353cb9717e896a8382 = $(`<div id="html_01179e46d53b9a353cb9717e896a8382" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Leipzig<br><b>Artist:</b> diffrent | badboombox | malugi | pegassi<br><b>Date:</b> VRI, 20 JUN.<br><b>Title:</b> HIVE Festival 2025<br><b>Full lineup:</b> diffrent | badboombox | malugi | pegassi<br><br></div></div>`)[0];
+                popup_dabbb31bfe77f70d1668a8502d8f7a93.setContent(html_01179e46d53b9a353cb9717e896a8382);
+            
+        
+
+        marker_ee0d784b3d5eb4d95f94054a18ebf74d.bindPopup(popup_dabbb31bfe77f70d1668a8502d8f7a93)
+        ;
+
+        
+    
+    
+            marker_ee0d784b3d5eb4d95f94054a18ebf74d.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_967a9de914a3d05af68d960c3b44d885 = L.marker(
+                [51.9244424, 4.47775],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_c7a69fdb29cb959ca78edc9c4a15d762 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_967a9de914a3d05af68d960c3b44d885.setIcon(icon_c7a69fdb29cb959ca78edc9c4a15d762);
+        
+    
+        var popup_b74170e528e661cdb7d017ef8a967215 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2fc24d68834cc47c67ee385afc1eef4 = $(`<div id="html_f2fc24d68834cc47c67ee385afc1eef4" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> lammer | pegassi | diffrent<br><b>Date:</b> ZAT, 29 MRT.<br><b>Title:</b> Rotterdam Rave 'Spring Special' 2025<br><b>Full lineup:</b> lammer | pegassi | diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> lammer | diffrent<br><b>Date:</b> ZAT, 30 AUG.<br><b>Title:</b> Rotterdam Rave Festival 2025<br><b>Full lineup:</b> lammer | diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> benwal<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> Modular Maassilo<br><b>Full lineup:</b> benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> fourtet | purplediscomachine | sammyvirji<br><b>Date:</b> VRI, 2 MEI<br><b>Title:</b> WHP ROTTERDAM<br><b>Full lineup:</b> fourtet | purplediscomachine | sammyvirji<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> mcr-t | emilija<br><b>Date:</b> ZAT, 22 MRT.<br><b>Title:</b> BackToBase - MCR-T, EMILIJA<br><b>Full lineup:</b> mcr-t | emilija<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> marlonhoffstadt<br><b>Date:</b> VRI, 25 APR.<br><b>Title:</b> Audio Obscura x Marlon Hoffstadt & more [Sold Out]<br><b>Full lineup:</b> marlonhoffstadt<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rotterdam<br><b>Artist:</b> diffrent | malugi<br><b>Date:</b> ZAT, 26 APR.<br><b>Title:</b> Oranjebitter Festival<br><b>Full lineup:</b> diffrent | malugi<br><br></div></div>`)[0];
+                popup_b74170e528e661cdb7d017ef8a967215.setContent(html_f2fc24d68834cc47c67ee385afc1eef4);
+            
+        
+
+        marker_967a9de914a3d05af68d960c3b44d885.bindPopup(popup_b74170e528e661cdb7d017ef8a967215)
+        ;
+
+        
+    
+    
+            marker_967a9de914a3d05af68d960c3b44d885.bindTooltip(
+                `<div>
+                     7 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_36f1dcfe7a9ec44ff3f4bffcb72e4f45 = L.marker(
+                [52.0907006, 5.1215634],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_2ddd321c1e53426be2224099a0c2e3a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_36f1dcfe7a9ec44ff3f4bffcb72e4f45.setIcon(icon_2ddd321c1e53426be2224099a0c2e3a6);
+        
+    
+        var popup_986afdce015dcba58b22cb9419050634 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_209c437f8fbce1abd339c12c334c4484 = $(`<div id="html_209c437f8fbce1abd339c12c334c4484" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Utrecht<br><b>Artist:</b> emilija | lammer<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> VERKNIPT Festival 2025 - June 7 & 8<br><b>Full lineup:</b> emilija | lammer<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Utrecht<br><b>Artist:</b> badboombox | funktribu | lammer<br><b>Date:</b> ZAT, 31 MEI<br><b>Title:</b> Soenda Outdoor Festival<br><b>Full lineup:</b> badboombox | funktribu | lammer<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Utrecht<br><b>Artist:</b> spacerwoman<br><b>Date:</b> VRI, 25 APR.<br><b>Title:</b> BASIS Kingsnight/ Gyatso/ Lucky Done Gone/ Moody Mehran/ Spacer Woman<br><b>Full lineup:</b> spacerwoman<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Utrecht<br><b>Artist:</b> lammer<br><b>Date:</b> VRI, 7 MRT.<br><b>Title:</b> Soenda presents: I Hate Models, LAMMER & angelboy<br><b>Full lineup:</b> lammer<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Utrecht<br><b>Artist:</b> lammer<br><b>Date:</b> VRI, 28 MRT.<br><b>Title:</b> BASIS/ LAMMER All Night Long<br><b>Full lineup:</b> lammer<br><br></div></div>`)[0];
+                popup_986afdce015dcba58b22cb9419050634.setContent(html_209c437f8fbce1abd339c12c334c4484);
+            
+        
+
+        marker_36f1dcfe7a9ec44ff3f4bffcb72e4f45.bindPopup(popup_986afdce015dcba58b22cb9419050634)
+        ;
+
+        
+    
+    
+            marker_36f1dcfe7a9ec44ff3f4bffcb72e4f45.bindTooltip(
+                `<div>
+                     5 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_17d4c77ceb776a36588fc603492c5711 = L.marker(
+                [52.3730796, 4.8924534],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_3686456bf2ba63942d1afc821c025dc8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_17d4c77ceb776a36588fc603492c5711.setIcon(icon_3686456bf2ba63942d1afc821c025dc8);
+        
+    
+        var popup_234228a153386f98f8bf4598f7e92b08 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e71782aa4d42b3cb804eb641374ca3a = $(`<div id="html_8e71782aa4d42b3cb804eb641374ca3a" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> diffrent | benwal<br><b>Date:</b> ZAT, 17 MEI<br><b>Title:</b> UPCLOSE 2025<br><b>Full lineup:</b> diffrent | benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> fourtet<br><b>Date:</b> WOE, 30 JUL.<br><b>Title:</b> Dekmantel Festival 2025<br><b>Full lineup:</b> fourtet<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> malugi<br><b>Date:</b> ZAT, 9 AUG.<br><b>Title:</b> Loveland Festival 2025<br><b>Full lineup:</b> malugi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> ninakraviz | charlottedewitte<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> 909 Festival 2025<br><b>Full lineup:</b> ninakraviz | charlottedewitte<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> Lentekabinet 2025<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> mcr-t | badboombox | benwal | lammer | diffrent<br><b>Date:</b> ZAT, 26 APR.<br><b>Title:</b> Oranjebloesem Festival 2025<br><b>Full lineup:</b> mcr-t | badboombox | benwal | lammer | diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> badboombox<br><b>Date:</b> ZON, 9 FEB.<br><b>Title:</b> 9 FEB - Thuishaven with Bad Boombox 4HRS<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> benwal<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> Benwal pres. NOUW [sold out]<br><b>Full lineup:</b> benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> diffrent<br><b>Date:</b> ZON, 23 MRT.<br><b>Title:</b> 23 MRT - Thuishaven with Diffrent 5HRS / Oppidan / Rozie<br><b>Full lineup:</b> diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> emilija | funktribu<br><b>Date:</b> ZON, 23 FEB.<br><b>Title:</b> 23 FEB - Thuishaven with Funk Tribu / Justin Jay / Supergloss<br><b>Full lineup:</b> emilija | funktribu<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> lammer<br><b>Date:</b> VRI, 21 FEB.<br><b>Title:</b> Club Tineke - Musical Journey - Levenslang Amsterdam<br><b>Full lineup:</b> lammer<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> spacerwoman<br><b>Date:</b> VRI, 7 FEB.<br><b>Title:</b> RADION invites Yere Yere<br><b>Full lineup:</b> spacerwoman<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> marlonhoffstadt<br><b>Date:</b> ZAT, 26 APR.<br><b>Title:</b> BURST presented by Loveland<br><b>Full lineup:</b> marlonhoffstadt<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> funktribu | mallgrab | djheartstring | spacerwoman | pegassi | malugi<br><b>Date:</b> VRI, 18 APR.<br><b>Title:</b> DGTL Amsterdam 2025<br><b>Full lineup:</b> funktribu | mallgrab | djheartstring | spacerwoman | pegassi | malugi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Amsterdam<br><b>Artist:</b> lammer<br><b>Date:</b> ZAT, 1 FEB.<br><b>Title:</b> ferrari rot (DE) - De Sluwe Vos - Lucky Done Gone - LAMMER<br><b>Full lineup:</b> lammer<br><br></div></div>`)[0];
+                popup_234228a153386f98f8bf4598f7e92b08.setContent(html_8e71782aa4d42b3cb804eb641374ca3a);
+            
+        
+
+        marker_17d4c77ceb776a36588fc603492c5711.bindPopup(popup_234228a153386f98f8bf4598f7e92b08)
+        ;
+
+        
+    
+    
+            marker_17d4c77ceb776a36588fc603492c5711.bindTooltip(
+                `<div>
+                     15 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_105da6459c749668f6a6819d98d4306d = L.marker(
+                [55.9533456, -3.1883749],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_bb2314f9eef3d0577139a3230b0471cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_105da6459c749668f6a6819d98d4306d.setIcon(icon_bb2314f9eef3d0577139a3230b0471cb);
+        
+    
+        var popup_2747a3ea7e931f9c449883d182efa292 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9356b291a02b1cd33e1ab1e98ea8affc = $(`<div id="html_9356b291a02b1cd33e1ab1e98ea8affc" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Edinburgh<br><b>Artist:</b> benwal | funktribu | badboombox<br><b>Date:</b> ZAT, 19 APR.<br><b>Title:</b> Terminal V Festival 2025<br><b>Full lineup:</b> benwal | funktribu | badboombox<br><br></div></div>`)[0];
+                popup_2747a3ea7e931f9c449883d182efa292.setContent(html_9356b291a02b1cd33e1ab1e98ea8affc);
+            
+        
+
+        marker_105da6459c749668f6a6819d98d4306d.bindPopup(popup_2747a3ea7e931f9c449883d182efa292)
+        ;
+
+        
+    
+    
+            marker_105da6459c749668f6a6819d98d4306d.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d0394aa8ec20a5c4e397ad28a019f354 = L.marker(
+                [35.8885993, 14.4476911],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_86625e9afd1c637b8dfdf9e33cd48f47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d0394aa8ec20a5c4e397ad28a019f354.setIcon(icon_86625e9afd1c637b8dfdf9e33cd48f47);
+        
+    
+        var popup_d2dcf5016200d91b541798fa9e96a49a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_901e1de74c6f3204ac31b392506f1e2a = $(`<div id="html_901e1de74c6f3204ac31b392506f1e2a" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Malta<br><b>Artist:</b> emilija<br><b>Date:</b> DON, 22 MEI<br><b>Title:</b> XXL Malta 2025<br><b>Full lineup:</b> emilija<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Malta<br><b>Artist:</b> badboombox | benwal | djheartstring | spacerwoman | malugi<br><b>Date:</b> WOE, 13 AUG.<br><b>Title:</b> Glitch Festival 2025<br><b>Full lineup:</b> badboombox | benwal | djheartstring | spacerwoman | malugi<br><br></div></div>`)[0];
+                popup_d2dcf5016200d91b541798fa9e96a49a.setContent(html_901e1de74c6f3204ac31b392506f1e2a);
+            
+        
+
+        marker_d0394aa8ec20a5c4e397ad28a019f354.bindPopup(popup_d2dcf5016200d91b541798fa9e96a49a)
+        ;
+
+        
+    
+    
+            marker_d0394aa8ec20a5c4e397ad28a019f354.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d618a9c4dd113469d41029d1270275c4 = L.marker(
+                [45.3658443, 15.6575209],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_df0abe531f2d9cd5720782538b27e63c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d618a9c4dd113469d41029d1270275c4.setIcon(icon_df0abe531f2d9cd5720782538b27e63c);
+        
+    
+        var popup_adee86a0061197f5f840f265b3200d75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c32a554cf0006d15787d455e78539ade = $(`<div id="html_c32a554cf0006d15787d455e78539ade" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Croatia<br><b>Artist:</b> mcr-t | mallgrab | benwal | pegassi<br><b>Date:</b> DON, 17 JUL.<br><b>Title:</b> Terminal V Croatia 2025<br><b>Full lineup:</b> mcr-t | mallgrab | benwal | pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Croatia<br><b>Artist:</b> bonobo<br><b>Date:</b> WOE, 9 JUL.<br><b>Title:</b> Love International 2025<br><b>Full lineup:</b> bonobo<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Croatia<br><b>Artist:</b> badboombox | djheartstring<br><b>Date:</b> ZON, 17 AUG.<br><b>Title:</b> Sonus Croatia 2025<br><b>Full lineup:</b> badboombox | djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Croatia<br><b>Artist:</b> mountkimbie<br><b>Date:</b> WOE, 25 JUN.<br><b>Title:</b> Velvet Festival 2025<br><b>Full lineup:</b> mountkimbie<br><br></div></div>`)[0];
+                popup_adee86a0061197f5f840f265b3200d75.setContent(html_c32a554cf0006d15787d455e78539ade);
+            
+        
+
+        marker_d618a9c4dd113469d41029d1270275c4.bindPopup(popup_adee86a0061197f5f840f265b3200d75)
+        ;
+
+        
+    
+    
+            marker_d618a9c4dd113469d41029d1270275c4.bindTooltip(
+                `<div>
+                     4 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5939d7a879698b7bf3b5d462d9a7dcea = L.marker(
+                [38.7077507, -9.1365919],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_4e5da463ad23c8020360aff1e8f7c9be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5939d7a879698b7bf3b5d462d9a7dcea.setIcon(icon_4e5da463ad23c8020360aff1e8f7c9be);
+        
+    
+        var popup_400ef8cb18ebe85b488853fa52b5a375 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99873cd05056ad0ab033f567c142528e = $(`<div id="html_99873cd05056ad0ab033f567c142528e" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Lisbon<br><b>Artist:</b> badboombox<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> Sound Waves Winter Edition<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Lisbon<br><b>Artist:</b> anotr<br><b>Date:</b> VRI, 27 JUN.<br><b>Title:</b> Lisb-ON #JARDIMSONORO 2025<br><b>Full lineup:</b> anotr<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Lisbon<br><b>Artist:</b> ninakraviz<br><b>Date:</b> VRI, 11 APR.<br><b>Title:</b> Sónar Lisboa 2025<br><b>Full lineup:</b> ninakraviz<br><br></div></div>`)[0];
+                popup_400ef8cb18ebe85b488853fa52b5a375.setContent(html_99873cd05056ad0ab033f567c142528e);
+            
+        
+
+        marker_5939d7a879698b7bf3b5d462d9a7dcea.bindPopup(popup_400ef8cb18ebe85b488853fa52b5a375)
+        ;
+
+        
+    
+    
+            marker_5939d7a879698b7bf3b5d462d9a7dcea.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a3cfdf9b62d89e7abb3bb2691dd55b4d = L.marker(
+                [-33.8698439, 151.2082848],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_e9fc498cb2b3dbd0e8d43810356d2e0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a3cfdf9b62d89e7abb3bb2691dd55b4d.setIcon(icon_e9fc498cb2b3dbd0e8d43810356d2e0e);
+        
+    
+        var popup_773521922caf059a8fb3da176c66d4e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b7c9d80b4f78dfa580d57406d1e0ce4 = $(`<div id="html_7b7c9d80b4f78dfa580d57406d1e0ce4" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Sydney<br><b>Artist:</b> pegassi<br><b>Date:</b> ZON, 16 MRT.<br><b>Title:</b> Lost Sundays Block Party - March 16<br><b>Full lineup:</b> pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Sydney<br><b>Artist:</b> anotr<br><b>Date:</b> VRI, 28 FEB.<br><b>Title:</b> ANOTR - On A Trip - Australia 2025<br><b>Full lineup:</b> anotr<br><br></div></div>`)[0];
+                popup_773521922caf059a8fb3da176c66d4e5.setContent(html_7b7c9d80b4f78dfa580d57406d1e0ce4);
+            
+        
+
+        marker_a3cfdf9b62d89e7abb3bb2691dd55b4d.bindPopup(popup_773521922caf059a8fb3da176c66d4e5)
+        ;
+
+        
+    
+    
+            marker_a3cfdf9b62d89e7abb3bb2691dd55b4d.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_752cd8fd95e6293f9c8ab969e34dae46 = L.marker(
+                [48.1371079, 11.5753822],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_0e71ba6a8a5c71fd5f5365efa2613550 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_752cd8fd95e6293f9c8ab969e34dae46.setIcon(icon_0e71ba6a8a5c71fd5f5365efa2613550);
+        
+    
+        var popup_aacf19fea074620bfa03ec39fae6b1aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6da9589760a5206c55e41582031b9fbd = $(`<div id="html_6da9589760a5206c55e41582031b9fbd" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Munich<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZAT, 10 MEI<br><b>Title:</b> Isle of Summer Opening<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Munich<br><b>Artist:</b> baronvontrax<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> slippy xoxo<br><b>Full lineup:</b> baronvontrax<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Munich<br><b>Artist:</b> charlottedewitte<br><b>Date:</b> ZAT, 5 JUL.<br><b>Title:</b> Greenfields Open Air Festival 2024<br><b>Full lineup:</b> charlottedewitte<br><br></div></div>`)[0];
+                popup_aacf19fea074620bfa03ec39fae6b1aa.setContent(html_6da9589760a5206c55e41582031b9fbd);
+            
+        
+
+        marker_752cd8fd95e6293f9c8ab969e34dae46.bindPopup(popup_aacf19fea074620bfa03ec39fae6b1aa)
+        ;
+
+        
+    
+    
+            marker_752cd8fd95e6293f9c8ab969e34dae46.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_397771820fb6eade60d36b971051c1c8 = L.marker(
+                [41.3828939, 2.1774322],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_eec4bda0a968b49b240b464a5530f2b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_397771820fb6eade60d36b971051c1c8.setIcon(icon_eec4bda0a968b49b240b464a5530f2b7);
+        
+    
+        var popup_2cddc5c2ed74494d2c5d4f4f93590aed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3916a2b26e88418c8e70783e40083e8e = $(`<div id="html_3916a2b26e88418c8e70783e40083e8e" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> mcr-t | overmono | djheartstring<br><b>Date:</b> DON, 12 JUN.<br><b>Title:</b> Sónar by Day 2025<br><b>Full lineup:</b> mcr-t | overmono | djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> mallgrab<br><b>Date:</b> VRI, 18 JUL.<br><b>Title:</b> SOUNDIT Festival 2025<br><b>Full lineup:</b> mallgrab<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> ninakraviz | purplediscomachine | marlonhoffstadt<br><b>Date:</b> VRI, 8 AUG.<br><b>Title:</b> Brunch Electronik Festival 2025<br><b>Full lineup:</b> ninakraviz | purplediscomachine | marlonhoffstadt<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> peggygou | bicep | fourtet<br><b>Date:</b> VRI, 13 JUN.<br><b>Title:</b> Sónar by Night 2025<br><b>Full lineup:</b> peggygou | bicep | fourtet<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> badboombox<br><b>Date:</b> VRI, 18 APR.<br><b>Title:</b> BCCO x SWING pres. Bad Boombox & DJ Hyperdrive<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> bostonbun<br><b>Date:</b> WOE, 23 APR.<br><b>Title:</b> Boston Bun (live) en microdosis - La Nau, Barcelona<br><b>Full lineup:</b> bostonbun<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> anotr<br><b>Date:</b> DON, 5 JUN.<br><b>Title:</b> Primavera Sound 2025 Barcelona<br><b>Full lineup:</b> anotr<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> ninakraviz<br><b>Date:</b> VRI, 18 APR.<br><b>Title:</b> Duro Festival 2025<br><b>Full lineup:</b> ninakraviz<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Barcelona<br><b>Artist:</b> sammyvirji<br><b>Date:</b> VRI, 7 FEB.<br><b>Title:</b> FUEGO: Sammy Virji<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_2cddc5c2ed74494d2c5d4f4f93590aed.setContent(html_3916a2b26e88418c8e70783e40083e8e);
+            
+        
+
+        marker_397771820fb6eade60d36b971051c1c8.bindPopup(popup_2cddc5c2ed74494d2c5d4f4f93590aed)
+        ;
+
+        
+    
+    
+            marker_397771820fb6eade60d36b971051c1c8.bindTooltip(
+                `<div>
+                     9 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1120e7eb755ecf06c98b25f993c15dc7 = L.marker(
+                [44.8178131, 20.4568974],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_93b7897a2136156eb35b68c129710f57 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1120e7eb755ecf06c98b25f993c15dc7.setIcon(icon_93b7897a2136156eb35b68c129710f57);
+        
+    
+        var popup_6062f7c9cfe3f15737aaf73932131642 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5091ad3612b865fa6633f8622ec4a739 = $(`<div id="html_5091ad3612b865fa6633f8622ec4a739" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belgrade<br><b>Artist:</b> badboombox<br><b>Date:</b> VRI, 7 MRT.<br><b>Title:</b> Boiler Room: Belgrade x Music Reactions<br><b>Full lineup:</b> badboombox<br><br></div></div>`)[0];
+                popup_6062f7c9cfe3f15737aaf73932131642.setContent(html_5091ad3612b865fa6633f8622ec4a739);
+            
+        
+
+        marker_1120e7eb755ecf06c98b25f993c15dc7.bindPopup(popup_6062f7c9cfe3f15737aaf73932131642)
+        ;
+
+        
+    
+    
+            marker_1120e7eb755ecf06c98b25f993c15dc7.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3da060dc6c05a3bc9b78e00006dc9fd9 = L.marker(
+                [51.5074456, -0.1277653],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_5e6c528b588998f425c1f2fa6ad385db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3da060dc6c05a3bc9b78e00006dc9fd9.setIcon(icon_5e6c528b588998f425c1f2fa6ad385db);
+        
+    
+        var popup_fb030587d2d30dc7176ad2acdea18e62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fb71ea896545b02e99a2493d6556e44 = $(`<div id="html_8fb71ea896545b02e99a2493d6556e44" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> anotr<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> ANOTR<br><b>Full lineup:</b> anotr<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> me | rampa | adamport<br><b>Date:</b> ZON, 15 JUN.<br><b>Title:</b> krankbrother presents: Keinemusik<br><b>Full lineup:</b> me | rampa | adamport<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> blackcoffee<br><b>Date:</b> DON, 31 JUL.<br><b>Title:</b> Black Coffee on the Thames<br><b>Full lineup:</b> blackcoffee<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> mountkimbie | ninakraviz | charlottedewitte<br><b>Date:</b> VRI, 25 JUL.<br><b>Title:</b> Junction 2<br><b>Full lineup:</b> mountkimbie | ninakraviz | charlottedewitte<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> diffrent<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> FABRICLIVE: Conducta, Special Request, La La, Ghoulish, Silva Snipa, The Menendez Brothers<br><b>Full lineup:</b> diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> djheartstring<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> DJ HEARTSTRING [Sold Out]<br><b>Full lineup:</b> djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> mountkimbie<br><b>Date:</b> ZON, 21 SEP.<br><b>Title:</b> PORTA<br><b>Full lineup:</b> mountkimbie<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> benwal | emilija<br><b>Date:</b> VRI, 21 MRT.<br><b>Title:</b> Faster Horses [All Night Long] ft. Benwal, D*******, EMILIJA + MORE<br><b>Full lineup:</b> benwal | emilija<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> pegassi<br><b>Date:</b> ZAT, 12 APR.<br><b>Title:</b> Rhythm Labs: Pegassi, Upper90, dogheadsurigeri, Guestlist to Mars (Kmya)<br><b>Full lineup:</b> pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> London<br><b>Artist:</b> peggygou | mallgrab<br><b>Date:</b> ZAT, 24 MEI<br><b>Title:</b> Field Day 2025<br><b>Full lineup:</b> peggygou | mallgrab<br><br></div></div>`)[0];
+                popup_fb030587d2d30dc7176ad2acdea18e62.setContent(html_8fb71ea896545b02e99a2493d6556e44);
+            
+        
+
+        marker_3da060dc6c05a3bc9b78e00006dc9fd9.bindPopup(popup_fb030587d2d30dc7176ad2acdea18e62)
+        ;
+
+        
+    
+    
+            marker_3da060dc6c05a3bc9b78e00006dc9fd9.bindTooltip(
+                `<div>
+                     10 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4089db419f36e9d032debec68627952b = L.marker(
+                [-8.2271303, 115.1919203],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_582847701b6c8a97ae39a35cd742d39e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4089db419f36e9d032debec68627952b.setIcon(icon_582847701b6c8a97ae39a35cd742d39e);
+        
+    
+        var popup_01e8c5b04aea7010618a913732def513 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_948df0a5b6f131e49a29641b4a439670 = $(`<div id="html_948df0a5b6f131e49a29641b4a439670" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Bali<br><b>Artist:</b> anotr<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> ANOTR<br><b>Full lineup:</b> anotr<br><br></div></div>`)[0];
+                popup_01e8c5b04aea7010618a913732def513.setContent(html_948df0a5b6f131e49a29641b4a439670);
+            
+        
+
+        marker_4089db419f36e9d032debec68627952b.bindPopup(popup_01e8c5b04aea7010618a913732def513)
+        ;
+
+        
+    
+    
+            marker_4089db419f36e9d032debec68627952b.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b5516f317478fefac711d784299de8eb = L.marker(
+                [-34.6083696, -58.4440583],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_56752566f8df065450a9ac52d4dfb931 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b5516f317478fefac711d784299de8eb.setIcon(icon_56752566f8df065450a9ac52d4dfb931);
+        
+    
+        var popup_600412f5c42b688ce1a4652f36bb3b74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d099471c7e854281bb1721cb08330c8b = $(`<div id="html_d099471c7e854281bb1721cb08330c8b" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Buenos Aires<br><b>Artist:</b> anotr<br><b>Date:</b> VRI, 14 MRT.<br><b>Title:</b> ANOTR & MORE ARTISTS - by ALDEA & NATIVE<br><b>Full lineup:</b> anotr<br><br></div></div>`)[0];
+                popup_600412f5c42b688ce1a4652f36bb3b74.setContent(html_d099471c7e854281bb1721cb08330c8b);
+            
+        
+
+        marker_b5516f317478fefac711d784299de8eb.bindPopup(popup_600412f5c42b688ce1a4652f36bb3b74)
+        ;
+
+        
+    
+    
+            marker_b5516f317478fefac711d784299de8eb.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4d8eec5e5f5b1f2bd6c4b160b2a7d951 = L.marker(
+                [40.7127281, -74.0060152],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_98d749051e488874d49ec20d09b3dda7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4d8eec5e5f5b1f2bd6c4b160b2a7d951.setIcon(icon_98d749051e488874d49ec20d09b3dda7);
+        
+    
+        var popup_85cf7bfa85c5961d59227e406b7e6508 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a852b73c87194a15a8d88fa61dda9d21 = $(`<div id="html_a852b73c87194a15a8d88fa61dda9d21" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> anotr<br><b>Date:</b> VRI, 21 MRT.<br><b>Title:</b> Teksupport: ANOTR<br><b>Full lineup:</b> anotr<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> fourtet | overmono<br><b>Date:</b> ZAT, 17 MEI<br><b>Title:</b> Four Tet & Friends<br><b>Full lineup:</b> fourtet | overmono<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> kolsch<br><b>Date:</b> ZAT, 15 MRT.<br><b>Title:</b> Gray Area presents: Kölsch<br><b>Full lineup:</b> kolsch<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> mcr-t<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Live From Earth<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 14 JUN.<br><b>Title:</b> SAMMY VIRJI – NORTH AMERICA TOUR 2025 PART ONE<br><b>Full lineup:</b> sammyvirji<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> solomun<br><b>Date:</b> VRI, 28 FEB.<br><b>Title:</b> Teksupport: Solomun (Friday)<br><b>Full lineup:</b> solomun<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> New York City<br><b>Artist:</b> solomun<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> Teksupport: Solomun (Saturday)<br><b>Full lineup:</b> solomun<br><br></div></div>`)[0];
+                popup_85cf7bfa85c5961d59227e406b7e6508.setContent(html_a852b73c87194a15a8d88fa61dda9d21);
+            
+        
+
+        marker_4d8eec5e5f5b1f2bd6c4b160b2a7d951.bindPopup(popup_85cf7bfa85c5961d59227e406b7e6508)
+        ;
+
+        
+    
+    
+            marker_4d8eec5e5f5b1f2bd6c4b160b2a7d951.bindTooltip(
+                `<div>
+                     7 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_94a9b34e2d09acfd268ec3d89e310297 = L.marker(
+                [41.8755616, -87.6244212],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_932533770640ba177510d9e269ea35cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94a9b34e2d09acfd268ec3d89e310297.setIcon(icon_932533770640ba177510d9e269ea35cd);
+        
+    
+        var popup_4ac2648429b90786c74070c969f2fbab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9090da8d4be00053a8a8dd46b186771 = $(`<div id="html_d9090da8d4be00053a8a8dd46b186771" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Chicago<br><b>Artist:</b> anotr<br><b>Date:</b> ZAT, 22 MRT.<br><b>Title:</b> ANOTR<br><b>Full lineup:</b> anotr<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Chicago<br><b>Artist:</b> funktribu<br><b>Date:</b> VRI, 4 APR.<br><b>Title:</b> Serum: Funk Tribu<br><b>Full lineup:</b> funktribu<br><br></div></div>`)[0];
+                popup_4ac2648429b90786c74070c969f2fbab.setContent(html_d9090da8d4be00053a8a8dd46b186771);
+            
+        
+
+        marker_94a9b34e2d09acfd268ec3d89e310297.bindPopup(popup_4ac2648429b90786c74070c969f2fbab)
+        ;
+
+        
+    
+    
+            marker_94a9b34e2d09acfd268ec3d89e310297.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_142d245b8c2e073d39afd5a33ecf92ee = L.marker(
+                [48.8534951, 2.3483915],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_927e9ecee6595873227e4b40bb92e953 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_142d245b8c2e073d39afd5a33ecf92ee.setIcon(icon_927e9ecee6595873227e4b40bb92e953);
+        
+    
+        var popup_01e3083be815f49512173df4ee0a80f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c0fa07e7c7ef12ed3be97ecde9ee916 = $(`<div id="html_8c0fa07e7c7ef12ed3be97ecde9ee916" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> malugi | purplediscomachine<br><b>Date:</b> VRI, 14 MRT.<br><b>Title:</b> Madame Loyal XXL PARIS<br><b>Full lineup:</b> malugi | purplediscomachine<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> bicep<br><b>Date:</b> VRI, 6 JUN.<br><b>Title:</b> We Love Green 2025<br><b>Full lineup:</b> bicep<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> baronvontrax<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Transgenik<br><b>Full lineup:</b> baronvontrax<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> djheartstring<br><b>Date:</b> VRI, 21 FEB.<br><b>Title:</b> T7: DJ Heartstring<br><b>Full lineup:</b> djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> funktribu<br><b>Date:</b> VRI, 7 FEB.<br><b>Title:</b> Nexus: Funk Tribu - Supergloss - Eskha - BONES33<br><b>Full lineup:</b> funktribu<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> benwal<br><b>Date:</b> ZON, 8 JUN.<br><b>Title:</b> Marvellous Island 2025, Day 2, Sunday June 8th<br><b>Full lineup:</b> benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> kaytranada<br><b>Date:</b> ZAT, 19 APR.<br><b>Title:</b> Kaytranada<br><b>Full lineup:</b> kaytranada<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> Marvellous Island 2025, Day 1, Saturday June 7th<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> T7: Sammy Virji<br><b>Full lineup:</b> sammyvirji<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Paris<br><b>Artist:</b> solomun<br><b>Date:</b> ZAT, 21 JUN.<br><b>Title:</b> Solomun 2025<br><b>Full lineup:</b> solomun<br><br></div></div>`)[0];
+                popup_01e3083be815f49512173df4ee0a80f7.setContent(html_8c0fa07e7c7ef12ed3be97ecde9ee916);
+            
+        
+
+        marker_142d245b8c2e073d39afd5a33ecf92ee.bindPopup(popup_01e3083be815f49512173df4ee0a80f7)
+        ;
+
+        
+    
+    
+            marker_142d245b8c2e073d39afd5a33ecf92ee.bindTooltip(
+                `<div>
+                     10 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_70ca3d2298a5abc86738b15ebde9d868 = L.marker(
+                [53.4794892, -2.2451148],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_90e0b26757bc2aea863e1600bd56791e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_70ca3d2298a5abc86738b15ebde9d868.setIcon(icon_90e0b26757bc2aea863e1600bd56791e);
+        
+    
+        var popup_dfc97a08514b32412f0b15c92057752c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_706e4fee9772ebba3cd96d8bb1743b0d = $(`<div id="html_706e4fee9772ebba3cd96d8bb1743b0d" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Manchester<br><b>Artist:</b> emilija<br><b>Date:</b> ZAT, 3 MEI<br><b>Title:</b> Teletech Hardcore 2025 [Day & Night]<br><b>Full lineup:</b> emilija<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Manchester<br><b>Artist:</b> pegassi | diffrent<br><b>Date:</b> ZAT, 1 FEB.<br><b>Title:</b> Teletech Hidden, Manchester: 1st February 2025<br><b>Full lineup:</b> pegassi | diffrent<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Manchester<br><b>Artist:</b> steveangello | djheartstring | bicep | diffrent | marcrebillet | overmono | peggygou | malugi<br><b>Date:</b> ZAT, 14 JUN.<br><b>Title:</b> Parklife 2025, 14th - 15th June<br><b>Full lineup:</b> steveangello | djheartstring | bicep | diffrent | marcrebillet | overmono | peggygou | malugi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Manchester<br><b>Artist:</b> purplediscomachine<br><b>Date:</b> VRI, 7 MRT.<br><b>Title:</b> Purple Disco Machine<br><b>Full lineup:</b> purplediscomachine<br><br></div></div>`)[0];
+                popup_dfc97a08514b32412f0b15c92057752c.setContent(html_706e4fee9772ebba3cd96d8bb1743b0d);
+            
+        
+
+        marker_70ca3d2298a5abc86738b15ebde9d868.bindPopup(popup_dfc97a08514b32412f0b15c92057752c)
+        ;
+
+        
+    
+    
+            marker_70ca3d2298a5abc86738b15ebde9d868.bindTooltip(
+                `<div>
+                     4 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5df2e30bffa77e3b92514e7c98a30e86 = L.marker(
+                [46.7985624, 8.2319736],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_823c14ada710057085d88dce6186c2d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5df2e30bffa77e3b92514e7c98a30e86.setIcon(icon_823c14ada710057085d88dce6186c2d7);
+        
+    
+        var popup_dfc006a6c3a73e4041dcbb093b211a7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3468f264b7027ced077822bff156c448 = $(`<div id="html_3468f264b7027ced077822bff156c448" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Switzerland<br><b>Artist:</b> blackcoffee | ninakraviz<br><b>Date:</b> VRI, 4 APR.<br><b>Title:</b> Caprices Festival 2025 - Crans-Montana<br><b>Full lineup:</b> blackcoffee | ninakraviz<br><br></div></div>`)[0];
+                popup_dfc006a6c3a73e4041dcbb093b211a7d.setContent(html_3468f264b7027ced077822bff156c448);
+            
+        
+
+        marker_5df2e30bffa77e3b92514e7c98a30e86.bindPopup(popup_dfc006a6c3a73e4041dcbb093b211a7d)
+        ;
+
+        
+    
+    
+            marker_5df2e30bffa77e3b92514e7c98a30e86.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2bb98931ae85086eb6d2c116eaa2c4d6 = L.marker(
+                [49.4892913, 8.4673098],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_e5c5d76fa69a285b038ad0d2ab4623af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2bb98931ae85086eb6d2c116eaa2c4d6.setIcon(icon_e5c5d76fa69a285b038ad0d2ab4623af);
+        
+    
+        var popup_18c6f9fdb497b2284aefccfb54178d29 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83929b25dd1688daaafaf395dd2b57eb = $(`<div id="html_83929b25dd1688daaafaf395dd2b57eb" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Mannheim<br><b>Artist:</b> blackcoffee | ninakraviz | pegassi | djheartstring | malugi | charlottedewitte<br><b>Date:</b> ZAT, 5 APR.<br><b>Title:</b> Time Warp Mannheim Germany 2025<br><b>Full lineup:</b> blackcoffee | ninakraviz | pegassi | djheartstring | malugi | charlottedewitte<br><br></div></div>`)[0];
+                popup_18c6f9fdb497b2284aefccfb54178d29.setContent(html_83929b25dd1688daaafaf395dd2b57eb);
+            
+        
+
+        marker_2bb98931ae85086eb6d2c116eaa2c4d6.bindPopup(popup_18c6f9fdb497b2284aefccfb54178d29)
+        ;
+
+        
+    
+    
+            marker_2bb98931ae85086eb6d2c116eaa2c4d6.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_62164e057926c556503374db6c1cb044 = L.marker(
+                [52.510885, 13.3989367],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_76aa19a70acd1701453541ca4cdebe3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_62164e057926c556503374db6c1cb044.setIcon(icon_76aa19a70acd1701453541ca4cdebe3c);
+        
+    
+        var popup_e0dba5848481c71e40fa18bc89b1cc81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56b3066cb591fcca5f13bb580f9a23a2 = $(`<div id="html_56b3066cb591fcca5f13bb580f9a23a2" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> mountkimbie<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> SOFT with Mount Kimbie, Actress, upsammy, Dangermami<br><b>Full lineup:</b> mountkimbie<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> baronvontrax<br><b>Date:</b> VRI, 7 FEB.<br><b>Title:</b> Slave To The Rave 35 with Baugruppe90, Danny Wabbit, Marcus L, Teki Latex<br><b>Full lineup:</b> baronvontrax<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> badboombox<br><b>Date:</b> VRI, 30 MEI<br><b>Title:</b> Hot Meal<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZON, 31 AUG.<br><b>Title:</b> SESH w/ Clara Cuvé b2b MCR-T ALL DAY LONG<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> mcr-t<br><b>Date:</b> DON, 1 MEI<br><b>Title:</b> SESH May Day Open Air + Indoor<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> spacerwoman<br><b>Date:</b> VRI, 28 FEB.<br><b>Title:</b> »TAU MICH AUF« with DJ MELL G, Raven, CRRDR, Abu Glitsch b2b Bovskey, Spacer Woman, Kali<br><b>Full lineup:</b> spacerwoman<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> fourtet<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> Four Tet - Berlin<br><b>Full lineup:</b> fourtet<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> kaytranada<br><b>Date:</b> ZAT, 12 APR.<br><b>Title:</b> Kaytranada<br><b>Full lineup:</b> kaytranada<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZON, 23 MRT.<br><b>Title:</b> MCR-T Concert & Aftershowparty<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> BCCO x STORNO 52 Hours<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> mcr-t | pegassi<br><b>Date:</b> VRI, 28 MRT.<br><b>Title:</b> SESH<br><b>Full lineup:</b> mcr-t | pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> emilija<br><b>Date:</b> ZAT, 1 FEB.<br><b>Title:</b> Polyamor pres. MRD, Stef de Haan, Mika Heggemann B2B EMILIJA, Cleopard2000<br><b>Full lineup:</b> emilija<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> me | rampa | adamport<br><b>Date:</b> ZAT, 23 AUG.<br><b>Title:</b> Keinemusik<br><b>Full lineup:</b> me | rampa | adamport<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Berlin<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 8 MRT.<br><b>Title:</b> Sammy Virji – Europe Tour 2025<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_e0dba5848481c71e40fa18bc89b1cc81.setContent(html_56b3066cb591fcca5f13bb580f9a23a2);
+            
+        
+
+        marker_62164e057926c556503374db6c1cb044.bindPopup(popup_e0dba5848481c71e40fa18bc89b1cc81)
+        ;
+
+        
+    
+    
+            marker_62164e057926c556503374db6c1cb044.bindTooltip(
+                `<div>
+                     14 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4396fdfed3a13746b07c1643e224940a = L.marker(
+                [45.0677551, 7.6824892],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_acb38822e8803d20f3d0417382cb6d37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4396fdfed3a13746b07c1643e224940a.setIcon(icon_acb38822e8803d20f3d0417382cb6d37);
+        
+    
+        var popup_ca577f94060f1827ccf0daeb422697c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c271951da81cb2549a3c7d308f41cc3c = $(`<div id="html_c271951da81cb2549a3c7d308f41cc3c" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Turin<br><b>Artist:</b> solomun | peggygou | charlottedewitte | anotr | ninakraviz<br><b>Date:</b> VRI, 4 JUL.<br><b>Title:</b> Kappa FuturFestival 2025<br><b>Full lineup:</b> solomun | peggygou | charlottedewitte | anotr | ninakraviz<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Turin<br><b>Artist:</b> ninakraviz<br><b>Date:</b> VRI, 4 APR.<br><b>Title:</b> [OVER] with Nina Kraviz<br><b>Full lineup:</b> ninakraviz<br><br></div></div>`)[0];
+                popup_ca577f94060f1827ccf0daeb422697c8.setContent(html_c271951da81cb2549a3c7d308f41cc3c);
+            
+        
+
+        marker_4396fdfed3a13746b07c1643e224940a.bindPopup(popup_ca577f94060f1827ccf0daeb422697c8)
+        ;
+
+        
+    
+    
+            marker_4396fdfed3a13746b07c1643e224940a.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d8e7414c07c4a138fe2bac74126b1fa9 = L.marker(
+                [41.0766019, 29.052495],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_743289c81e7597fce07cc2716d1e9e3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d8e7414c07c4a138fe2bac74126b1fa9.setIcon(icon_743289c81e7597fce07cc2716d1e9e3a);
+        
+    
+        var popup_e8ae12bc383254575d3fb82f1c868fa9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e81fb831dc9c29a47db32f2ca158f187 = $(`<div id="html_e81fb831dc9c29a47db32f2ca158f187" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Istanbul<br><b>Artist:</b> adamport<br><b>Date:</b> ZAT, 10 MEI<br><b>Title:</b> MONKEY PROJECT PRESENTS: Adam Port ISTANBUL<br><b>Full lineup:</b> adamport<br><br></div></div>`)[0];
+                popup_e8ae12bc383254575d3fb82f1c868fa9.setContent(html_e81fb831dc9c29a47db32f2ca158f187);
+            
+        
+
+        marker_d8e7414c07c4a138fe2bac74126b1fa9.bindPopup(popup_e8ae12bc383254575d3fb82f1c868fa9)
+        ;
+
+        
+    
+    
+            marker_d8e7414c07c4a138fe2bac74126b1fa9.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f62a1da8f8c5d0597a9d8ab7a8194791 = L.marker(
+                [-22.9110137, -43.2093727],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_75baf1b7c1f59db1f82c6371107c5e8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f62a1da8f8c5d0597a9d8ab7a8194791.setIcon(icon_75baf1b7c1f59db1f82c6371107c5e8d);
+        
+    
+        var popup_62d226b61af702253251f7dc6a7b2ba6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02442d5a693f2dfc1ba7493ee0440248 = $(`<div id="html_02442d5a693f2dfc1ba7493ee0440248" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Rio de Janeiro<br><b>Artist:</b> adamport<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> ADAM PORT // MUSEU DO AMANHÃ // CARNAVAL RIO DE JANEIRO<br><b>Full lineup:</b> adamport<br><br></div></div>`)[0];
+                popup_62d226b61af702253251f7dc6a7b2ba6.setContent(html_02442d5a693f2dfc1ba7493ee0440248);
+            
+        
+
+        marker_f62a1da8f8c5d0597a9d8ab7a8194791.bindPopup(popup_62d226b61af702253251f7dc6a7b2ba6)
+        ;
+
+        
+    
+    
+            marker_f62a1da8f8c5d0597a9d8ab7a8194791.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c66db9832d9ff76c46c4449593d0a3dd = L.marker(
+                [-24.62994925, 26.045475779882626],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_99a8e3aca534d76ae42fc4a88ece073c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c66db9832d9ff76c46c4449593d0a3dd.setIcon(icon_99a8e3aca534d76ae42fc4a88ece073c);
+        
+    
+        var popup_3d53efaf828da1457cc2cb52bcc72035 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa3873887c7108f7f31a03ac316f34ef = $(`<div id="html_fa3873887c7108f7f31a03ac316f34ef" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> South East<br><b>Artist:</b> kolsch | ninakraviz<br><b>Date:</b> VRI, 14 MRT.<br><b>Title:</b> Tomorrowland Winter<br><b>Full lineup:</b> kolsch | ninakraviz<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> South East<br><b>Artist:</b> ninakraviz<br><b>Date:</b> ZAT, 26 APR.<br><b>Title:</b> tignes unlimited 2025<br><b>Full lineup:</b> ninakraviz<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> South + East<br><b>Artist:</b> mountkimbie<br><b>Date:</b> ZON, 24 AUG.<br><b>Title:</b> Maribou State<br><b>Full lineup:</b> mountkimbie<br><br></div></div>`)[0];
+                popup_3d53efaf828da1457cc2cb52bcc72035.setContent(html_fa3873887c7108f7f31a03ac316f34ef);
+            
+        
+
+        marker_c66db9832d9ff76c46c4449593d0a3dd.bindPopup(popup_3d53efaf828da1457cc2cb52bcc72035)
+        ;
+
+        
+    
+    
+            marker_c66db9832d9ff76c46c4449593d0a3dd.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c08c1ce3b46a3d78bc4e82216a8e3408 = L.marker(
+                [45.9246705, 6.8727506],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_241af602d39c6f12f5c6397afa721cca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c08c1ce3b46a3d78bc4e82216a8e3408.setIcon(icon_241af602d39c6f12f5c6397afa721cca);
+        
+    
+        var popup_2d16bb96f3d3aa778d987214e008b753 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_640296149c288a309fac05fb536fa0da = $(`<div id="html_640296149c288a309fac05fb536fa0da" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Chamonix<br><b>Artist:</b> ninakraviz<br><b>Date:</b> WOE, 26 MRT.<br><b>Title:</b> the unlimited festival 2025<br><b>Full lineup:</b> ninakraviz<br><br></div></div>`)[0];
+                popup_2d16bb96f3d3aa778d987214e008b753.setContent(html_640296149c288a309fac05fb536fa0da);
+            
+        
+
+        marker_c08c1ce3b46a3d78bc4e82216a8e3408.bindPopup(popup_2d16bb96f3d3aa778d987214e008b753)
+        ;
+
+        
+    
+    
+            marker_c08c1ce3b46a3d78bc4e82216a8e3408.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ab8fb01e6dad2db84759ae08d5327c27 = L.marker(
+                [34.0536909, -118.242766],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_2896d9043ae28b1aee3471151650e2c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ab8fb01e6dad2db84759ae08d5327c27.setIcon(icon_2896d9043ae28b1aee3471151650e2c9);
+        
+    
+        var popup_a5c72c95223965c8407dd6fc4e2c4ed8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93c90660beeeb5e3fdf21486fa64b97d = $(`<div id="html_93c90660beeeb5e3fdf21486fa64b97d" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Los Angeles<br><b>Artist:</b> fourtet | sammyvirji<br><b>Date:</b> WOE, 21 MEI<br><b>Title:</b> Lightning in a Bottle<br><b>Full lineup:</b> fourtet | sammyvirji<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Los Angeles<br><b>Artist:</b> badboombox<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> Skyline Festival 2025<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Los Angeles<br><b>Artist:</b> bonobo<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Lights Down Low feat. Bonobo (Benefiting LA Fire Relief)<br><b>Full lineup:</b> bonobo<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Los Angeles<br><b>Artist:</b> mcr-t<br><b>Date:</b> VRI, 7 FEB.<br><b>Title:</b> TUNNEL presents: MCR-T, River Moon, Etari & OZA<br><b>Full lineup:</b> mcr-t<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Los Angeles<br><b>Artist:</b> ninakraviz<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Nina Kraviz LA Fire Relief Fundraiser<br><b>Full lineup:</b> ninakraviz<br><br></div></div>`)[0];
+                popup_a5c72c95223965c8407dd6fc4e2c4ed8.setContent(html_93c90660beeeb5e3fdf21486fa64b97d);
+            
+        
+
+        marker_ab8fb01e6dad2db84759ae08d5327c27.bindPopup(popup_a5c72c95223965c8407dd6fc4e2c4ed8)
+        ;
+
+        
+    
+    
+            marker_ab8fb01e6dad2db84759ae08d5327c27.bindTooltip(
+                `<div>
+                     5 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e6f5f1ad9428dedbcb8086d73564fdbf = L.marker(
+                [52.3744779, 9.7385532],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_6eca9a1ad8fc0d365f102ecc93902494 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e6f5f1ad9428dedbcb8086d73564fdbf.setIcon(icon_6eca9a1ad8fc0d365f102ecc93902494);
+        
+    
+        var popup_5deca661cbbd28cf85fe5c49a6f896a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_866b827a1558f9971cf679560b3ac02e = $(`<div id="html_866b827a1558f9971cf679560b3ac02e" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Hannover<br><b>Artist:</b> badboombox | funktribu | benwal<br><b>Date:</b> ZAT, 14 JUN.<br><b>Title:</b> Waves Open Air 2025<br><b>Full lineup:</b> badboombox | funktribu | benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Hannover<br><b>Artist:</b> funktribu<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> EXIT with Funk Tribu<br><b>Full lineup:</b> funktribu<br><br></div></div>`)[0];
+                popup_5deca661cbbd28cf85fe5c49a6f896a4.setContent(html_866b827a1558f9971cf679560b3ac02e);
+            
+        
+
+        marker_e6f5f1ad9428dedbcb8086d73564fdbf.bindPopup(popup_5deca661cbbd28cf85fe5c49a6f896a4)
+        ;
+
+        
+    
+    
+            marker_e6f5f1ad9428dedbcb8086d73564fdbf.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3d9b7a76203f874c316b4a682be758cc = L.marker(
+                [45.7578137, 4.8320114],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_eebdbb5bb8da6fb6b0415dc85bb052c8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3d9b7a76203f874c316b4a682be758cc.setIcon(icon_eebdbb5bb8da6fb6b0415dc85bb052c8);
+        
+    
+        var popup_072c405f9fd7d1c0589132a707df4e26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19dd67aacb66f430784f31fa7d19d92b = $(`<div id="html_19dd67aacb66f430784f31fa7d19d92b" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Lyon<br><b>Artist:</b> peggygou | mallgrab | bicep<br><b>Date:</b> WOE, 28 MEI<br><b>Title:</b> Nuits Sonores 2025<br><b>Full lineup:</b> peggygou | mallgrab | bicep<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Lyon<br><b>Artist:</b> bostonbun<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> LOST IN THE GROOVE - Cerrone / Boston Bun / Barbara Boeing<br><b>Full lineup:</b> bostonbun<br><br></div></div>`)[0];
+                popup_072c405f9fd7d1c0589132a707df4e26.setContent(html_19dd67aacb66f430784f31fa7d19d92b);
+            
+        
+
+        marker_3d9b7a76203f874c316b4a682be758cc.bindPopup(popup_072c405f9fd7d1c0589132a707df4e26)
+        ;
+
+        
+    
+    
+            marker_3d9b7a76203f874c316b4a682be758cc.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c448b4fcdc91fd9fb0fa87a6e54e52f6 = L.marker(
+                [53.7974185, -1.5437941],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_199365af0d5ab23380a81a4ab5540a64 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c448b4fcdc91fd9fb0fa87a6e54e52f6.setIcon(icon_199365af0d5ab23380a81a4ab5540a64);
+        
+    
+        var popup_082e580ee73d1312983c127398f32b6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8358631c65bcd0cd0d6e32b1ffe53e79 = $(`<div id="html_8358631c65bcd0cd0d6e32b1ffe53e79" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Leeds<br><b>Artist:</b> mallgrab | diffrent | benwal<br><b>Date:</b> ZAT, 3 MEI<br><b>Title:</b> Mint Festival 2025<br><b>Full lineup:</b> mallgrab | diffrent | benwal<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Leeds<br><b>Artist:</b> overmono<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Into Reality: Overmono DJ | SOLD OUT<br><b>Full lineup:</b> overmono<br><br></div></div>`)[0];
+                popup_082e580ee73d1312983c127398f32b6d.setContent(html_8358631c65bcd0cd0d6e32b1ffe53e79);
+            
+        
+
+        marker_c448b4fcdc91fd9fb0fa87a6e54e52f6.bindPopup(popup_082e580ee73d1312983c127398f32b6d)
+        ;
+
+        
+    
+    
+            marker_c448b4fcdc91fd9fb0fa87a6e54e52f6.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f14f9fa5954a96be23dbebcafc557274 = L.marker(
+                [-19.2785043, 29.8790852],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_991df2c9be8cba043b19eaf5fcad98f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f14f9fa5954a96be23dbebcafc557274.setIcon(icon_991df2c9be8cba043b19eaf5fcad98f0);
+        
+    
+        var popup_a65cb3d90be3a1030c1df5d760bc95d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7779a09c647a632799c39946c06d807 = $(`<div id="html_b7779a09c647a632799c39946c06d807" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Midlands<br><b>Artist:</b> fourtet | anotr<br><b>Date:</b> DON, 21 AUG.<br><b>Title:</b> Lost Village 2025<br><b>Full lineup:</b> fourtet | anotr<br><br></div></div>`)[0];
+                popup_a65cb3d90be3a1030c1df5d760bc95d5.setContent(html_b7779a09c647a632799c39946c06d807);
+            
+        
+
+        marker_f14f9fa5954a96be23dbebcafc557274.bindPopup(popup_a65cb3d90be3a1030c1df5d760bc95d5)
+        ;
+
+        
+    
+    
+            marker_f14f9fa5954a96be23dbebcafc557274.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_281a63d076333556fd31c0df1e8d08a1 = L.marker(
+                [50.8465573, 4.351697],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_3a544982d584df2085e92b0ccfb04f51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_281a63d076333556fd31c0df1e8d08a1.setIcon(icon_3a544982d584df2085e92b0ccfb04f51);
+        
+    
+        var popup_bc9107fb9ddd14092c681d34ab9eee11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7d5a693c97c3fdff18519d7c2bdc385 = $(`<div id="html_e7d5a693c97c3fdff18519d7c2bdc385" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brussels<br><b>Artist:</b> mallgrab | djheartstring<br><b>Date:</b> ZAT, 19 APR.<br><b>Title:</b> Hangar Festival 2025<br><b>Full lineup:</b> mallgrab | djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brussels<br><b>Artist:</b> funktribu<br><b>Date:</b> ZAT, 12 APR.<br><b>Title:</b> Fuse presents: Funk Tribu & Faster Horses<br><b>Full lineup:</b> funktribu<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brussels<br><b>Artist:</b> pegassi<br><b>Date:</b> VRI, 21 FEB.<br><b>Title:</b> Fuse presents: Pegassi, Adrián Mills & fka.m4a<br><b>Full lineup:</b> pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brussels<br><b>Artist:</b> solomun<br><b>Date:</b> VRI, 15 AUG.<br><b>Title:</b> Hangar invites Solomun – Royal Palace Open Air<br><b>Full lineup:</b> solomun<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brussels<br><b>Artist:</b> pegassi | emilija<br><b>Date:</b> VRI, 27 JUN.<br><b>Title:</b> Paradise City Festival 2025<br><b>Full lineup:</b> pegassi | emilija<br><br></div></div>`)[0];
+                popup_bc9107fb9ddd14092c681d34ab9eee11.setContent(html_e7d5a693c97c3fdff18519d7c2bdc385);
+            
+        
+
+        marker_281a63d076333556fd31c0df1e8d08a1.bindPopup(popup_bc9107fb9ddd14092c681d34ab9eee11)
+        ;
+
+        
+    
+    
+            marker_281a63d076333556fd31c0df1e8d08a1.bindTooltip(
+                `<div>
+                     5 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4a0bf1218d34598a107f699ebf5b6ed2 = L.marker(
+                [48.9467562, 11.4038717],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_0bde96c83dba7e4b24fa2dc53dfab0d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4a0bf1218d34598a107f699ebf5b6ed2.setIcon(icon_0bde96c83dba7e4b24fa2dc53dfab0d7);
+        
+    
+        var popup_e8c13290a7ea082ada00b92acd9ad0cf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e107dfaf577077bfc4faa2911a22ec9c = $(`<div id="html_e107dfaf577077bfc4faa2911a22ec9c" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Bavaria<br><b>Artist:</b> badboombox<br><b>Date:</b> VRI, 6 JUN.<br><b>Title:</b> Ikarus Festival 2025<br><b>Full lineup:</b> badboombox<br><br></div></div>`)[0];
+                popup_e8c13290a7ea082ada00b92acd9ad0cf.setContent(html_e107dfaf577077bfc4faa2911a22ec9c);
+            
+        
+
+        marker_4a0bf1218d34598a107f699ebf5b6ed2.bindPopup(popup_e8c13290a7ea082ada00b92acd9ad0cf)
+        ;
+
+        
+    
+    
+            marker_4a0bf1218d34598a107f699ebf5b6ed2.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_38400293febdc0498aa65d80dc25ef82 = L.marker(
+                [51.4789205, 7.5543751],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_15b7c6c9a8eb578ff5fbaf128d0ff277 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_38400293febdc0498aa65d80dc25ef82.setIcon(icon_15b7c6c9a8eb578ff5fbaf128d0ff277);
+        
+    
+        var popup_9a48dbdf88402d94302542b7866e3e4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f79903c408a6bf4f65296d68d2721cf = $(`<div id="html_6f79903c408a6bf4f65296d68d2721cf" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> North Rhine-Westphalia<br><b>Artist:</b> pegassi | diffrent<br><b>Date:</b> VRI, 16 MEI<br><b>Title:</b> REACTŌR - Kernkraftwerk Kalkar<br><b>Full lineup:</b> pegassi | diffrent<br><br></div></div>`)[0];
+                popup_9a48dbdf88402d94302542b7866e3e4c.setContent(html_6f79903c408a6bf4f65296d68d2721cf);
+            
+        
+
+        marker_38400293febdc0498aa65d80dc25ef82.bindPopup(popup_9a48dbdf88402d94302542b7866e3e4c)
+        ;
+
+        
+    
+    
+            marker_38400293febdc0498aa65d80dc25ef82.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9ae015d7c7ac5d1c7ce55f25a1253048 = L.marker(
+                [51.4392648, 5.478633],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_00eb0c65958ac472cc3f7dcb0e45b0ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9ae015d7c7ac5d1c7ce55f25a1253048.setIcon(icon_00eb0c65958ac472cc3f7dcb0e45b0ce);
+        
+    
+        var popup_aa01083001c4481ac2600e147591bb16 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a719fb48bca05224f90474c3fcc4da7 = $(`<div id="html_0a719fb48bca05224f90474c3fcc4da7" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Eindhoven<br><b>Artist:</b> benwal | funktribu | djheartstring | pegassi | badboombox<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> Intercell Klokgebouw 2025<br><b>Full lineup:</b> benwal | funktribu | djheartstring | pegassi | badboombox<br><br></div></div>`)[0];
+                popup_aa01083001c4481ac2600e147591bb16.setContent(html_0a719fb48bca05224f90474c3fcc4da7);
+            
+        
+
+        marker_9ae015d7c7ac5d1c7ce55f25a1253048.bindPopup(popup_aa01083001c4481ac2600e147591bb16)
+        ;
+
+        
+    
+    
+            marker_9ae015d7c7ac5d1c7ce55f25a1253048.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c1aff04d9a9c95be516fdcb9f90c88fd = L.marker(
+                [43.2961743, 5.3699525],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_c0f229b311f125cf0fca868c1f0f774c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c1aff04d9a9c95be516fdcb9f90c88fd.setIcon(icon_c0f229b311f125cf0fca868c1f0f774c);
+        
+    
+        var popup_5b0a373cafbcc4214ce5eb6f5af37ae6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ced862d3e0d587bd1bf36642fb2a0d0f = $(`<div id="html_ced862d3e0d587bd1bf36642fb2a0d0f" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Marseille<br><b>Artist:</b> bicep<br><b>Date:</b> VRI, 6 JUN.<br><b>Title:</b> FESTIVAL LE BON AIR 2025<br><b>Full lineup:</b> bicep<br><br></div></div>`)[0];
+                popup_5b0a373cafbcc4214ce5eb6f5af37ae6.setContent(html_ced862d3e0d587bd1bf36642fb2a0d0f);
+            
+        
+
+        marker_c1aff04d9a9c95be516fdcb9f90c88fd.bindPopup(popup_5b0a373cafbcc4214ce5eb6f5af37ae6)
+        ;
+
+        
+    
+    
+            marker_c1aff04d9a9c95be516fdcb9f90c88fd.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3233bdf2a415c0a1bf32d6c2da6dbcec = L.marker(
+                [40.4167047, -3.7035825],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_3abe3cfdce810c8c7494b0645b091185 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3233bdf2a415c0a1bf32d6c2da6dbcec.setIcon(icon_3abe3cfdce810c8c7494b0645b091185);
+        
+    
+        var popup_4b5a9ae99e49756859da656722efe8e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d22dc686c942377e36d19b5b864ed4d9 = $(`<div id="html_d22dc686c942377e36d19b5b864ed4d9" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> malugi | pegassi<br><b>Date:</b> DON, 17 APR.<br><b>Title:</b> Mondo KRYSTAL #6: Anetha / Gerardo Niva / MALUGI / Mija / Pegassi<br><b>Full lineup:</b> malugi | pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> badboombox<br><b>Date:</b> DON, 13 MRT.<br><b>Title:</b> Bad Boombox / Alba Franch<br><b>Full lineup:</b> badboombox<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> baronvontrax<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> Baron Von Trax / Gerardo Niva / Kara Okay<br><b>Full lineup:</b> baronvontrax<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> bostonbun<br><b>Date:</b> DON, 24 APR.<br><b>Title:</b> Boston Bun (live) en microdosis - Sala Villanos, Madrid<br><b>Full lineup:</b> bostonbun<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> claptone<br><b>Date:</b> ZAT, 8 MRT.<br><b>Title:</b> SPACE THE 360 w/ Claptone + Jungle DJ SET + Sonny Fodera<br><b>Full lineup:</b> claptone<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> benwal | djheartstring<br><b>Date:</b> DON, 1 MEI<br><b>Title:</b> OPEN AIR #1: DJ Heartstring / Benwal / Gerardo Niva / Hello Sasy<br><b>Full lineup:</b> benwal | djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Madrid<br><b>Artist:</b> lammer<br><b>Date:</b> ZAT, 5 APR.<br><b>Title:</b> LAMMER B2B Freddi<br><b>Full lineup:</b> lammer<br><br></div></div>`)[0];
+                popup_4b5a9ae99e49756859da656722efe8e2.setContent(html_d22dc686c942377e36d19b5b864ed4d9);
+            
+        
+
+        marker_3233bdf2a415c0a1bf32d6c2da6dbcec.bindPopup(popup_4b5a9ae99e49756859da656722efe8e2)
+        ;
+
+        
+    
+    
+            marker_3233bdf2a415c0a1bf32d6c2da6dbcec.bindTooltip(
+                `<div>
+                     7 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7908a9b9c41f2c13637d3032299db5f7 = L.marker(
+                [42.3315509, -83.0466403],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_47521d19329f5cdad0a803f65964a5b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7908a9b9c41f2c13637d3032299db5f7.setIcon(icon_47521d19329f5cdad0a803f65964a5b4);
+        
+    
+        var popup_80202a0ff1d03a28efeb866a48dbaba6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac40cee1468414dc17d1b69a9d73c070 = $(`<div id="html_ac40cee1468414dc17d1b69a9d73c070" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Detroit<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 24 MEI<br><b>Title:</b> Movement Music Festival<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_80202a0ff1d03a28efeb866a48dbaba6.setContent(html_ac40cee1468414dc17d1b69a9d73c070);
+            
+        
+
+        marker_7908a9b9c41f2c13637d3032299db5f7.bindPopup(popup_80202a0ff1d03a28efeb866a48dbaba6)
+        ;
+
+        
+    
+    
+            marker_7908a9b9c41f2c13637d3032299db5f7.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d3db285e13ef3a707a5d566879fd6321 = L.marker(
+                [52.07494555, 4.269680220536452],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_90ccc53b52b01f4c8c4751184b4b552e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d3db285e13ef3a707a5d566879fd6321.setIcon(icon_90ccc53b52b01f4c8c4751184b4b552e);
+        
+    
+        var popup_da72ac0d3b6eeae8e0d203156f6274bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e23e84cf6adbafca0209983f771565f = $(`<div id="html_3e23e84cf6adbafca0209983f771565f" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> The Hague<br><b>Artist:</b> malugi<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> The Crave Festival 2025<br><b>Full lineup:</b> malugi<br><br></div></div>`)[0];
+                popup_da72ac0d3b6eeae8e0d203156f6274bd.setContent(html_3e23e84cf6adbafca0209983f771565f);
+            
+        
+
+        marker_d3db285e13ef3a707a5d566879fd6321.bindPopup(popup_da72ac0d3b6eeae8e0d203156f6274bd)
+        ;
+
+        
+    
+    
+            marker_d3db285e13ef3a707a5d566879fd6321.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1fde2291576637c13c1927757be588f0 = L.marker(
+                [25.7741728, -80.19362],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_840f0cf13e61af01fd33f2301f117c85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1fde2291576637c13c1927757be588f0.setIcon(icon_840f0cf13e61af01fd33f2301f117c85);
+        
+    
+        var popup_3ddeca213b308eb86c644a2a1ff02fc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42b9d4d3052e574c304a10b271291951 = $(`<div id="html_42b9d4d3052e574c304a10b271291951" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Miami<br><b>Artist:</b> fourtet | charlottedewitte<br><b>Date:</b> VRI, 28 MRT.<br><b>Title:</b> Ultra Music Festival 2025<br><b>Full lineup:</b> fourtet | charlottedewitte<br><br></div></div>`)[0];
+                popup_3ddeca213b308eb86c644a2a1ff02fc9.setContent(html_42b9d4d3052e574c304a10b271291951);
+            
+        
+
+        marker_1fde2291576637c13c1927757be588f0.bindPopup(popup_3ddeca213b308eb86c644a2a1ff02fc9)
+        ;
+
+        
+    
+    
+            marker_1fde2291576637c13c1927757be588f0.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6aa67ec9ea360645de2ad7770f7ec059 = L.marker(
+                [51.842574850000005, 5.838960628748229],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_9b2bda6c9aa3d2f7a8dab44a37262d6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6aa67ec9ea360645de2ad7770f7ec059.setIcon(icon_9b2bda6c9aa3d2f7a8dab44a37262d6b);
+        
+    
+        var popup_44c8b74a7ac467f089df4d5ce2494860 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74c00764f5caea19e7fdb61753fda735 = $(`<div id="html_74c00764f5caea19e7fdb61753fda735" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Nijmegen<br><b>Artist:</b> benwal<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> Drift Festival 2025<br><b>Full lineup:</b> benwal<br><br></div></div>`)[0];
+                popup_44c8b74a7ac467f089df4d5ce2494860.setContent(html_74c00764f5caea19e7fdb61753fda735);
+            
+        
+
+        marker_6aa67ec9ea360645de2ad7770f7ec059.bindPopup(popup_44c8b74a7ac467f089df4d5ce2494860)
+        ;
+
+        
+    
+    
+            marker_6aa67ec9ea360645de2ad7770f7ec059.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a17f5e9c64900e9db6750b6f07437e3e = L.marker(
+                [55.6867243, 12.5700724],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_03c980255e3cb513629a9731ad56bf83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a17f5e9c64900e9db6750b6f07437e3e.setIcon(icon_03c980255e3cb513629a9731ad56bf83);
+        
+    
+        var popup_3b3a122cb8c01f0b54aa7c0acca20c63 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ebef162042be7f4ad413d66e5cb50ce = $(`<div id="html_3ebef162042be7f4ad413d66e5cb50ce" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Copenhagen<br><b>Artist:</b> marlonhoffstadt | badboombox | peggygou | funktribu<br><b>Date:</b> WOE, 4 JUN.<br><b>Title:</b> Distortion 2025<br><b>Full lineup:</b> marlonhoffstadt | badboombox | peggygou | funktribu<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Copenhagen<br><b>Artist:</b> mountkimbie<br><b>Date:</b> VRI, 14 MRT.<br><b>Title:</b> Mount Kimbie (DJ Set) / Cirkeline / Slumjuice / Neel Wismann / Nellie Cortado / Divad Yrrah<br><b>Full lineup:</b> mountkimbie<br><br></div></div>`)[0];
+                popup_3b3a122cb8c01f0b54aa7c0acca20c63.setContent(html_3ebef162042be7f4ad413d66e5cb50ce);
+            
+        
+
+        marker_a17f5e9c64900e9db6750b6f07437e3e.bindPopup(popup_3b3a122cb8c01f0b54aa7c0acca20c63)
+        ;
+
+        
+    
+    
+            marker_a17f5e9c64900e9db6750b6f07437e3e.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_672bb7667aaf481e4097ef641a88756c = L.marker(
+                [36.7213028, -4.4216366],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_2203e2affabbcf90ccf9eb043028dae1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_672bb7667aaf481e4097ef641a88756c.setIcon(icon_2203e2affabbcf90ccf9eb043028dae1);
+        
+    
+        var popup_67bb644147c4f50a432f68bc9e51a7e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63d6b2b1c3db21159092aaaceac4d391 = $(`<div id="html_63d6b2b1c3db21159092aaaceac4d391" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Malaga<br><b>Artist:</b> badboombox | funktribu<br><b>Date:</b> ZAT, 1 FEB.<br><b>Title:</b> Studio present: Bad Boombox - Funk Tribu - MoBlack - Adassiya - Moshem - OZA<br><b>Full lineup:</b> badboombox | funktribu<br><br></div></div>`)[0];
+                popup_67bb644147c4f50a432f68bc9e51a7e1.setContent(html_63d6b2b1c3db21159092aaaceac4d391);
+            
+        
+
+        marker_672bb7667aaf481e4097ef641a88756c.bindPopup(popup_67bb644147c4f50a432f68bc9e51a7e1)
+        ;
+
+        
+    
+    
+            marker_672bb7667aaf481e4097ef641a88756c.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1b0ce43a3da1cdf123b280de30f18699 = L.marker(
+                [53.550341, 10.000654],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_9d75b212bb2d200b96f123a4edad5f71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1b0ce43a3da1cdf123b280de30f18699.setIcon(icon_9d75b212bb2d200b96f123a4edad5f71);
+        
+    
+        var popup_b8902b4c4b4c14b3abfdde7f9f07604d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1226f65ec3c9f6a8c9537bcb98509eb1 = $(`<div id="html_1226f65ec3c9f6a8c9537bcb98509eb1" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Hamburg<br><b>Artist:</b> mallgrab<br><b>Date:</b> ZAT, 19 JUL.<br><b>Title:</b> Habitat Festival 2025<br><b>Full lineup:</b> mallgrab<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Hamburg<br><b>Artist:</b> kaytranada<br><b>Date:</b> DIN, 29 APR.<br><b>Title:</b> Kaytranada<br><b>Full lineup:</b> kaytranada<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Hamburg<br><b>Artist:</b> baronvontrax<br><b>Date:</b> VRI, 21 FEB.<br><b>Title:</b> unceen with Paraçek & Baron Von Trax<br><b>Full lineup:</b> baronvontrax<br><br></div></div>`)[0];
+                popup_b8902b4c4b4c14b3abfdde7f9f07604d.setContent(html_1226f65ec3c9f6a8c9537bcb98509eb1);
+            
+        
+
+        marker_1b0ce43a3da1cdf123b280de30f18699.bindPopup(popup_b8902b4c4b4c14b3abfdde7f9f07604d)
+        ;
+
+        
+    
+    
+            marker_1b0ce43a3da1cdf123b280de30f18699.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f187d239f25710e43c72711d0b1e1093 = L.marker(
+                [55.861155, -4.2501687],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_7091c9891a5f02dbcbff5cc5b135f4f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f187d239f25710e43c72711d0b1e1093.setIcon(icon_7091c9891a5f02dbcbff5cc5b135f4f9);
+        
+    
+        var popup_7f01a59171e7910434f354f0884b3732 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83038d9d4d3c6158191ddee792b28be5 = $(`<div id="html_83038d9d4d3c6158191ddee792b28be5" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Glasgow<br><b>Artist:</b> baronvontrax<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> Club 69 x Transcend presents: Baron Von Trax<br><b>Full lineup:</b> baronvontrax<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Glasgow<br><b>Artist:</b> djheartstring<br><b>Date:</b> ZAT, 12 APR.<br><b>Title:</b> SWG3 presents DJ Heartstring<br><b>Full lineup:</b> djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Glasgow<br><b>Artist:</b> malugi<br><b>Date:</b> DON, 20 MRT.<br><b>Title:</b> FLY presents MALUGI<br><b>Full lineup:</b> malugi<br><br></div></div>`)[0];
+                popup_7f01a59171e7910434f354f0884b3732.setContent(html_83038d9d4d3c6158191ddee792b28be5);
+            
+        
+
+        marker_f187d239f25710e43c72711d0b1e1093.bindPopup(popup_7f01a59171e7910434f354f0884b3732)
+        ;
+
+        
+    
+    
+            marker_f187d239f25710e43c72711d0b1e1093.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a495699e8417eb8c537f9ecbd2c0ad61 = L.marker(
+                [-35.2975906, 149.1012676],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_d1bda307616de74ad03a0d24ea14b981 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a495699e8417eb8c537f9ecbd2c0ad61.setIcon(icon_d1bda307616de74ad03a0d24ea14b981);
+        
+    
+        var popup_a94617fac94481aa759e2b9537945418 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_433c984128c0a5c59ac995f7d5aada5b = $(`<div id="html_433c984128c0a5c59ac995f7d5aada5b" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Canberra<br><b>Artist:</b> pegassi | funktribu<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> DIGI Culture & Music 2025<br><b>Full lineup:</b> pegassi | funktribu<br><br></div></div>`)[0];
+                popup_a94617fac94481aa759e2b9537945418.setContent(html_433c984128c0a5c59ac995f7d5aada5b);
+            
+        
+
+        marker_a495699e8417eb8c537f9ecbd2c0ad61.bindPopup(popup_a94617fac94481aa759e2b9537945418)
+        ;
+
+        
+    
+    
+            marker_a495699e8417eb8c537f9ecbd2c0ad61.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_04d8943dc82133c05b99be9c4d582ce4 = L.marker(
+                [13.45911, -2.249636740301649],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_1e83938523d3315c015d7159e9eb8bce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_04d8943dc82133c05b99be9c4d582ce4.setIcon(icon_1e83938523d3315c015d7159e9eb8bce);
+        
+    
+        var popup_a2bcb0834ab837d7e3fb2104d429b9cf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad80a0c59194193eb2119a9884dcd444 = $(`<div id="html_ad80a0c59194193eb2119a9884dcd444" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> North<br><b>Artist:</b> bicep<br><b>Date:</b> DON, 10 JUL.<br><b>Title:</b> Bilbao BBk LIVE<br><b>Full lineup:</b> bicep<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> North<br><b>Artist:</b> charlottedewitte<br><b>Date:</b> VRI, 22 AUG.<br><b>Title:</b> Touquet Music Beach Festival 2025<br><b>Full lineup:</b> charlottedewitte<br><br></div></div>`)[0];
+                popup_a2bcb0834ab837d7e3fb2104d429b9cf.setContent(html_ad80a0c59194193eb2119a9884dcd444);
+            
+        
+
+        marker_04d8943dc82133c05b99be9c4d582ce4.bindPopup(popup_a2bcb0834ab837d7e3fb2104d429b9cf)
+        ;
+
+        
+    
+    
+            marker_04d8943dc82133c05b99be9c4d582ce4.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8c77a522f1bcd6520262fe7594448f2f = L.marker(
+                [53.3806626, -1.4702278],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_fdcbc225b3eda06f9a2db3c8cb28c328 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8c77a522f1bcd6520262fe7594448f2f.setIcon(icon_fdcbc225b3eda06f9a2db3c8cb28c328);
+        
+    
+        var popup_c650f25f67912440eab6b6fb1e81ae7c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f365c253323dae6fc028cd55e5fb941 = $(`<div id="html_8f365c253323dae6fc028cd55e5fb941" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Sheffield<br><b>Artist:</b> diffrent<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> Boiler Room: Sheffield - Saturday<br><b>Full lineup:</b> diffrent<br><br></div></div>`)[0];
+                popup_c650f25f67912440eab6b6fb1e81ae7c.setContent(html_8f365c253323dae6fc028cd55e5fb941);
+            
+        
+
+        marker_8c77a522f1bcd6520262fe7594448f2f.bindPopup(popup_c650f25f67912440eab6b6fb1e81ae7c)
+        ;
+
+        
+    
+    
+            marker_8c77a522f1bcd6520262fe7594448f2f.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_eb7deda58428632e6a2a0d7ab5e3952f = L.marker(
+                [33.7489924, -84.3902644],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_bb5945a0699f5e0993a7a99883658b47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eb7deda58428632e6a2a0d7ab5e3952f.setIcon(icon_bb5945a0699f5e0993a7a99883658b47);
+        
+    
+        var popup_f48500048415750db9b83f0020066b26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b55fbe26f92e0567b52747f1001d7fc = $(`<div id="html_1b55fbe26f92e0567b52747f1001d7fc" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Atlanta<br><b>Artist:</b> blackcoffee<br><b>Date:</b> DON, 20 MRT.<br><b>Title:</b> Black Coffee at District Thursday<br><b>Full lineup:</b> blackcoffee<br><br></div></div>`)[0];
+                popup_f48500048415750db9b83f0020066b26.setContent(html_1b55fbe26f92e0567b52747f1001d7fc);
+            
+        
+
+        marker_eb7deda58428632e6a2a0d7ab5e3952f.bindPopup(popup_f48500048415750db9b83f0020066b26)
+        ;
+
+        
+    
+    
+            marker_eb7deda58428632e6a2a0d7ab5e3952f.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a028422c7041c7af59e2e9723451fcc8 = L.marker(
+                [25.07428235, 55.18853865430702],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_7c6859eedfcfaef84c99eb2158ea5006 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a028422c7041c7af59e2e9723451fcc8.setIcon(icon_7c6859eedfcfaef84c99eb2158ea5006);
+        
+    
+        var popup_d6f1c2afb0ca7097915f7540641ef1d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b16e3f9b39e12167302d5c1bdfb57c1e = $(`<div id="html_b16e3f9b39e12167302d5c1bdfb57c1e" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Dubai<br><b>Artist:</b> blackcoffee<br><b>Date:</b> DON, 3 APR.<br><b>Title:</b> Icons by Pacha with Black Coffee, Parallelle & Fabrice<br><b>Full lineup:</b> blackcoffee<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Dubai<br><b>Artist:</b> charlottedewitte<br><b>Date:</b> ZAT, 22 FEB.<br><b>Title:</b> Charlotte de Witte at Meydan Grandstand<br><b>Full lineup:</b> charlottedewitte<br><br></div></div>`)[0];
+                popup_d6f1c2afb0ca7097915f7540641ef1d8.setContent(html_b16e3f9b39e12167302d5c1bdfb57c1e);
+            
+        
+
+        marker_a028422c7041c7af59e2e9723451fcc8.bindPopup(popup_d6f1c2afb0ca7097915f7540641ef1d8)
+        ;
+
+        
+    
+    
+            marker_a028422c7041c7af59e2e9723451fcc8.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_eb72b2a7eb32d6928b680cd24d93eaa1 = L.marker(
+                [50.8214626, -0.1400561],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_9f2492bb6150dc8574df36f67dd7ea98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eb72b2a7eb32d6928b680cd24d93eaa1.setIcon(icon_9f2492bb6150dc8574df36f67dd7ea98);
+        
+    
+        var popup_dcfe93858c5ef9885df49e95d709bb09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68ed56c60f0c6d55ef176b51986a70f1 = $(`<div id="html_68ed56c60f0c6d55ef176b51986a70f1" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brighton<br><b>Artist:</b> bonobo<br><b>Date:</b> VRI, 18 JUL.<br><b>Title:</b> Percolate x On The Beach 2025 - Bonobo presents OUTLIER<br><b>Full lineup:</b> bonobo<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Brighton<br><b>Artist:</b> malugi<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> RIPE presents: MALUGI Brighton Patterns<br><b>Full lineup:</b> malugi<br><br></div></div>`)[0];
+                popup_dcfe93858c5ef9885df49e95d709bb09.setContent(html_68ed56c60f0c6d55ef176b51986a70f1);
+            
+        
+
+        marker_eb72b2a7eb32d6928b680cd24d93eaa1.bindPopup(popup_dcfe93858c5ef9885df49e95d709bb09)
+        ;
+
+        
+    
+    
+            marker_eb72b2a7eb32d6928b680cd24d93eaa1.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ef1530d0587897d0d1982721ca22bdaf = L.marker(
+                [-36.852095, 174.7631803],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_b94a4f31f2db8d2ba9b1a1d9ad78fe1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ef1530d0587897d0d1982721ca22bdaf.setIcon(icon_b94a4f31f2db8d2ba9b1a1d9ad78fe1d);
+        
+    
+        var popup_6a5e3e7da7185c9a0dc5f3a9ecf1be5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1328c2fea8b781c6fd5c13394804d5e8 = $(`<div id="html_1328c2fea8b781c6fd5c13394804d5e8" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Auckland<br><b>Artist:</b> bicep<br><b>Date:</b> DON, 6 FEB.<br><b>Title:</b> Laneway Festival<br><b>Full lineup:</b> bicep<br><br></div></div>`)[0];
+                popup_6a5e3e7da7185c9a0dc5f3a9ecf1be5b.setContent(html_1328c2fea8b781c6fd5c13394804d5e8);
+            
+        
+
+        marker_ef1530d0587897d0d1982721ca22bdaf.bindPopup(popup_6a5e3e7da7185c9a0dc5f3a9ecf1be5b)
+        ;
+
+        
+    
+    
+            marker_ef1530d0587897d0d1982721ca22bdaf.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b3b4d45c2942e24cbe6b8253ab34fda4 = L.marker(
+                [60.1674881, 24.9427473],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_63ee982d207cfaedf3d9ea41473724ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b3b4d45c2942e24cbe6b8253ab34fda4.setIcon(icon_63ee982d207cfaedf3d9ea41473724ac);
+        
+    
+        var popup_2d87b7c2ff5e38f50377682de4d8f139 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_06184f80ebf16c6d57a5e1405e2d3a38 = $(`<div id="html_06184f80ebf16c6d57a5e1405e2d3a38" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Helsinki<br><b>Artist:</b> bicep<br><b>Date:</b> VRI, 8 AUG.<br><b>Title:</b> Flow Festival 2025<br><b>Full lineup:</b> bicep<br><br></div></div>`)[0];
+                popup_2d87b7c2ff5e38f50377682de4d8f139.setContent(html_06184f80ebf16c6d57a5e1405e2d3a38);
+            
+        
+
+        marker_b3b4d45c2942e24cbe6b8253ab34fda4.bindPopup(popup_2d87b7c2ff5e38f50377682de4d8f139)
+        ;
+
+        
+    
+    
+            marker_b3b4d45c2942e24cbe6b8253ab34fda4.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_797661fb14ef7ef0be583c11c6c3db87 = L.marker(
+                [-34.9058916, -56.1913095],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_1f3b3fa6551d241ad08724e9a1b51f37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_797661fb14ef7ef0be583c11c6c3db87.setIcon(icon_1f3b3fa6551d241ad08724e9a1b51f37);
+        
+    
+        var popup_699588246e2305bfee9195d84f988b90 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f2f6180526b38bd9e789c2e641e7770 = $(`<div id="html_1f2f6180526b38bd9e789c2e641e7770" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Montevideo<br><b>Artist:</b> charlottedewitte<br><b>Date:</b> ZON, 23 MRT.<br><b>Title:</b> Charlotte de Witte & MORE ARTISTS - by HYPNOSE, MONTEVIDEO<br><b>Full lineup:</b> charlottedewitte<br><br></div></div>`)[0];
+                popup_699588246e2305bfee9195d84f988b90.setContent(html_1f2f6180526b38bd9e789c2e641e7770);
+            
+        
+
+        marker_797661fb14ef7ef0be583c11c6c3db87.bindPopup(popup_699588246e2305bfee9195d84f988b90)
+        ;
+
+        
+    
+    
+            marker_797661fb14ef7ef0be583c11c6c3db87.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d54d8d6d27b3b4a2ce32de81370d2c64 = L.marker(
+                [43.7218277, 0.9774958],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_e6bdb1b5769d99e62014dcdcd13a4d13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d54d8d6d27b3b4a2ce32de81370d2c64.setIcon(icon_e6bdb1b5769d99e62014dcdcd13a4d13);
+        
+    
+        var popup_cc0d48b953ad32089e3893a37187d727 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7105efc98090da4a3325578df6372639 = $(`<div id="html_7105efc98090da4a3325578df6372639" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Cologne<br><b>Artist:</b> malugi<br><b>Date:</b> MAA, 3 MRT.<br><b>Title:</b> Klubnacht with DJ ASS TITS, Helena Lauwaert & MALUGI<br><b>Full lineup:</b> malugi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Cologne<br><b>Artist:</b> kaytranada<br><b>Date:</b> VRI, 11 APR.<br><b>Title:</b> Kaytranada<br><b>Full lineup:</b> kaytranada<br><br></div></div>`)[0];
+                popup_cc0d48b953ad32089e3893a37187d727.setContent(html_7105efc98090da4a3325578df6372639);
+            
+        
+
+        marker_d54d8d6d27b3b4a2ce32de81370d2c64.bindPopup(popup_cc0d48b953ad32089e3893a37187d727)
+        ;
+
+        
+    
+    
+            marker_d54d8d6d27b3b4a2ce32de81370d2c64.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b70221f07dff8a59b3507974f1c4ad9f = L.marker(
+                [43.6534817, -79.3839347],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_c8f5af8dfb52e72987fa3efe9643745e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b70221f07dff8a59b3507974f1c4ad9f.setIcon(icon_c8f5af8dfb52e72987fa3efe9643745e);
+        
+    
+        var popup_5df2877110f3d94b0035f613f0f17bad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4edcdc86e3510d512b1f7c3cbc5bb226 = $(`<div id="html_4edcdc86e3510d512b1f7c3cbc5bb226" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Toronto<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> Pep Rally presents: Live From Earth Showcase<br><b>Full lineup:</b> mcr-t<br><br></div></div>`)[0];
+                popup_5df2877110f3d94b0035f613f0f17bad.setContent(html_4edcdc86e3510d512b1f7c3cbc5bb226);
+            
+        
+
+        marker_b70221f07dff8a59b3507974f1c4ad9f.bindPopup(popup_5df2877110f3d94b0035f613f0f17bad)
+        ;
+
+        
+    
+    
+            marker_b70221f07dff8a59b3507974f1c4ad9f.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1c679bca6653ae056cef5566c212061d = L.marker(
+                [50.0596288, 14.446459273258007],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_8954945beea42640b05b23ee904c2643 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1c679bca6653ae056cef5566c212061d.setIcon(icon_8954945beea42640b05b23ee904c2643);
+        
+    
+        var popup_8efdc8b91a435f5d26e78148f85c5b7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5baafe6ceab2552a54eef6eec311876 = $(`<div id="html_d5baafe6ceab2552a54eef6eec311876" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Prague<br><b>Artist:</b> djheartstring<br><b>Date:</b> VRI, 14 MRT.<br><b>Title:</b> DJ Heartstring ∞ Roxy<br><b>Full lineup:</b> djheartstring<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Prague<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> Sammy Virji EUROPE TOUR 2025 ∞ ROXY Prague<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_8efdc8b91a435f5d26e78148f85c5b7f.setContent(html_d5baafe6ceab2552a54eef6eec311876);
+            
+        
+
+        marker_1c679bca6653ae056cef5566c212061d.bindPopup(popup_8efdc8b91a435f5d26e78148f85c5b7f)
+        ;
+
+        
+    
+    
+            marker_1c679bca6653ae056cef5566c212061d.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_125613212733f8b7a57de23366cd56fd = L.marker(
+                [52.865196, -7.9794599],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_7405a887c3d6b8f0fdcb25d9a8e61901 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_125613212733f8b7a57de23366cd56fd.setIcon(icon_7405a887c3d6b8f0fdcb25d9a8e61901);
+        
+    
+        var popup_169fe0c6c97ec2a22bbd5529412ce571 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a8a349b3c40f009a54aa7e8e47dab49 = $(`<div id="html_7a8a349b3c40f009a54aa7e8e47dab49" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Ireland<br><b>Artist:</b> malugi | djheartstring<br><b>Date:</b> ZON, 16 MRT.<br><b>Title:</b> Otherside Music & Arts Festival<br><b>Full lineup:</b> malugi | djheartstring<br><br></div></div>`)[0];
+                popup_169fe0c6c97ec2a22bbd5529412ce571.setContent(html_7a8a349b3c40f009a54aa7e8e47dab49);
+            
+        
+
+        marker_125613212733f8b7a57de23366cd56fd.bindPopup(popup_169fe0c6c97ec2a22bbd5529412ce571)
+        ;
+
+        
+    
+    
+            marker_125613212733f8b7a57de23366cd56fd.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dd85173eddf5ddad17b041f87777efee = L.marker(
+                [51.4538022, -2.5972985],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_dea4ed2c044050fdff46ee6b03484de1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dd85173eddf5ddad17b041f87777efee.setIcon(icon_dea4ed2c044050fdff46ee6b03484de1);
+        
+    
+        var popup_fd6b2080b9b3376987ff310cbe2338f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d23b9c7579dfe8a8a7f9a7d877008612 = $(`<div id="html_d23b9c7579dfe8a8a7f9a7d877008612" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Bristol<br><b>Artist:</b> diffrent | malugi<br><b>Date:</b> VRI, 7 FEB.<br><b>Title:</b> 5 years of EC2A<br><b>Full lineup:</b> diffrent | malugi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Bristol<br><b>Artist:</b> overmono | mallgrab<br><b>Date:</b> ZAT, 24 MEI<br><b>Title:</b> Love Saves The Day 2025<br><b>Full lineup:</b> overmono | mallgrab<br><br></div></div>`)[0];
+                popup_fd6b2080b9b3376987ff310cbe2338f9.setContent(html_d23b9c7579dfe8a8a7f9a7d877008612);
+            
+        
+
+        marker_dd85173eddf5ddad17b041f87777efee.bindPopup(popup_fd6b2080b9b3376987ff310cbe2338f9)
+        ;
+
+        
+    
+    
+            marker_dd85173eddf5ddad17b041f87777efee.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a3c5be99641593630cdd20d06f5652d4 = L.marker(
+                [54.596391, -5.9301829],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_e72e9fe07bd11ab5081100efd6e84956 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a3c5be99641593630cdd20d06f5652d4.setIcon(icon_e72e9fe07bd11ab5081100efd6e84956);
+        
+    
+        var popup_62cc78a61ffb6f64d3b50f727bd1eb9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9ad10643c2c9aaffabe0172e714cf68 = $(`<div id="html_c9ad10643c2c9aaffabe0172e714cf68" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belfast<br><b>Artist:</b> bicep | marlonhoffstadt<br><b>Date:</b> ZAT, 23 AUG.<br><b>Title:</b> Emerge · Fatboy Slim, Bicep pres. Chroma, Sonny Fodera, Teletech + more<br><b>Full lineup:</b> bicep | marlonhoffstadt<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belfast<br><b>Artist:</b> sammyvirji<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Sammy Virji - Europe Tour 2025<br><b>Full lineup:</b> sammyvirji<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belfast<br><b>Artist:</b> overmono<br><b>Date:</b> VRI, 30 MEI<br><b>Title:</b> AVA Festival 2025<br><b>Full lineup:</b> overmono<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Belfast<br><b>Artist:</b> malugi<br><b>Date:</b> MAA, 17 MRT.<br><b>Title:</b> SHINE • St. Patrick's Day • Yasmin Gardezi, MALUGI, Luciid + more<br><b>Full lineup:</b> malugi<br><br></div></div>`)[0];
+                popup_62cc78a61ffb6f64d3b50f727bd1eb9f.setContent(html_c9ad10643c2c9aaffabe0172e714cf68);
+            
+        
+
+        marker_a3c5be99641593630cdd20d06f5652d4.bindPopup(popup_62cc78a61ffb6f64d3b50f727bd1eb9f)
+        ;
+
+        
+    
+    
+            marker_a3c5be99641593630cdd20d06f5652d4.bindTooltip(
+                `<div>
+                     4 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_87cf145fbf0ad330caffacf137c00b72 = L.marker(
+                [32.7174202, -117.162772],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_3f469a40615048369dd680d30d9f4520 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_87cf145fbf0ad330caffacf137c00b72.setIcon(icon_3f469a40615048369dd680d30d9f4520);
+        
+    
+        var popup_ebe968b83b136b6b673d7d6698ad55b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d641f3f2be8f1246551106c2e5f6797 = $(`<div id="html_0d641f3f2be8f1246551106c2e5f6797" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> San Diego<br><b>Artist:</b> claptone<br><b>Date:</b> ZAT, 1 MRT.<br><b>Title:</b> CRSSD Festival Spring '25<br><b>Full lineup:</b> claptone<br><br></div></div>`)[0];
+                popup_ebe968b83b136b6b673d7d6698ad55b6.setContent(html_0d641f3f2be8f1246551106c2e5f6797);
+            
+        
+
+        marker_87cf145fbf0ad330caffacf137c00b72.bindPopup(popup_ebe968b83b136b6b673d7d6698ad55b6)
+        ;
+
+        
+    
+    
+            marker_87cf145fbf0ad330caffacf137c00b72.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2ed258d2a7704d15d2048e2d3c22588f = L.marker(
+                [20.5922997, -100.3917424],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_52905903847149c5c9fc93f43d2540fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2ed258d2a7704d15d2048e2d3c22588f.setIcon(icon_52905903847149c5c9fc93f43d2540fd);
+        
+    
+        var popup_02888379cb0bfe49dfb4954c02b5d87a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c29e236ac20d5ee1a66063637e7e23e = $(`<div id="html_3c29e236ac20d5ee1a66063637e7e23e" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Santiago de Querétaro<br><b>Artist:</b> rampa<br><b>Date:</b> ZAT, 15 MRT.<br><b>Title:</b> KAEK<br><b>Full lineup:</b> rampa<br><br></div></div>`)[0];
+                popup_02888379cb0bfe49dfb4954c02b5d87a.setContent(html_3c29e236ac20d5ee1a66063637e7e23e);
+            
+        
+
+        marker_2ed258d2a7704d15d2048e2d3c22588f.bindPopup(popup_02888379cb0bfe49dfb4954c02b5d87a)
+        ;
+
+        
+    
+    
+            marker_2ed258d2a7704d15d2048e2d3c22588f.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4f8030dff824bba8860534b42956baf9 = L.marker(
+                [45.5031824, -73.5698065],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_0ea78e33613034da458ea10d16007246 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4f8030dff824bba8860534b42956baf9.setIcon(icon_0ea78e33613034da458ea10d16007246);
+        
+    
+        var popup_62c7e36c80df6316ebd3a2df2ddcfd15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e101bf56a8ed494c1f400ddaf1c66aa = $(`<div id="html_0e101bf56a8ed494c1f400ddaf1c66aa" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Montreal<br><b>Artist:</b> fourtet<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> Igloofest MTL #12: Four Tet, Avalon Emerson, Priori / Unikorn: Princess Superstar<br><b>Full lineup:</b> fourtet<br><br></div></div>`)[0];
+                popup_62c7e36c80df6316ebd3a2df2ddcfd15.setContent(html_0e101bf56a8ed494c1f400ddaf1c66aa);
+            
+        
+
+        marker_4f8030dff824bba8860534b42956baf9.bindPopup(popup_62c7e36c80df6316ebd3a2df2ddcfd15)
+        ;
+
+        
+    
+    
+            marker_4f8030dff824bba8860534b42956baf9.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8a1d589c342a2f3f5c255d59f63482eb = L.marker(
+                [51.45491485, 7.021635879084142],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_c1dd4a7bc8bf8b928f654b0b469fdd39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8a1d589c342a2f3f5c255d59f63482eb.setIcon(icon_c1dd4a7bc8bf8b928f654b0b469fdd39);
+        
+    
+        var popup_388cfd41e663ad55a6fbbee11c16788b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89216a6e89f0b1b235cbcfce98ed635b = $(`<div id="html_89216a6e89f0b1b235cbcfce98ed635b" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Dortmund / Essen<br><b>Artist:</b> funktribu<br><b>Date:</b> ZON, 8 JUN.<br><b>Title:</b> PollerWiesen Festival 2025<br><b>Full lineup:</b> funktribu<br><br></div></div>`)[0];
+                popup_388cfd41e663ad55a6fbbee11c16788b.setContent(html_89216a6e89f0b1b235cbcfce98ed635b);
+            
+        
+
+        marker_8a1d589c342a2f3f5c255d59f63482eb.bindPopup(popup_388cfd41e663ad55a6fbbee11c16788b)
+        ;
+
+        
+    
+    
+            marker_8a1d589c342a2f3f5c255d59f63482eb.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_692a3ab02f460513661e41e023c1dc61 = L.marker(
+                [54.6870458, 25.2829111],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_477a6d5b4d8e9478bb2df3b024b2e015 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_692a3ab02f460513661e41e023c1dc61.setIcon(icon_477a6d5b4d8e9478bb2df3b024b2e015);
+        
+    
+        var popup_9ba3f4c412a777266e4280bdb9bca803 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1e7f500b578cb2e3fb2bb324343be63 = $(`<div id="html_c1e7f500b578cb2e3fb2bb324343be63" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Vilnius<br><b>Artist:</b> funktribu<br><b>Date:</b> VRI, 21 FEB.<br><b>Title:</b> Unmistakably: Funk Tribu, Ensure, JPSC, Mario Moretti, Probl3ma<br><b>Full lineup:</b> funktribu<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Vilnius<br><b>Artist:</b> mcr-t<br><b>Date:</b> VRI, 18 APR.<br><b>Title:</b> Imperija: MCR-T, Acidless, Fake Stassie, Mirror Slave, MWT<br><b>Full lineup:</b> mcr-t<br><br></div></div>`)[0];
+                popup_9ba3f4c412a777266e4280bdb9bca803.setContent(html_c1e7f500b578cb2e3fb2bb324343be63);
+            
+        
+
+        marker_692a3ab02f460513661e41e023c1dc61.bindPopup(popup_9ba3f4c412a777266e4280bdb9bca803)
+        ;
+
+        
+    
+    
+            marker_692a3ab02f460513661e41e023c1dc61.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8a6659908ae233bbe2b8cb6b0aec4801 = L.marker(
+                [47.48138955, 19.14609412691246],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_9bebc2d807ba5aca7931ec4eab4699fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8a6659908ae233bbe2b8cb6b0aec4801.setIcon(icon_9bebc2d807ba5aca7931ec4eab4699fc);
+        
+    
+        var popup_f2a50cb886d1e0228a70304e54078b96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9f3bc7e54d7bc1a78ce23bfa1304cd1 = $(`<div id="html_c9f3bc7e54d7bc1a78ce23bfa1304cd1" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Budapest<br><b>Artist:</b> funktribu<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> Youtopia 016 ~ Funk Tribu ~ Part Time Killer ~ CAIVA at Arzenál<br><b>Full lineup:</b> funktribu<br><br></div></div>`)[0];
+                popup_f2a50cb886d1e0228a70304e54078b96.setContent(html_c9f3bc7e54d7bc1a78ce23bfa1304cd1);
+            
+        
+
+        marker_8a6659908ae233bbe2b8cb6b0aec4801.bindPopup(popup_f2a50cb886d1e0228a70304e54078b96)
+        ;
+
+        
+    
+    
+            marker_8a6659908ae233bbe2b8cb6b0aec4801.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_59d9bf681097aa6ddf1743e87d99eb6c = L.marker(
+                [18.75, -99.0],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_be1a71c12a4e9b88f9582fe29e937532 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_59d9bf681097aa6ddf1743e87d99eb6c.setIcon(icon_be1a71c12a4e9b88f9582fe29e937532);
+        
+    
+        var popup_2b777e12b47501f53626a909a04ab931 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9f251a1873850c369fef22dbf2b0f47 = $(`<div id="html_a9f251a1873850c369fef22dbf2b0f47" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Morelos<br><b>Artist:</b> kaytranada | ninakraviz<br><b>Date:</b> VRI, 14 FEB.<br><b>Title:</b> Bahidorá 2025<br><b>Full lineup:</b> kaytranada | ninakraviz<br><br></div></div>`)[0];
+                popup_2b777e12b47501f53626a909a04ab931.setContent(html_a9f251a1873850c369fef22dbf2b0f47);
+            
+        
+
+        marker_59d9bf681097aa6ddf1743e87d99eb6c.bindPopup(popup_2b777e12b47501f53626a909a04ab931)
+        ;
+
+        
+    
+    
+            marker_59d9bf681097aa6ddf1743e87d99eb6c.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a7697e9f04ad9078701a696833ef6038 = L.marker(
+                [33.8246269, -116.540303],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_b4e0602d4b6b4d1bba6ba79c39c57a17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a7697e9f04ad9078701a696833ef6038.setIcon(icon_b4e0602d4b6b4d1bba6ba79c39c57a17);
+        
+    
+        var popup_7a469b2572bcfd9588bdc8e5d27bf294 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_787499e7c592e1981183eebd0b9a5be7 = $(`<div id="html_787499e7c592e1981183eebd0b9a5be7" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Palm Springs<br><b>Artist:</b> sammyvirji<br><b>Date:</b> VRI, 11 APR.<br><b>Title:</b> Coachella Weekend One (April 11th—13th)<br><b>Full lineup:</b> sammyvirji<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Palm Springs<br><b>Artist:</b> sammyvirji<br><b>Date:</b> VRI, 18 APR.<br><b>Title:</b> Coachella Weekend Two (April 18th—20th)<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_7a469b2572bcfd9588bdc8e5d27bf294.setContent(html_787499e7c592e1981183eebd0b9a5be7);
+            
+        
+
+        marker_a7697e9f04ad9078701a696833ef6038.bindPopup(popup_7a469b2572bcfd9588bdc8e5d27bf294)
+        ;
+
+        
+    
+    
+            marker_a7697e9f04ad9078701a696833ef6038.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e8a372825c1251811f9b1e46d0510655 = L.marker(
+                [37.7993876, -122.37657627091028],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_dd54a718d449a7c368ef14116a5afd5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e8a372825c1251811f9b1e46d0510655.setIcon(icon_dd54a718d449a7c368ef14116a5afd5c);
+        
+    
+        var popup_1e546e1a42fb7a9fbbe85acdd9de8ef3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d9538616f25da69ce756f4be3a6f8d6 = $(`<div id="html_6d9538616f25da69ce756f4be3a6f8d6" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> San Francisco/Oakland<br><b>Artist:</b> mcr-t<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> MCR-T, OZA presented by Public Works and Fake & Gay<br><b>Full lineup:</b> mcr-t<br><br></div></div>`)[0];
+                popup_1e546e1a42fb7a9fbbe85acdd9de8ef3.setContent(html_6d9538616f25da69ce756f4be3a6f8d6);
+            
+        
+
+        marker_e8a372825c1251811f9b1e46d0510655.bindPopup(popup_1e546e1a42fb7a9fbbe85acdd9de8ef3)
+        ;
+
+        
+    
+    
+            marker_e8a372825c1251811f9b1e46d0510655.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_03e1536eb5e24ee9b09fb43c99fd189f = L.marker(
+                [41.1494512, -8.6107884],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_2b3975e2c3bd5ab9532960b003dda1ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_03e1536eb5e24ee9b09fb43c99fd189f.setIcon(icon_2b3975e2c3bd5ab9532960b003dda1ab);
+        
+    
+        var popup_95017700a6f7f876595e70f942400e3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04f0fb9b6d9a5a0c751cb5194d7f7383 = $(`<div id="html_04f0fb9b6d9a5a0c751cb5194d7f7383" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Porto<br><b>Artist:</b> mallgrab<br><b>Date:</b> VRI, 11 APR.<br><b>Title:</b> Mall Grab (Au)<br><b>Full lineup:</b> mallgrab<br><br></div></div>`)[0];
+                popup_95017700a6f7f876595e70f942400e3f.setContent(html_04f0fb9b6d9a5a0c751cb5194d7f7383);
+            
+        
+
+        marker_03e1536eb5e24ee9b09fb43c99fd189f.bindPopup(popup_95017700a6f7f876595e70f942400e3f)
+        ;
+
+        
+    
+    
+            marker_03e1536eb5e24ee9b09fb43c99fd189f.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b6925dc949c9c55209d7a147ab7288ae = L.marker(
+                [53.3493795, -6.2605593],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_48a00afeec4f3e402ea87748872b992d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b6925dc949c9c55209d7a147ab7288ae.setIcon(icon_48a00afeec4f3e402ea87748872b992d);
+        
+    
+        var popup_a6ef248317df68d7d7fd9b6d5c45813a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da8b085b62c8d5ba2a40e92e683a7020 = $(`<div id="html_da8b085b62c8d5ba2a40e92e683a7020" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Dublin<br><b>Artist:</b> marlonhoffstadt<br><b>Date:</b> ZAT, 29 MRT.<br><b>Title:</b> District 8 presents Marlon Hoffstadt at SILO<br><b>Full lineup:</b> marlonhoffstadt<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Dublin<br><b>Artist:</b> pegassi<br><b>Date:</b> ZON, 2 FEB.<br><b>Title:</b> 6 Years of LOST: with Pegassi & Odymel<br><b>Full lineup:</b> pegassi<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Dublin<br><b>Artist:</b> sammyvirji<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> Index: Sammy Virji<br><b>Full lineup:</b> sammyvirji<br><br></div></div>`)[0];
+                popup_a6ef248317df68d7d7fd9b6d5c45813a.setContent(html_da8b085b62c8d5ba2a40e92e683a7020);
+            
+        
+
+        marker_b6925dc949c9c55209d7a147ab7288ae.bindPopup(popup_a6ef248317df68d7d7fd9b6d5c45813a)
+        ;
+
+        
+    
+    
+            marker_b6925dc949c9c55209d7a147ab7288ae.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7ac4091b8a9679ece915ea62ac1d8fe9 = L.marker(
+                [44.4361414, 26.1027202],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_d6e5ad826c9ba7a7fe15a123f7512630 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7ac4091b8a9679ece915ea62ac1d8fe9.setIcon(icon_d6e5ad826c9ba7a7fe15a123f7512630);
+        
+    
+        var popup_147eb3ceba1e991a7d59b13df30fba48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2dcc7b04260d289c4987296af6114167 = $(`<div id="html_2dcc7b04260d289c4987296af6114167" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Bucharest<br><b>Artist:</b> mountkimbie<br><b>Date:</b> DON, 27 FEB.<br><b>Title:</b> ctrl NIGHTS: aim+wall presents: Mount Kimbie [UK] [DJ set]<br><b>Full lineup:</b> mountkimbie<br><br></div></div>`)[0];
+                popup_147eb3ceba1e991a7d59b13df30fba48.setContent(html_2dcc7b04260d289c4987296af6114167);
+            
+        
+
+        marker_7ac4091b8a9679ece915ea62ac1d8fe9.bindPopup(popup_147eb3ceba1e991a7d59b13df30fba48)
+        ;
+
+        
+    
+    
+            marker_7ac4091b8a9679ece915ea62ac1d8fe9.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1e30fb72d9f330f8eb4f1097a4934b94 = L.marker(
+                [20.6720375, -103.338396],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_bac5e03103e1f64159853a132726881f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1e30fb72d9f330f8eb4f1097a4934b94.setIcon(icon_bac5e03103e1f64159853a132726881f);
+        
+    
+        var popup_20ded8df67250381776031a5f001ff77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be14c26c452a8b9a3f95e9d6d213e117 = $(`<div id="html_be14c26c452a8b9a3f95e9d6d213e117" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Guadalajara<br><b>Artist:</b> ninakraviz<br><b>Date:</b> ZON, 16 FEB.<br><b>Title:</b> NINA KRAVIZ X POLIFONIC MX<br><b>Full lineup:</b> ninakraviz<br><br></div></div>`)[0];
+                popup_20ded8df67250381776031a5f001ff77.setContent(html_be14c26c452a8b9a3f95e9d6d213e117);
+            
+        
+
+        marker_1e30fb72d9f330f8eb4f1097a4934b94.bindPopup(popup_20ded8df67250381776031a5f001ff77)
+        ;
+
+        
+    
+    
+            marker_1e30fb72d9f330f8eb4f1097a4934b94.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_63c71fac3c8ae3017c686bb7b174f991 = L.marker(
+                [52.2337172, 21.071432235636493],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_33a676e0159bda41f1cfa48e893ae26d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_63c71fac3c8ae3017c686bb7b174f991.setIcon(icon_33a676e0159bda41f1cfa48e893ae26d);
+        
+    
+        var popup_d866857aa56ef6294df26e0272e953f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_874e69f54b67f4e73b1e239ff3d9f62c = $(`<div id="html_874e69f54b67f4e73b1e239ff3d9f62c" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Warsaw<br><b>Artist:</b> ninakraviz<br><b>Date:</b> VRI, 25 APR.<br><b>Title:</b> Smolna: Nina Kraviz x 10th anniversary of trip recordings<br><b>Full lineup:</b> ninakraviz<br><br></div></div>`)[0];
+                popup_d866857aa56ef6294df26e0272e953f2.setContent(html_874e69f54b67f4e73b1e239ff3d9f62c);
+            
+        
+
+        marker_63c71fac3c8ae3017c686bb7b174f991.bindPopup(popup_d866857aa56ef6294df26e0272e953f2)
+        ;
+
+        
+    
+    
+            marker_63c71fac3c8ae3017c686bb7b174f991.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1ce6c9e0530ee3f3daaaed9de0682028 = L.marker(
+                [53.4071991, -2.99168],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_675e30c8326b4d0c75b7504fc82f07ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1ce6c9e0530ee3f3daaaed9de0682028.setIcon(icon_675e30c8326b4d0c75b7504fc82f07ba);
+        
+    
+        var popup_a656fff76c3c8be42bef9b5cd5e43bf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d448a66ea126c6508fa17e71cb187bc = $(`<div id="html_4d448a66ea126c6508fa17e71cb187bc" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Liverpool<br><b>Artist:</b> malugi | djheartstring | overmono<br><b>Date:</b> ZAT, 15 FEB.<br><b>Title:</b> ENRG Liverpool - Overmono (DJ) Interplanetary Criminal DJ Heartstring MALUGI & More<br><b>Full lineup:</b> malugi | djheartstring | overmono<br><br></div><div style="min-width:300px; max-width:500px;"><b>Location:</b> Liverpool<br><b>Artist:</b> purplediscomachine | purplediscomachine<br><b>Date:</b> ZAT, 8 MRT.<br><b>Title:</b> Glitterbox Liverpool<br><b>Full lineup:</b> purplediscomachine | purplediscomachine<br><br></div></div>`)[0];
+                popup_a656fff76c3c8be42bef9b5cd5e43bf1.setContent(html_4d448a66ea126c6508fa17e71cb187bc);
+            
+        
+
+        marker_1ce6c9e0530ee3f3daaaed9de0682028.bindPopup(popup_a656fff76c3c8be42bef9b5cd5e43bf1)
+        ;
+
+        
+    
+    
+            marker_1ce6c9e0530ee3f3daaaed9de0682028.bindTooltip(
+                `<div>
+                     2 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_91273369de19e13f30275a957a2e047d = L.marker(
+                [44.841225, -0.5800364],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_9cd20bd4d91530c7bd96f52c5797e4fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_91273369de19e13f30275a957a2e047d.setIcon(icon_9cd20bd4d91530c7bd96f52c5797e4fc);
+        
+    
+        var popup_58a44e1dfbca3a9c92ab491d550f84c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c307ba512884d24cf2e97c01d5f29147 = $(`<div id="html_c307ba512884d24cf2e97c01d5f29147" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Bordeaux<br><b>Artist:</b> peggygou | kolsch<br><b>Date:</b> ZAT, 7 JUN.<br><b>Title:</b> Brunch Electronik Bordeaux #1: Paul Kalkbrenner, Peggy Gou, Kölsch, Folamour<br><b>Full lineup:</b> peggygou | kolsch<br><br></div></div>`)[0];
+                popup_58a44e1dfbca3a9c92ab491d550f84c2.setContent(html_c307ba512884d24cf2e97c01d5f29147);
+            
+        
+
+        marker_91273369de19e13f30275a957a2e047d.bindPopup(popup_58a44e1dfbca3a9c92ab491d550f84c2)
+        ;
+
+        
+    
+    
+            marker_91273369de19e13f30275a957a2e047d.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_193404281dd855cdcef96b12fac01c05 = L.marker(
+                [42.6977028, 23.3217359],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_b6d453381018d8671540dfc2725323e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_193404281dd855cdcef96b12fac01c05.setIcon(icon_b6d453381018d8671540dfc2725323e4);
+        
+    
+        var popup_75d4f7d6690725ef00309152e0d4b9c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a117e1dd58ea538ae60fa973d42a88b5 = $(`<div id="html_a117e1dd58ea538ae60fa973d42a88b5" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Sofia<br><b>Artist:</b> pegassi<br><b>Date:</b> ZAT, 8 FEB.<br><b>Title:</b> SEGÁ with Pegassi<br><b>Full lineup:</b> pegassi<br><br></div></div>`)[0];
+                popup_75d4f7d6690725ef00309152e0d4b9c3.setContent(html_a117e1dd58ea538ae60fa973d42a88b5);
+            
+        
+
+        marker_193404281dd855cdcef96b12fac01c05.bindPopup(popup_75d4f7d6690725ef00309152e0d4b9c3)
+        ;
+
+        
+    
+    
+            marker_193404281dd855cdcef96b12fac01c05.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_937fbdf967cddb2b930650814fdc1dc6 = L.marker(
+                [18.7668687, -72.4387315],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_d3408cf38c929726d2a98a4c29542bcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_937fbdf967cddb2b930650814fdc1dc6.setIcon(icon_d3408cf38c929726d2a98a4c29542bcb);
+        
+    
+        var popup_c488f2d7aa395c43724fe03bf4059230 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd809348dd70b7a9dcd94c297adc5793 = $(`<div id="html_bd809348dd70b7a9dcd94c297adc5793" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> West<br><b>Artist:</b> bostonbun<br><b>Date:</b> ZAT, 12 JUL.<br><b>Title:</b> Cassius Club<br><b>Full lineup:</b> bostonbun<br><br></div></div>`)[0];
+                popup_c488f2d7aa395c43724fe03bf4059230.setContent(html_bd809348dd70b7a9dcd94c297adc5793);
+            
+        
+
+        marker_937fbdf967cddb2b930650814fdc1dc6.bindPopup(popup_c488f2d7aa395c43724fe03bf4059230)
+        ;
+
+        
+    
+    
+            marker_937fbdf967cddb2b930650814fdc1dc6.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e7c1dd31d234b706e87ecf66cbe764b9 = L.marker(
+                [38.8950368, -77.0365427],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_2f001604af467183f0f55d16bce6c196 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e7c1dd31d234b706e87ecf66cbe764b9.setIcon(icon_2f001604af467183f0f55d16bce6c196);
+        
+    
+        var popup_21bcf3bbdec402757c1663c86d55bdd5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a49025a344bfe002890eb0f3af9e8ef = $(`<div id="html_0a49025a344bfe002890eb0f3af9e8ef" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Washington DC<br><b>Artist:</b> solomun<br><b>Date:</b> VRI, 7 MRT.<br><b>Title:</b> Factory 93 x GLOW: Solomun<br><b>Full lineup:</b> solomun<br><br></div></div>`)[0];
+                popup_21bcf3bbdec402757c1663c86d55bdd5.setContent(html_0a49025a344bfe002890eb0f3af9e8ef);
+            
+        
+
+        marker_e7c1dd31d234b706e87ecf66cbe764b9.bindPopup(popup_21bcf3bbdec402757c1663c86d55bdd5)
+        ;
+
+        
+    
+    
+            marker_e7c1dd31d234b706e87ecf66cbe764b9.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_70f67926cf100fb7f136bb7a72280789 = L.marker(
+                [38.9743901, 1.4197463178515335],
+                {
+}
+            ).addTo(feature_group_b324b945a853ca7a7d171aed1d4d45ab);
+        
+    
+            var icon_40a7f2c2016e0f47e16b76840adfc19d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_70f67926cf100fb7f136bb7a72280789.setIcon(icon_40a7f2c2016e0f47e16b76840adfc19d);
+        
+    
+        var popup_49af7c84d8b5922039262492449ad399 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_790a145b91b739f08fef4eb29da3ab68 = $(`<div id="html_790a145b91b739f08fef4eb29da3ab68" style="width: 100.0%; height: 100.0%;"><div style="min-width:300px; max-width:500px;"><b>Location:</b> Ibiza<br><b>Artist:</b> solomun<br><b>Date:</b> VRI, 25 APR.<br><b>Title:</b> Pacha Ibiza Grand Opening: Solomun & Mau P<br><b>Full lineup:</b> solomun<br><br></div></div>`)[0];
+                popup_49af7c84d8b5922039262492449ad399.setContent(html_790a145b91b739f08fef4eb29da3ab68);
+            
+        
+
+        marker_70f67926cf100fb7f136bb7a72280789.bindPopup(popup_49af7c84d8b5922039262492449ad399)
+        ;
+
+        
+    
+    
+            marker_70f67926cf100fb7f136bb7a72280789.bindTooltip(
+                `<div>
+                     1 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b324b945a853ca7a7d171aed1d4d45ab.addTo(map_95eee7c323c2061e96bac44682a7e2c0);
+        
+    
+            var layer_control_f153e891660047501eadb9f99452021e_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_868318261b8b6ac76f6d86e083ee9885,
+                },
+                overlays :  {
+                    "Filter: Recent Events" : feature_group_b324b945a853ca7a7d171aed1d4d45ab,
+                },
+            };
+            let layer_control_f153e891660047501eadb9f99452021e = L.control.layers(
+                layer_control_f153e891660047501eadb9f99452021e_layers.base_layers,
+                layer_control_f153e891660047501eadb9f99452021e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_95eee7c323c2061e96bac44682a7e2c0);
+
+        
+</script>
+</html>
