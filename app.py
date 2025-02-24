@@ -22,14 +22,14 @@ def load_data():
 data,unique_artists = load_data()
 
 # Get min/max dates
-min_date = data['date'].min().date()
+min_date = pd.Timestamp.today().date()
 max_date = data['date'].max().date()
 
 
 
 
 # Streamlit Layout: Move Filters on Top of Map
-st.sidebar.title("Matcha-daddy selects💚")
+st.sidebar.title("MatchaDaddy selects💚")
 
 # Date Range Slider
 selected_date_range = st.sidebar.slider(
@@ -46,7 +46,7 @@ selected_locations = st.sidebar.multiselect("Select Location(s)", sorted(data['l
 # Artist Filter
 selected_artists = st.sidebar.multiselect("Select Artist(s)", unique_artists)
 # Convert date filters
-start_date = pd.Timestamp.today().normalize()  
+start_date = pd.to_datetime(selected_date_range[0])
 end_date = pd.to_datetime(selected_date_range[1])
 
 # Apply Filters
