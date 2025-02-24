@@ -29,7 +29,7 @@ max_date = data['date'].max().date()
 
 
 # Streamlit Layout: Move Filters on Top of Map
-st.sidebar.title("🟢 Matcha-daddy selects 🟢")
+st.sidebar.title("Matcha-daddy selects💚")
 
 # Date Range Slider
 selected_date_range = st.sidebar.slider(
