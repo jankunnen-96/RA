@@ -29,7 +29,7 @@ max_date = data['date'].max().date()
 st.set_page_config(layout="wide")
 
 # Streamlit Layout: Move Filters on Top of Map
-st.title("🎵 Jantjes party Map 🎵")
+st.title("🎵 Jantjes party Map 2🎵")
 
 # Create columns for filters
 col1, col2, col3 = st.columns([2, 2, 2])
