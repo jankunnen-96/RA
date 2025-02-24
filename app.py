@@ -132,6 +132,38 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+
+# 🟢 JavaScript to Get Screen Size
+screen_size_script = """
+    <script>
+    function sendScreenSize() {
+        var screenWidth = window.innerWidth;
+        var screenHeight = window.innerHeight;
+        var data = {'width': screenWidth, 'height': screenHeight};
+        fetch('/_stcore/streamlit/setComponentValue', {
+            method: 'POST',
+            body: JSON.stringify({'data': data}),
+            headers: {'Content-Type': 'application/json'}
+        });
+    }
+    window.onload = sendScreenSize;
+    window.onresize = sendScreenSize;
+    </script>
+"""
+st.markdown(screen_size_script, unsafe_allow_html=True)
+
+# 🟢 Placeholder for Screen Size
+screen_width = st.session_state.get("screen_width", 1600)  # Default if no JS input
+screen_height = st.session_state.get("screen_height", 900)  # Default height
+
+# 🟢 Adjust Map Size Dynamically
+map_width = max(900, int(screen_width * 0.9))  # 90% of screen width
+map_height = max(600, int(screen_height * 0.75))  # 75% of screen height
+
+# 🟢 Display Responsive Map
+folium_static(m, width=map_width, height=map_height)
+
+
 folium_static(m, width=1600, height=900)
 
 
