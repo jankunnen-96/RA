@@ -160,15 +160,13 @@ screen_height = st.session_state.get("screen_height", 900)  # Default height
 map_width = max(900, int(screen_width * 0.9))  # 90% of screen width
 map_height = max(600, int(screen_height * 0.75))  # 75% of screen height
 
+
+print(map_width, map_height)
+
+col1, = st.columns(1)
+
+with col1:
 # 🟢 Display Responsive Map
-folium_static(m, width=1000, height=2000)
+    folium_static(m, width=2000, height=1500)
 
 
-
-
-
-# # 🟢 Custom CSS to Make Map Full-Width
-
-
-# # 🟢 Display Full-Screen Map
-# folium_static(m, width=1600, height=900)  # Adjust width to match large screens
