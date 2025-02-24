@@ -5,7 +5,7 @@ from folium.plugins import MarkerCluster, Fullscreen,BeautifyIcon
 from streamlit_folium import folium_static
 from collections import defaultdict
 
-
+st.set_page_config(layout="wide")
 @st.cache_data
 def load_data():
     data = pd.read_csv('events_new.csv')
@@ -26,10 +26,10 @@ min_date = data['date'].min().date()
 max_date = data['date'].max().date()
 
 
-st.set_page_config(layout="wide")
+
 
 # Streamlit Layout: Move Filters on Top of Map
-st.title("🎵 Jantjes party Map 2🎵")
+st.title("🎵 Jantjes party Map 3🎵")
 
 # Create columns for filters
 col1, col2, col3 = st.columns([2, 2, 2])
