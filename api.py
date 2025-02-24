@@ -61,7 +61,7 @@ for artist in artists.iterrows():
     # deleted i['images'][0]['filename']
     try:
         for i in data['data']['listing']['data']: 
-            event_list.append([artist_name,i['title'],i['date'],i['contentUrl'],' | '.join([j['name'] for j in i['artists']]),i['venue']["name"],i['venue']["area"]["name"],i['venue']["area"]["country"]["name"],i['images'][0]['filename'] if i['images'] else 'ownimage.png'])
+            event_list.append([artist_name,i['title'],i['date'],i['contentUrl'],' | '.join([j['name'] for j in i['artists']]),i['venue']["name"],i['venue']["area"]["name"],i['venue']["area"]["country"]["name"],i['images'][0]['filename'] if i['images'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'])
 
     except:
         print(artist_name)

@@ -72,18 +72,19 @@ for _, row in filtered_data.iterrows():
     
     # Construct HTML with increased width and side-by-side image using flex layout.
     popup_text = (
-            f'<div style="display: flex; align-items: center;">'
-                f'<div style="margin-right: 10px;">'
-                    f'<img src="https://github.com/jankunnen-96/RA/blob/main/ownimage.png" alt="Event Image" style="width:150px; height:auto;">'
-                f'</div>'
-                f'<div style="flex: 1;">'
-                    f"<b>{row['date'].date()} - {row['title']}</b><br>"
-                    f"{row['artist']}<br>"
-                    f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
-                f'</div>'
+        f'<div style="display: flex; align-items: center; background-color: #333; color: white; font-family: Arial, sans-serif; padding: 10px; border-radius: 10px;">'
+            f'<div style="margin-right: 10px;">'
+                f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
+                    f'<img src="{row["image"]}" alt="Event Image" style="width:150px; height:auto; border-radius: 5px;">'
+                f'</a>'
             f'</div>'
-        )
-
+            f'<div style="flex: 1;">'
+                f"<b>{row['date'].date()} - {row['title']}</b><br>"
+                f"{row['artist']}<br>"
+                f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
+            f'</div>'
+        f'</div>'
+    )
     if not grouped_data[key]:
         grouped_data[key].append(f'<div style="min-width:500px; max-width:900px; max-height:400px; overflow-y:auto;">')
         grouped_data[key].append(f"<b style='font-size:16px;'>{row['location']}</b><br><br>")

@@ -538,5 +538,93 @@
     "Zeebrugge Beach, Belgium": [
         51.3312211,
         3.207561
+    ],
+    "Zurich, Switzerland": [
+        47.3744489,
+        8.5410422
+    ],
+    "Budapest, Hungary": [
+        47.48138955,
+        19.14609412691246
+    ],
+    "Tbilisi, Georgia": [
+        41.6934591,
+        44.8014495
+    ],
+    "Mdlr, Singapore": [
+        1.357107,
+        103.8194992
+    ],
+    "TBA, France": [
+        -17.5301941,
+        -149.5672422
+    ],
+    "San Francisco/Oakland, United States of America": [
+        37.79713724477815,
+        -122.37900765709006
+    ],
+    "Austin, United States of America": [
+        30.2711286,
+        -97.7436995
+    ],
+    "Hawaii, United States of America": [
+        19.593801499999998,
+        -155.42837009716908
+    ],
+    "Taipei, Taiwan": [
+        25.0375198,
+        121.5636796
+    ],
+    "Montanejos, Spain": [
+        40.068152,
+        -0.522929
+    ],
+    "West + Wales, United Kingdom": [
+        53.27816025,
+        -4.347871127822403
+    ],
+    "Minnesota, United States of America": [
+        45.9896587,
+        -94.6113288
+    ],
+    "Kloster Graefenthal, Netherlands": [
+        51.6755765,
+        6.1593045
+    ],
+    "Dallas/Fort Worth, United States of America": [
+        32.89651945,
+        -97.0465220537124
+    ],
+    "Paradigm, Netherlands": [
+        53.2190652,
+        6.5680077
+    ],
+    "Hesse, Germany": [
+        50.6080651,
+        9.0284647
+    ],
+    "Toronto, Canada": [
+        43.6534817,
+        -79.3839347
+    ],
+    "Kyoto, Japan": [
+        35.021041,
+        135.7556075
+    ],
+    "Perth, Australia": [
+        -31.9558933,
+        115.8605855
+    ],
+    "TBA - Residenzplatz Salzburg, Austria": [
+        47.7981346,
+        13.0464806
+    ],
+    "Bremen, Germany": [
+        53.0758196,
+        8.8071646
+    ],
+    "Vancouver, Canada": [
+        49.2608724,
+        -123.113952
     ]
 }
