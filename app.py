@@ -161,10 +161,10 @@ map_width = max(900, int(screen_width * 0.9))  # 90% of screen width
 map_height = max(600, int(screen_height * 0.75))  # 75% of screen height
 
 # 🟢 Display Responsive Map
-folium_static(m, width=map_width, height=map_height)
+folium_static(m, width=1000, height=2000)
 
 
-folium_static(m, width=1600, height=900)
+
 
 
 # # 🟢 Custom CSS to Make Map Full-Width
