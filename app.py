@@ -160,6 +160,6 @@ col1, = st.columns(1)
 
 with col1:
 # 🟢 Display Responsive Map
-    folium_static(m, width=2000, height=1500)
+    folium_static(m, width=1200, height=1500)
 
 
