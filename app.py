@@ -25,8 +25,11 @@ data,unique_artists = load_data()
 min_date = data['date'].min().date()
 max_date = data['date'].max().date()
 
+
+st.set_page_config(layout="wide")
+
 # Streamlit Layout: Move Filters on Top of Map
-st.title("🎵 Event Map - Explore Locations and Lineups")
+st.title("🎵 Jantjes party Map 🎵")
 
 # Create columns for filters
 col1, col2, col3 = st.columns([2, 2, 2])
@@ -34,7 +37,7 @@ col1, col2, col3 = st.columns([2, 2, 2])
 with col1:
     # Date Range Slider
     selected_date_range = st.slider(
-        "Select Date Range",
+        "Date Filter",
         min_value=min_date,
         max_value=max_date,
         value=(min_date, max_date),
@@ -44,11 +47,11 @@ with col1:
 with col2:
     # Location Filter
     unique_locations = sorted(data['location'].unique())
-    selected_locations = st.multiselect("Select Location(s)", unique_locations)
+    selected_locations = st.multiselect("Location filter", unique_locations)
 
 with col3:
     # Artist Filter
-    selected_artists = st.multiselect("Select Artist(s)", unique_artists)
+    selected_artists = st.multiselect("Artist filter", unique_artists)
 
 # Convert date filters
 start_date = pd.Timestamp.today().normalize()  
@@ -119,9 +122,21 @@ for (lat, lon), events in grouped_data.items():
 
 # Display Fullscreen Map
 st.markdown(
-    """<style>
-        .fullScreenFrame {height: 85vh !important;}
-    </style>""", unsafe_allow_html=True
+    """
+    <style>
+        .fullScreenFrame {height: 85vh !important; width: 90vw !important;}
+        .block-container {padding-left: 10px; padding-right: 10px;} /* Removes side padding */
+        .st-emotion-cache-1kyxreq {padding: 0 !important;} /* Fixes extra margin */
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
-folium_static(m, width=900, height=2000)
+folium_static(m, width=1600, height=900)
+
+
+# # 🟢 Custom CSS to Make Map Full-Width
+
+
+# # 🟢 Display Full-Screen Map
+# folium_static(m, width=1600, height=900)  # Adjust width to match large screens
