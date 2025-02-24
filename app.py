@@ -29,30 +29,23 @@ max_date = data['date'].max().date()
 
 
 # Streamlit Layout: Move Filters on Top of Map
-st.title("🎵 Jantjes party Map 3🎵")
+st.title("🟢 Matcha-daddy selects 🟢")
+st.sidebar.title("🔍 Filters")
 
-# Create columns for filters
-col1, col2, col3 = st.columns([2, 2, 2])
+# Date Range Slider
+selected_date_range = st.sidebar.slider(
+    "Select Date Range",
+    min_value=min_date,
+    max_value=max_date,
+    value=(min_date, max_date),
+    format="YYYY-MM-DD"
+)
 
-with col1:
-    # Date Range Slider
-    selected_date_range = st.slider(
-        "Date Filter",
-        min_value=min_date,
-        max_value=max_date,
-        value=(min_date, max_date),
-        format="YYYY-MM-DD"
-    )
+# Location Filter
+selected_locations = st.sidebar.multiselect("Select Location(s)", sorted(data['location'].unique()))
 
-with col2:
-    # Location Filter
-    unique_locations = sorted(data['location'].unique())
-    selected_locations = st.multiselect("Location filter", unique_locations)
-
-with col3:
-    # Artist Filter
-    selected_artists = st.multiselect("Artist filter", unique_artists)
-
+# Artist Filter
+selected_artists = st.sidebar.multiselect("Select Artist(s)", unique_artists)
 # Convert date filters
 start_date = pd.Timestamp.today().normalize()  
 end_date = pd.to_datetime(selected_date_range[1])
@@ -153,7 +146,7 @@ screen_size_script = """
 st.markdown(screen_size_script, unsafe_allow_html=True)
 
 # 🟢 Placeholder for Screen Size
-screen_width = st.session_state.get("screen_width", 1600)  # Default if no JS input
+screen_width = st.session_state.get("screen_width", 1400)  # Default if no JS input
 screen_height = st.session_state.get("screen_height", 900)  # Default height
 
 # 🟢 Adjust Map Size Dynamically
