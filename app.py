@@ -130,10 +130,10 @@ from user_agents import parse
 ua_string = st_javascript("""window.navigator.userAgent;""")
 user_agent = parse(ua_string)
 st.session_state.is_mobile = user_agent.is_mobile
-
+st.info(st.session_state.is_mobile)
 
 if st.session_state.is_mobile:
-    folium_static(m, width=800, height=750)
+    folium_static(m, width=600, height=750)
 
 else:
     folium_static(m, width=1200, height=750)
