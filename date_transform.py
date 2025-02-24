@@ -2,6 +2,7 @@ from datetime import datetime
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 import time
+import requests
 
 day_mapping = {
     "MAA": "Mon",
@@ -69,3 +70,30 @@ def get_coordinates(location):
         print(f"Error fetching coordinates for {location}: {e}")
         return None, None
 
+
+
+
+def get_osm_coordinates(query):
+    """
+    Uses Overpass API to search for a location in OpenStreetMap data.
+    """
+    try:
+        overpass_url = "http://overpass-api.de/api/interpreter"
+        overpass_query = f"""
+        [out:json];
+        node[~"name"~"{query}",i];
+        out center;
+        """
+        response = requests.get(overpass_url, params={"data": overpass_query}, timeout=10)
+        data = response.json()
+
+        if "elements" in data and data["elements"]:
+            node = data["elements"][0]
+            return (node["lat"], node["lon"])
+        else:
+            return (None, None)
+    except Exception as e:
+        print(f"OSM Error: {e}")
+        return (None, None)
+
+print(get_osm_coordinates("Dour Festival, Belgium"))

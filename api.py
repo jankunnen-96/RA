@@ -1,7 +1,11 @@
 import requests
 import json
 import pandas as pd
-
+import re 
+from date_transform import convert_dates, get_coordinates
+import os
+import json
+import numpy as np
 
 
 event_list = []
@@ -57,7 +61,7 @@ for artist in artists.iterrows():
     # deleted i['images'][0]['filename']
     try:
         for i in data['data']['listing']['data']: 
-            event_list.append([artist_name,i['title'],i['date'],i['contentUrl'],'_'.join([j['name'] for j in i['artists']]),i['venue']["name"],i['venue']["area"]["name"],i['venue']["area"]["country"]["name"]])
+            event_list.append([artist_name,i['title'],i['date'],i['contentUrl'],' | '.join([j['name'] for j in i['artists']]),i['venue']["name"],i['venue']["area"]["name"],i['venue']["area"]["country"]["name"],i['images'][0]['filename'] if i['images'] else 'ownimage.png'])
 
     except:
         print(artist_name)
@@ -66,17 +70,45 @@ print(event_list)
 
 
 
-df = pd.DataFrame(event_list, columns=['artist','title','date','eventUrl','artists','venue_name','area_name','country_name'])
+df = pd.DataFrame(event_list, columns=['artist','title','date','eventUrl','artists','venue_name','area_name','country_name','image'])
 
 # Load the CSV data into a DataFrame
-df =  pd.read_csv('events_new.csv')
-df['area_name_country']=df['area_name']+', '+df['country_name']
-pattern = r'\b(north|south|east|west|all)\b|\+'
-df['location'] = df['area_name_country'].str.replace(pattern, '', flags=re.IGNORECASE, regex=True).str.replace(r'^\s*,\s*', '', regex=True).str.strip()
+df['location'] = np.where(~df['area_name'].isin(["North", "South", "East", "West", "All", "South East","South West","South + East"]),
+    df['area_name'] + ', ' + df['country_name'],df['venue_name'] + ', ' + df['country_name'])
+
+
+coord_file = "coordinates.json"
+
+# Load the coordinate dictionary from file if it exists, otherwise initialize an empty dictionary.
+if os.path.exists(coord_file):
+    with open(coord_file, "r") as f:
+        coordinate_dict = json.load(f)
+else:
+    coordinate_dict = {}
+
+# Update the dictionary with any new locations that aren't already in it.
+for location in df['location'].unique():
+    if location not in coordinate_dict:
+        coordinates = get_coordinates(location)
+        # If coordinates are None, ask the user for an input
+        while coordinates == (None, None):
+            new_location = input(f"Could not find '{location}'. Please enter a corrected location (press Enter to keep '{location}'): ") or location
+            coordinates = get_coordinates(new_location)
+
+        # Store the successful coordinates
+        coordinate_dict[location] = coordinates
 
 
 
 
+# Save the updated coordinate dictionary back to the file.
+with open(coord_file, "w") as f:
+    json.dump(coordinate_dict, f, indent=4)
+
+# Map the coordinates to the DataFrame.
+df['latitude'], df['longitude'] = zip(*df['location'].map(coordinate_dict))
 
 # Save the DataFrame to a CSV file (without the index)
 df.to_csv("events_new.csv", index=False)
+
+

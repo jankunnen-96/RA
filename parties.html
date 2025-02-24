@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_233445bf71d601e33159dd87ccdf2ac9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_233445bf71d601e33159dd87ccdf2ac9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_233445bf71d601e33159dd87ccdf2ac9 = L.map(
+                "map_233445bf71d601e33159dd87ccdf2ac9",
+                {
+                    center: [40.7128, -74.006],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2580eb5937b5b6ecef7c4d51265e8e17 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2580eb5937b5b6ecef7c4d51265e8e17.addTo(map_233445bf71d601e33159dd87ccdf2ac9);
+        
+    
+            var marker_6c4eeefa2f01a29fd2ab37cd6b72a8e8 = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_233445bf71d601e33159dd87ccdf2ac9);
+        
+    
+            var beautify_icon_c29ed3a7199d4e4f433ad8a687914112 = new L.BeautifyIcon.icon(
+                {
+  "iconShape": "marker",
+  "borderWidth": 3,
+  "borderColor": "blue",
+  "textColor": "white",
+  "backgroundColor": "blue",
+  "innerIconStyle": "font-size:12px;",
+  "spin": false,
+  "isAlphaNumericIcon": true,
+  "text": 5,
+}
+            )
+            marker_6c4eeefa2f01a29fd2ab37cd6b72a8e8.setIcon(beautify_icon_c29ed3a7199d4e4f433ad8a687914112);
+        
+    
+        var popup_09ec62acd4335fa5f182691f393bf82f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07373d09efefb1bea637ee54c5bb19b2 = $(`<div id="html_07373d09efefb1bea637ee54c5bb19b2" style="width: 100.0%; height: 100.0%;">Party 1: 5 events</div>`)[0];
+                popup_09ec62acd4335fa5f182691f393bf82f.setContent(html_07373d09efefb1bea637ee54c5bb19b2);
+            
+        
+
+        marker_6c4eeefa2f01a29fd2ab37cd6b72a8e8.bindPopup(popup_09ec62acd4335fa5f182691f393bf82f)
+        ;
+
+        
+    
+    
+            marker_6c4eeefa2f01a29fd2ab37cd6b72a8e8.bindTooltip(
+                `<div>
+                     5 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e280e79756380475d3f32164017c77d5 = L.marker(
+                [40.7228, -74.016],
+                {
+}
+            ).addTo(map_233445bf71d601e33159dd87ccdf2ac9);
+        
+    
+            var beautify_icon_b7d9df01d0b871268727cfd6e451fff5 = new L.BeautifyIcon.icon(
+                {
+  "icon": "glass-cheers",
+  "iconShape": "circle",
+  "borderWidth": 3,
+  "borderColor": "purple",
+  "textColor": "white",
+  "backgroundColor": "magenta",
+  "innerIconStyle": "font-size:12px;",
+  "spin": true,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_e280e79756380475d3f32164017c77d5.setIcon(beautify_icon_b7d9df01d0b871268727cfd6e451fff5);
+        
+    
+        var popup_bf17a50c342ca22280f2f83c6cbd1fa2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0335a0f86bef244c447fe48807d9e5b9 = $(`<div id="html_0335a0f86bef244c447fe48807d9e5b9" style="width: 100.0%; height: 100.0%;">Party 2: Cheers!</div>`)[0];
+                popup_bf17a50c342ca22280f2f83c6cbd1fa2.setContent(html_0335a0f86bef244c447fe48807d9e5b9);
+            
+        
+
+        marker_e280e79756380475d3f32164017c77d5.bindPopup(popup_bf17a50c342ca22280f2f83c6cbd1fa2)
+        ;
+
+        
+    
+    
+            marker_e280e79756380475d3f32164017c77d5.bindTooltip(
+                `<div>
+                     Party time!
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_12d631ee5d664d1f77a58142759ed946 = L.marker(
+                [40.7328, -74.026],
+                {
+}
+            ).addTo(map_233445bf71d601e33159dd87ccdf2ac9);
+        
+    
+            var beautify_icon_02a3477c91946a50f1d05576c3276ea3 = new L.BeautifyIcon.icon(
+                {
+  "iconShape": "square",
+  "borderWidth": 3,
+  "borderColor": "darkblue",
+  "textColor": "black",
+  "backgroundColor": "lightblue",
+  "innerIconStyle": "font-size:10px; font-weight:bold;",
+  "spin": false,
+  "isAlphaNumericIcon": true,
+  "text": 3,
+}
+            )
+            marker_12d631ee5d664d1f77a58142759ed946.setIcon(beautify_icon_02a3477c91946a50f1d05576c3276ea3);
+        
+    
+        var popup_66abe76c0d7fd68b4309b1e00f93606d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_48f6c96aa581ac40d00c12ed6b9d0c05 = $(`<div id="html_48f6c96aa581ac40d00c12ed6b9d0c05" style="width: 100.0%; height: 100.0%;">Party 3: 3 events</div>`)[0];
+                popup_66abe76c0d7fd68b4309b1e00f93606d.setContent(html_48f6c96aa581ac40d00c12ed6b9d0c05);
+            
+        
+
+        marker_12d631ee5d664d1f77a58142759ed946.bindPopup(popup_66abe76c0d7fd68b4309b1e00f93606d)
+        ;
+
+        
+    
+    
+            marker_12d631ee5d664d1f77a58142759ed946.bindTooltip(
+                `<div>
+                     3 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_750f6d000ae512fdb1b39eb9308ddcd7 = L.marker(
+                [40.7428, -74.036],
+                {
+}
+            ).addTo(map_233445bf71d601e33159dd87ccdf2ac9);
+        
+    
+            var beautify_icon_8254368bcc20e3a40a451cc6e345a388 = new L.BeautifyIcon.icon(
+                {
+  "iconShape": "marker",
+  "borderWidth": 3,
+  "borderColor": "red",
+  "textColor": "white",
+  "backgroundColor": "crimson",
+  "innerIconStyle": "font-size:14px;",
+  "spin": false,
+  "isAlphaNumericIcon": true,
+  "text": 12,
+}
+            )
+            marker_750f6d000ae512fdb1b39eb9308ddcd7.setIcon(beautify_icon_8254368bcc20e3a40a451cc6e345a388);
+        
+    
+        var popup_4dc2452a1dade0e955a2997def0b4963 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ab6ba025062f7e1386d079917caba20 = $(`<div id="html_0ab6ba025062f7e1386d079917caba20" style="width: 100.0%; height: 100.0%;">Party 4: 12 events</div>`)[0];
+                popup_4dc2452a1dade0e955a2997def0b4963.setContent(html_0ab6ba025062f7e1386d079917caba20);
+            
+        
+
+        marker_750f6d000ae512fdb1b39eb9308ddcd7.bindPopup(popup_4dc2452a1dade0e955a2997def0b4963)
+        ;
+
+        
+    
+    
+            marker_750f6d000ae512fdb1b39eb9308ddcd7.bindTooltip(
+                `<div>
+                     12 event(s) here
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

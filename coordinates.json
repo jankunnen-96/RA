@@ -1,0 +1,542 @@
+{
+    "Medellin, Colombia": [
+        6.269732449999999,
+        -75.60255965090315
+    ],
+    "Mumbai, India": [
+        19.054999,
+        72.8692035
+    ],
+    "London, United Kingdom": [
+        51.5074456,
+        -0.1277653
+    ],
+    "Berlin, Germany": [
+        52.510885,
+        13.3989367
+    ],
+    "San Jose, United States of America": [
+        37.3361663,
+        -121.890591
+    ],
+    "Rio de Janeiro, Brazil": [
+        -22.9110137,
+        -43.2093727
+    ],
+    "Istanbul, Turkey": [
+        41.006381,
+        28.9758715
+    ],
+    "Bali, Indonesia": [
+        -8.2271303,
+        115.1919203
+    ],
+    "Sydney, Australia": [
+        -33.8698439,
+        151.2082848
+    ],
+    "Melbourne, Australia": [
+        -37.8142454,
+        144.9631732
+    ],
+    "Buenos Aires, Argentina": [
+        -34.6083696,
+        -58.4440583
+    ],
+    "New York City, United States of America": [
+        40.7127281,
+        -74.0060152
+    ],
+    "Chicago, United States of America": [
+        41.8755616,
+        -87.6244212
+    ],
+    "Ibiza, Spain": [
+        38.974390099999994,
+        1.4197463178515335
+    ],
+    "Barcelona, Spain": [
+        41.3828939,
+        2.1774322
+    ],
+    "Lisbon, Portugal": [
+        38.7077507,
+        -9.1365919
+    ],
+    "Turin, Italy": [
+        45.0677551,
+        7.6824892
+    ],
+    "Midlands, United Kingdom": [
+        52.505432,
+        -1.9646781758425385
+    ],
+    "Lac De Montendre, France": [
+        45.2710299,
+        -0.39555819149446386
+    ],
+    "Rome, Italy": [
+        41.8933203,
+        12.4829321
+    ],
+    "Eindhoven, Netherlands": [
+        51.4392648,
+        5.478633
+    ],
+    "Belgrade, Serbia": [
+        44.8178131,
+        20.4568974
+    ],
+    "Madrid, Spain": [
+        40.4167047,
+        -3.7035825
+    ],
+    "Munich, Germany": [
+        48.1371079,
+        11.5753822
+    ],
+    "Prague, Czech Republic": [
+        50.0596288,
+        14.446459273258009
+    ],
+    "Bronze Beach, Netherlands": [
+        52.4050157,
+        4.5448128
+    ],
+    "Mexico City, Mexico": [
+        19.4326296,
+        -99.1331785
+    ],
+    "Miami, United States of America": [
+        25.7741728,
+        -80.19362
+    ],
+    "M\u00fcnster, Germany": [
+        51.9625101,
+        7.6251879
+    ],
+    "Edinburgh, United Kingdom": [
+        55.9533456,
+        -3.1883749
+    ],
+    "Amsterdam, Netherlands": [
+        52.3730796,
+        4.8924534
+    ],
+    "Utrecht, Netherlands": [
+        52.0907006,
+        5.1215634
+    ],
+    "Copenhagen, Denmark": [
+        55.6867243,
+        12.5700724
+    ],
+    "Dortmund / Essen, Germany": [
+        51.4549925,
+        7.0214361
+    ],
+    "Bavaria, Germany": [
+        48.9467562,
+        11.4038717
+    ],
+    "Hannover, Germany": [
+        52.3744779,
+        9.7385532
+    ],
+    "The Hague, Netherlands": [
+        52.07494555,
+        4.2696802205364515
+    ],
+    "Leipzig, Germany": [
+        51.3406321,
+        12.3747329
+    ],
+    "Zrce Beach, Croatia": [
+        44.53924205,
+        14.914611112838296
+    ],
+    "Hamburg, Germany": [
+        53.550341,
+        10.000654
+    ],
+    "Antwerp, Belgium": [
+        51.2211097,
+        4.3997081
+    ],
+    "Stuttgart, Germany": [
+        48.7784485,
+        9.1800132
+    ],
+    "Mannheim, Germany": [
+        49.4892913,
+        8.4673098
+    ],
+    "Lyon, France": [
+        45.7578137,
+        4.8320114
+    ],
+    "Be Mine, Belgium": [
+        51.0684671624652,
+        5.223936318362567
+    ],
+    "Zeefgebouw, Netherlands": [
+        53.2103879,
+        6.5375171189710795
+    ],
+    "Leeds, United Kingdom": [
+        53.7974185,
+        -1.5437941
+    ],
+    "Nijmegen, Netherlands": [
+        51.8474946,
+        5.8637771
+    ],
+    "Kelchterhoef, Belgium": [
+        51.0337546,
+        5.4171754
+    ],
+    "Paris, France": [
+        48.8588897,
+        2.3200410217200766
+    ],
+    "Stroombroek, Braamt, Netherlands": [
+        51.935753000000005,
+        6.26779898944779
+    ],
+    "Beekse Bergen, Netherlands": [
+        51.52925999282132,
+        5.126089981429852
+    ],
+    "The Garden Tisno, Croatia": [
+        43.8000969,
+        15.6571124
+    ],
+    "Manchester, United Kingdom": [
+        53.4794892,
+        -2.2451148
+    ],
+    "Vliegbasis Twenthe, Netherlands": [
+        52.2654862,
+        6.897014
+    ],
+    "Marseille, France": [
+        43.2961743,
+        5.3699525
+    ],
+    "Kobetamendi, Spain": [
+        43.2583792,
+        -2.963528953155195
+    ],
+    "Helsinki, Finland": [
+        60.1674881,
+        24.9427473
+    ],
+    "Belfast, United Kingdom": [
+        54.596391,
+        -5.9301829
+    ],
+    "Cape Town, South Africa": [
+        -33.9288301,
+        18.4172197
+    ],
+    "Atlanta, United States of America": [
+        33.7489924,
+        -84.3902644
+    ],
+    "Dubai, United Arab Emirates": [
+        25.074282349999997,
+        55.18853865430702
+    ],
+    "Bogot\u00e1, Colombia": [
+        4.711011,
+        -74.0720917
+    ],
+    "Brighton, United Kingdom": [
+        50.8214626,
+        -0.1400561
+    ],
+    "La Sirene, France": [
+        48.00649575,
+        0.19872736626928048
+    ],
+    "Montevideo, Uruguay": [
+        -34.9058916,
+        -56.1913095
+    ],
+    "Detroit, United States of America": [
+        42.3315509,
+        -83.0466403
+    ],
+    "B\u0142onia \u0141\u00f3dzkie, Poland": [
+        52.0169028,
+        19.4708702
+    ],
+    "Forte Santiago da Barra, Portugal": [
+        41.6890726,
+        -8.838219329515304
+    ],
+    "Le Touquet-Paris-Plage, France": [
+        50.5211202,
+        1.5909325
+    ],
+    "Athens, Greece": [
+        37.9755648,
+        23.7348324
+    ],
+    "San Diego, United States of America": [
+        32.7174202,
+        -117.162772
+    ],
+    "Heidelberg, Germany": [
+        49.4093582,
+        8.694724
+    ],
+    "Karlsruhe, Germany": [
+        49.0068705,
+        8.4034195
+    ],
+    "Rotterdam, Netherlands": [
+        51.9244424,
+        4.47775
+    ],
+    "Complex Maastricht, Netherlands": [
+        50.8522573,
+        5.6976653
+    ],
+    "North Rhine-Westphalia, Germany": [
+        51.4789205,
+        7.5543751
+    ],
+    "Brussels, Belgium": [
+        50.8465573,
+        4.351697
+    ],
+    "Porto, Portugal": [
+        41.1494512,
+        -8.6107884
+    ],
+    "Mecklenburg-Vorpommern, Germany": [
+        53.7735064,
+        12.5755471
+    ],
+    "Bielefeld, Germany": [
+        52.0191005,
+        8.531007
+    ],
+    "Basel, Switzerland": [
+        47.5581077,
+        7.5878261
+    ],
+    "Dublin, Ireland": [
+        53.3493795,
+        -6.2605593
+    ],
+    "Glasgow, United Kingdom": [
+        55.861155,
+        -4.2501687
+    ],
+    "Cologne, Germany": [
+        50.938361,
+        6.959974
+    ],
+    "Universiteit Enschede, Netherlands": [
+        52.24332675,
+        6.850915739203856
+    ],
+    "UNO MALTA, Malta": [
+        40.79540835,
+        17.504143293283526
+    ],
+    "Los Angeles, United States of America": [
+        34.0536909,
+        -118.242766
+    ],
+    "Vilnius, Lithuania": [
+        54.6870458,
+        25.2829111
+    ],
+    "Canberra, Australia": [
+        -35.2975906,
+        149.1012676
+    ],
+    "Frankfurt, Germany": [
+        50.1106444,
+        8.6820917
+    ],
+    "Sao Paulo, Brazil": [
+        -23.5506507,
+        -46.6333824
+    ],
+    "Geusseltpark, Maastricht, Netherlands": [
+        50.8581181,
+        5.7197368
+    ],
+    "MTP Poznan, Poland": [
+        52.47137035,
+        16.791630787243882
+    ],
+    "Warsaw, Poland": [
+        52.2337172,
+        21.071432235636493
+    ],
+    "Ljubljana, Slovenia": [
+        46.0500268,
+        14.5069289
+    ],
+    "Zagreb, Croatia": [
+        45.8130967,
+        15.9772795
+    ],
+    "Cardiff, United Kingdom": [
+        51.4816546,
+        -3.1791934
+    ],
+    "Montreal, Canada": [
+        45.5031824,
+        -73.5698065
+    ],
+    "Bordeaux, France": [
+        44.841225,
+        -0.5800364
+    ],
+    "Neushoorn, Netherlands": [
+        53.2005593,
+        5.7902345
+    ],
+    "Lijm & Cultuur, Netherlands": [
+        51.99616205,
+        4.369146234568248
+    ],
+    "Bristol, United Kingdom": [
+        51.4538022,
+        -2.5972985
+    ],
+    "Nottingham, United Kingdom": [
+        52.9534193,
+        -1.1496461
+    ],
+    "\u2018T Zoet Breda, Netherlands": [
+        51.5947343,
+        4.7642523951082225
+    ],
+    "Airport Trencin, Slovakia": [
+        48.86651275,
+        18.00611620481591
+    ],
+    "Bucharest, Romania": [
+        44.4361414,
+        26.1027202
+    ],
+    "Tokyo, Japan": [
+        35.6768601,
+        139.7638947
+    ],
+    "Kyushu, Japan": [
+        32.48214205,
+        131.10089656440624
+    ],
+    "Chubu, Japan": [
+        36.586766,
+        137.34392238081682
+    ],
+    "Chamonix, France": [
+        45.9246705,
+        6.8727506
+    ],
+    "Ifevi, Spain": [
+        42.22448505,
+        -8.638248360173215
+    ],
+    "Victoria, Australia": [
+        -36.5986096,
+        144.6780052
+    ],
+    "Brisbane, Australia": [
+        -27.4689682,
+        153.0234991
+    ],
+    "Liverpool, United Kingdom": [
+        53.4071991,
+        -2.99168
+    ],
+    "Washington DC, United States of America": [
+        38.8950368,
+        -77.0365427
+    ],
+    "Santiago de Quer\u00e9taro, Mexico": [
+        20.5922997,
+        -100.3917424
+    ],
+    "Palm Springs, United States of America": [
+        33.8246269,
+        -116.540303
+    ],
+    "Monterrey, Mexico": [
+        25.6802019,
+        -100.315258
+    ],
+    "Vienna, Austria": [
+        48.2083537,
+        16.3725042
+    ],
+    "N\u00fcrnberg, Germany": [
+        49.453872,
+        11.077298
+    ],
+    "Dour Festival, Belgium": [
+        50.3963781,
+        3.7786762
+    ],
+    "Gianpula Village, Malta": [
+        35.8885993,
+        14.4476911
+    ],
+    "TBA - Liege, Belgium": [
+        50.47081585,
+        5.773545903524977
+    ],
+    "TBA - Megapolis Convention Center, Panama": [
+        30.1586518,
+        -85.6602936
+    ],
+    "Cry d'Er \u2013 Club d'Altitude, Switzerland": [
+        46.3304899,
+        7.526435803722132
+    ],
+    "Rhineland-Palatinate, Germany": [
+        49.9531599,
+        7.310646
+    ],
+    "Milan, Italy": [
+        45.4641943,
+        9.1896346
+    ],
+    "Alpe d'Huez, France": [
+        45.092401,
+        6.0699443
+    ],
+    "Folie Douce Les Arcs, France": [
+        45.5731149,
+        6.7780477
+    ],
+    "Le Bikini, France": [
+        45.7784615,
+        3.0899454
+    ],
+    "Medane Beach, Croatia": [
+        45.0195884,
+        14.631247
+    ],
+    "Dreamland Margate, United Kingdom": [
+        51.38515855,
+        1.3772397467725002
+    ],
+    "TBA - various venues in Tignes, France": [
+        45.4697293,
+        6.907594
+    ],
+    "Zeebrugge Beach, Belgium": [
+        51.3312211,
+        3.207561
+    ]
+}
