@@ -75,7 +75,7 @@ for _, row in filtered_data.iterrows():
     
     # Construct HTML with increased width and side-by-side image using flex layout.
     popup_text = (
-        f'<div style="display: flex; align-items: center; background-color: #333; color: white; font-family: Arial, sans-serif; padding: 10px; border-radius: 10px;">'
+        f'<div style="display: flex; align-items: center; background-color: #333; color: white; font-family:  Arial Black, sans-serif; padding: 10px; border-radius: 10px;">'
             f'<div style="margin-right: 10px;">'
                 f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
                     f'<img src="{row["image"]}" alt="Event Image" style="width:150px; height:auto; border-radius: 5px;">'
