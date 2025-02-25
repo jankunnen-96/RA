@@ -96,7 +96,7 @@ for _, row in filtered_data.iterrows():
             f'</div>'
         )
         if not grouped_data[key]:
-            grouped_data[key].append(f'<div style="width:400px; max-height:400px; overflow-y:auto;">')
+            grouped_data[key].append(f'<div style="width:350px; max-height:500px; overflow-y:auto;">')
             grouped_data[key].append(f"<b style='font-size:16px;'>{row['location']}</b><br><br>")
     else:
         popup_text = (
