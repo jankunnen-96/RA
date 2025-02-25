@@ -4,8 +4,20 @@ import folium
 from folium.plugins import MarkerCluster, Fullscreen,BeautifyIcon
 from streamlit_folium import folium_static
 from collections import defaultdict
+from streamlit_javascript import st_javascript
+from user_agents import parse
 
 st.set_page_config(layout="wide")
+
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+    body {
+        font-family: 'Quicksand';
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 @st.cache_data
 def load_data():
     data = pd.read_csv('events_new.csv')
@@ -25,7 +37,7 @@ data,unique_artists = load_data()
 min_date = pd.Timestamp.today().date()
 max_date = data['date'].max().date()
 
-
+browser_width=st_javascript("""window.innerWidth;""")
 
 
 # Streamlit Layout: Move Filters on Top of Map
@@ -66,23 +78,44 @@ for _, row in filtered_data.iterrows():
     
     
     # Construct HTML with increased width and side-by-side image using flex layout.
-    popup_text = (
-        f'<div style="display: flex; align-items: center; background-color: #333; color: white; font-family:  Arial Black, sans-serif; padding: 10px; border-radius: 10px;">'
-            f'<div style="margin-right: 10px;">'
-                f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
-                    f'<img src="{row["image"]}" alt="Event Image" style="width:150px; height:auto; border-radius: 5px;">'
-                f'</a>'
+    if browser_width<900:
+        popup_text = (
+            f'<div style="display: flex; align-items: center; background-color: #333;font-size:9px; color: white; padding: 0px; border-radius: 15px;">'
+                f'<div style="margin-right: 5px;">'
+                    f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
+                        f'<img src="{row["image"]}" alt="Event Image" style="width:130px; height:auto; border-radius: 5px;">'
+                    f'</a>'
+                f'</div>'
+                f'<div style="flex: 1;">'
+                    f"<b>{row['date'].strftime('%A %#d %B %Y')}</b><br>"
+                    f"<b>{row['title']}</b><br>"
+                    f"{row['artist']}<br>"
+                    f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
+                f'</div>'
             f'</div>'
-            f'<div style="flex: 1;">'
-                f"<b>{row['date'].date()} - {row['title']}</b><br>"
-                f"{row['artist']}<br>"
-                f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
+        )
+        if not grouped_data[key]:
+            grouped_data[key].append(f'<div style="min-width:400px; max-width:800px; max-height:400px; overflow-y:auto;">')
+            grouped_data[key].append(f"<b style='font-size:16px;'>{row['location']}</b><br><br>")
+    else:
+        popup_text = (
+            f'<div style="display: flex; align-items: center; background-color: #333;font-size:18px; color: white; padding: 0px; border-radius: 15px;">'
+                f'<div style="margin-right: 5px;">'
+                    f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
+                        f'<img src="{row["image"]}" alt="Event Image" style="width:130px; height:auto; border-radius: 5px;">'
+                    f'</a>'
+                f'</div>'
+                f'<div style="flex: 1;">'
+                    f"<b>{row['date'].strftime('%A %#d %B %Y')}</b><br>"
+                    f"<b>{row['title']}</b><br>"
+                    f"{row['artist']}<br>"
+                    f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
+                f'</div>'
             f'</div>'
-        f'</div>'
-    )
-    if not grouped_data[key]:
-        grouped_data[key].append(f'<div style="min-width:500px; max-width:900px; max-height:400px; overflow-y:auto;">')
-        grouped_data[key].append(f"<b style='font-size:16px;'>{row['location']}</b><br><br>")
+        )
+        if not grouped_data[key]:
+            grouped_data[key].append(f'<div style="min-width:700px; max-width:800px; max-height:500px; overflow-y:auto;">')
+            grouped_data[key].append(f"<b style='font-size:20px;'>{row['location']}</b><br><br>")
 
     grouped_data[key].append(popup_text)
 
@@ -124,16 +157,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-from streamlit_javascript import st_javascript
-from user_agents import parse
-
-ua_string = st_javascript("""window.navigator.userAgent;""")
-user_agent = parse(ua_string)
-st.session_state.is_mobile = user_agent.is_mobile
 
 
-browser_width=st_javascript("""window.innerWidth;""")
-folium_static(m, width=browser_width, height=750)
+
+folium_static(m, width=browser_width, height=700)
 
 
 
