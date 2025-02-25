@@ -42,7 +42,6 @@ browser_width=st_javascript("""window.innerWidth;""")
 
 # Streamlit Layout: Move Filters on Top of Map
 st.sidebar.title("MatchaDaddy selects💚")
-st.info(browser_width)
 # Date Range Slider
 selected_date_range = st.sidebar.slider(
     "Select Date Range",
