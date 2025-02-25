@@ -42,7 +42,7 @@ browser_width=st_javascript("""window.innerWidth;""")
 
 # Streamlit Layout: Move Filters on Top of Map
 st.sidebar.title("MatchaDaddy selects💚")
-
+st.info(browser_width)
 # Date Range Slider
 selected_date_range = st.sidebar.slider(
     "Select Date Range",
@@ -60,6 +60,7 @@ selected_artists = st.sidebar.multiselect("Select Artist(s)", unique_artists)
 # Convert date filters
 start_date = pd.to_datetime(selected_date_range[0])
 end_date = pd.to_datetime(selected_date_range[1])
+
 
 # Apply Filters
 filtered_data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
@@ -95,7 +96,7 @@ for _, row in filtered_data.iterrows():
             f'</div>'
         )
         if not grouped_data[key]:
-            grouped_data[key].append(f'<div style="min-width:400px; max-width:800px; max-height:400px; overflow-y:auto;">')
+            grouped_data[key].append(f'<div style="width:400px; max-height:400px; overflow-y:auto;">')
             grouped_data[key].append(f"<b style='font-size:16px;'>{row['location']}</b><br><br>")
     else:
         popup_text = (
@@ -114,7 +115,7 @@ for _, row in filtered_data.iterrows():
             f'</div>'
         )
         if not grouped_data[key]:
-            grouped_data[key].append(f'<div style="min-width:700px; max-width:800px; max-height:500px; overflow-y:auto;">')
+            grouped_data[key].append(f'<div style="width:800px; max-height:500px; overflow-y:auto;">')
             grouped_data[key].append(f"<b style='font-size:20px;'>{row['location']}</b><br><br>")
 
     grouped_data[key].append(popup_text)
