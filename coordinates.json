@@ -626,5 +626,105 @@
     "Vancouver, Canada": [
         49.2608724,
         -123.113952
+    ],
+    "TBA - Castillo de Piria, Piriapolis, Uruguay": [
+        -34.8689037,
+        -55.2724472
+    ],
+    "Ghent, Belgium": [
+        51.0538286,
+        3.7250121
+    ],
+    "TBA - 4 Venues Over Malta, Malta": [
+        35.8885993,
+        14.4476911
+    ],
+    "Galderse Meren, Netherlands": [
+        51.522515999999996,
+        4.756552975576676
+    ],
+    "TBA - Bodega la Rotativa  Cl. 42 #50-80, Nte. Centro Historico, Barranquilla, Colombia": [
+        11.0101922,
+        -74.8231794084391
+    ],
+    "Naples, Italy": [
+        40.8358846,
+        14.2487679
+    ],
+    "Pandora Sevilla, Spain": [
+        37.3914132,
+        -5.9953027
+    ],
+    "Thessaloniki, Greece": [
+        40.6403167,
+        22.9352716
+    ],
+    "Mille Club, France": [
+        45.444381050000004,
+        4.3897990911319305
+    ],
+    "Denver, United States of America": [
+        39.7392364,
+        -104.984862
+    ],
+    "Stade des Alpes - Virage Ouest, France": [
+        45.1875602,
+        5.7357819
+    ],
+    "Sacramento, United States of America": [
+        38.5810606,
+        -121.493895
+    ],
+    "TBA - Parador P12, Florianopolis, Brazil": [
+        -27.5973002,
+        -48.5496098
+    ],
+    "Fundo Mamacona, Peru": [
+        -12.26502005,
+        -76.90520528005305
+    ],
+    "Strasbourg, France": [
+        48.584614,
+        7.7507127
+    ],
+    "Erfurt, Germany": [
+        50.9777974,
+        11.0287364
+    ],
+    "Poznan, Poland": [
+        52.4006632,
+        16.91973259178088
+    ],
+    "Kassel, Germany": [
+        51.3157833,
+        9.4978479
+    ],
+    "Malaga, Spain": [
+        36.7213028,
+        -4.4216366
+    ],
+    "Helmut List Halle, Austria": [
+        47.0796989,
+        15.411992562762524
+    ],
+    "Dom im Berg, Austria": [
+        47.0734725,
+        15.43808178456758
+    ],
+    "Adelaide, Australia": [
+        -34.9281805,
+        138.5999312
+    ],
+    "Osaka, Japan": [
+        34.6937569,
+        135.5014539
+    ],
+    "Malmo, Sweden": [
+        55.6052931,
+        13.0001566
+    ],
+    "Liquid Club, Malta": [
+        35.9093052,
+        14.4788042
     ]
 }
