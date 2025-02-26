@@ -78,7 +78,7 @@ for _, row in filtered_data.iterrows():
     
     
     # Construct HTML with increased width and side-by-side image using flex layout.
-    if browser_width<900:
+    if browser_width<600:
         popup_text = (
             f'<div style="display: flex; align-items: center; background-color: #333;font-size:9px; color: white; padding: 0px; border-radius: 15px;">'
                 f'<div style="margin-right: 5px;">'
