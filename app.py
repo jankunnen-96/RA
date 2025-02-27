@@ -11,9 +11,10 @@ st.set_page_config(layout="wide")
 
 st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
-    body {
-        font-family: 'Quicksand';
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    
+    * {
+        font-family: 'Poppins', sans-serif !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -125,12 +126,42 @@ for key in grouped_data:
 # Create Fullscreen Folium Map
 m = folium.Map(location=[48.8566, 2.3522], zoom_start=4, tiles="CartoDB dark_matter")
 
+# Custom function to display total text length in cluster icons
+icon_create_function = '''
+function(cluster) {
+    var markers = cluster.getAllChildMarkers();
+    
+    var totalClickCount = markers.reduce((sum, marker) => {
+        var popup = marker.getPopup();
+        var popupContent = popup ? popup.getContent() : ""; // Get popup content
+
+        if (popupContent instanceof HTMLElement) {
+            popupContent = popupContent.outerHTML; // Convert HTML element to string
+        }
+
+        popupContent = String(popupContent).replace(/\s+/g, ' ').trim(); // Normalize whitespace
+        var clickCount = (popupContent.match(/Click here for Full Lineup/gi) || []).length; // Case-insensitive search
+
+        return sum + clickCount;
+    }, 0);
+    
+    return L.divIcon({
+        html: '<div style="background-color: #74C365; color: black; border-radius: 50%; padding: 10px; ' +
+              'width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; ' +
+              'font-size: 16px; font-weight: bold; text-align: center; font-family: Roboto, sans-serif;">' + 
+              totalClickCount + 
+              '</div>',
+        className: 'marker-cluster-custom',
+        iconSize: L.point(40, 40)
+    }); 
+}
+'''
+
 # Add Fullscreen Control
 Fullscreen(position="topleft").add_to(m)
 
-# Add Markers
-marker_cluster = MarkerCluster().add_to(m)
-
+# Add Custom Marker Cluster
+marker_cluster = MarkerCluster(icon_create_function=icon_create_function).add_to(m)
 for (lat, lon), events in grouped_data.items():
     popup_text = "".join(events)
     
@@ -140,8 +171,8 @@ for (lat, lon), events in grouped_data.items():
         icon=BeautifyIcon(
             icon='bolt',
             icon_shape='marker',
-            border_color='darkblue',
-            background_color='skyblue',
+            border_color='white',
+            background_color='#74C365',
             text_color='black',
             inner_icon_style='font-size:12px;',number=len(events)-3)).add_to(marker_cluster)
 
