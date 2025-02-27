@@ -42,7 +42,11 @@ browser_width=st_javascript("""window.innerWidth;""")
 
 
 # Streamlit Layout: Move Filters on Top of Map
-st.sidebar.title("MatchaDaddy selects💚")
+st.sidebar.markdown("""
+    <h1 style="font-size: 22px; color: white; font-weight: bold;">
+        MatchaDaddy selects💚
+    </h1>
+""", unsafe_allow_html=True)
 # Date Range Slider
 selected_date_range = st.sidebar.slider(
     "Select Date Range",
@@ -53,10 +57,10 @@ selected_date_range = st.sidebar.slider(
 )
 
 # Location Filter
-selected_locations = st.sidebar.multiselect("Select Location(s)", sorted(data['location'].unique()))
+selected_locations = st.sidebar.multiselect("Filter Location", sorted(data['location'].unique()))
 
 # Artist Filter
-selected_artists = st.sidebar.multiselect("Select Artist(s)", unique_artists)
+selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
 # Convert date filters
 start_date = pd.to_datetime(selected_date_range[0])
 end_date = pd.to_datetime(selected_date_range[1])
@@ -146,11 +150,12 @@ function(cluster) {
     }, 0);
     
     return L.divIcon({
-        html: '<div style="background-color: #74C365; color: black; border-radius: 50%; padding: 10px; ' +
-              'width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; ' +
-              'font-size: 16px; font-weight: bold; text-align: center; font-family: Roboto, sans-serif;">' + 
-              totalClickCount + 
-              '</div>',
+    html: '<div style="background-color: #74C365; color: black; border-radius: 50%; padding: 10px; ' +
+          'width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; ' +
+          'font-size: 13px; font-weight: bold; text-align: center; font-family: Roboto, sans-serif; ' +
+          'border: 2px solid white; box-shadow: 0px 0px 3px rgba(255,255,255,0.5);">' + 
+          totalClickCount + 
+          '</div>',
         className: 'marker-cluster-custom',
         iconSize: L.point(40, 40)
     }); 
