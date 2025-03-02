@@ -76,7 +76,7 @@ selected_locations = st.sidebar.multiselect("Filter Location", sorted(data['loca
 # Artist Filter
 selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
 
-selectbox_01 = st.sidebar.selectbox('Select', artist_suggestion,)
+# selectbox_01 = st.sidebar.selectbox('Select', artist_suggestion,)
 
 
 start_date = pd.to_datetime(selected_date_range[0])
