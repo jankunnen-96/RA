@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import folium
 from folium.plugins import MarkerCluster, Fullscreen,BeautifyIcon
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
@@ -215,8 +215,10 @@ st.markdown(
 
 
 
+# Replace folium_static with st_folium
+st_folium(m, width=browser_width, height=700)
 
-folium_static(m, width=browser_width, height=700)
+
 
 
 
