@@ -6,6 +6,13 @@ from streamlit_folium import folium_static
 from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
+from api import *
+
+
+
+from dateutil.relativedelta import relativedelta
+
+
 
 st.set_page_config(layout="wide")
 
@@ -32,11 +39,15 @@ def load_data():
     return data.sort_values('date'),unique_artists
 
 
+
+
+
+
 data,unique_artists = load_data()
 
-# Get min/max dates
+# Get min/max datesv
 min_date = pd.Timestamp.today().date()
-max_date = data['date'].max().date()
+max_date = min_date + relativedelta(months=6)
 
 browser_width=st_javascript("""window.innerWidth;""")
 
@@ -48,32 +59,43 @@ st.sidebar.markdown("""
     </h1>
 """, unsafe_allow_html=True)
 # Date Range Slider
+# selected_date_range = st.sidebar.date_input(
+#     "Select Date Range",
+#     [min_date, max_date],
+#     min_value=min_date,
+#     max_value=max_date,on_change =date_change)
+
 selected_date_range = st.sidebar.slider(
     "Select Date Range",
     min_value=min_date,
     max_value=max_date,
     value=(min_date, max_date),
-    format="YYYY-MM-DD"
-)
+    format="YYYY-MM-DD")
+
 
 # Location Filter
 selected_locations = st.sidebar.multiselect("Filter Location", sorted(data['location'].unique()))
 
 # Artist Filter
 selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
-# Convert date filters
+
+
+
 start_date = pd.to_datetime(selected_date_range[0])
 end_date = pd.to_datetime(selected_date_range[1])
-
-
 # Apply Filters
 filtered_data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
 
+
+# Convert date filters
 if selected_locations:
     filtered_data = filtered_data[filtered_data['location'].isin(selected_locations)]
 
 if selected_artists:
     filtered_data = filtered_data[filtered_data['artist'].apply(lambda x: any(sub in x for sub in selected_artists))]
+
+
+
 
 # Group Events by Location
 grouped_data = defaultdict(list)
@@ -153,7 +175,7 @@ function(cluster) {
     html: '<div style="background-color: #74C365; color: black; border-radius: 50%; padding: 10px; ' +
           'width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; ' +
           'font-size: 13px; font-weight: bold; text-align: center; font-family: Roboto, sans-serif; ' +
-          'border: 2px solid white; box-shadow: 0px 0px 3px rgba(255,255,255,0.5);">' + 
+          'border: 3px solid white; box-shadow: 0px 0px 3px rgba(255,255,255,0.5);">' + 
           totalClickCount + 
           '</div>',
         className: 'marker-cluster-custom',
