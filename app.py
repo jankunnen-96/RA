@@ -6,7 +6,7 @@ from streamlit_folium import folium_static
 from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
-from api import *
+from api import artist_suggestion,find_events_artist,save_events_to_csv
 
 
 
