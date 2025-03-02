@@ -19,7 +19,6 @@ st.set_page_config(layout="wide")
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-    
     * {
         font-family: 'Poppins', sans-serif !important;
     }
@@ -42,7 +41,7 @@ def load_data():
 
 
 
-
+artist_suggestion=['A$AP Rocky', 'A$AP Ferg', 'A$AP Nast', 'A$AP Twelvyy', 'A$AP Ant', 'A$AP TyY', 'A$AP Bari']
 data,unique_artists = load_data()
 
 # Get min/max datesv
@@ -79,6 +78,7 @@ selected_locations = st.sidebar.multiselect("Filter Location", sorted(data['loca
 # Artist Filter
 selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
 
+selectbox_01 = st.sidebar.selectbox('Select', artist_suggestion,)
 
 
 start_date = pd.to_datetime(selected_date_range[0])
