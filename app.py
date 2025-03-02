@@ -12,7 +12,7 @@ from dateutil.relativedelta import relativedelta
 
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",initial_sidebar_state="expanded",page_title="MatchaDaddy selects💚",page_icon="🚀")
 
 st.markdown("""
     <style>
