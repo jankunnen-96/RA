@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import folium
 from folium.plugins import MarkerCluster, Fullscreen,BeautifyIcon
-from streamlit_folium import st_folium
+from streamlit_folium import st_folium,folium_static
 from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
@@ -75,8 +75,6 @@ selected_locations = st.sidebar.multiselect("Filter Location", sorted(data['loca
 
 # Artist Filter
 selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
-
-# selectbox_01 = st.sidebar.selectbox('Select', artist_suggestion,)
 
 
 start_date = pd.to_datetime(selected_date_range[0])
@@ -216,7 +214,8 @@ st.markdown(
 
 
 # Replace folium_static with st_folium
-st_folium(m, width=browser_width, height=700)
+# st_folium(m, width=browser_width, height=700)
+folium_static(m, width=browser_width, height=700)
 
 
 
