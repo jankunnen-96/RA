@@ -49,6 +49,58 @@ max_date = min_date + relativedelta(months=6)
 browser_width=st_javascript("""window.innerWidth;""")
 
 
+
+
+# if browser_width > 700:
+#     st.markdown("""
+#         <style>
+#             /* Force Sidebar to Stay Expanded */
+#             [data-testid="stSidebar"] {
+#                 width: 300px !important;
+#                 min-width: 300px !important;
+#                 max-width: 300px !important;
+#                 transition: none !important;
+#                 position: fixed !important;  /* Prevents repositioning */
+#                 left: 0 !important;
+#                 top: 0 !important;
+#                 height: 100% !important;
+#                 z-index: 999 !important;  /* Ensures it stays on top */
+#             }
+
+#             /* Hide the Sidebar Collapse Button */
+#             [data-testid="stBaseButton-headerNoPadding"] {
+#                 display: none !important;
+#             }
+
+#             /* Fix layout issues when sidebar is locked */
+#             .block-container {
+#                 margin-left: 320px !important; /* Ensures main content does not overlap */
+#             }
+#         </style>
+#         """, unsafe_allow_html=True)
+# else:
+#     st.markdown("""
+#         <style>
+#             /* Restore default sidebar behavior */
+#             [data-testid="stSidebar"] {
+#                 width: auto !important;
+#                 min-width: unset !important;
+#                 max-width: unset !important;
+#             }
+
+#             /* Show the Sidebar Collapse Button */
+#             [data-testid="stBaseButton-headerNoPadding"] {
+#                 display: block !important;
+#             }
+
+#             /* Reset main content layout */
+#             .block-container {
+#                 margin-left: unset !important;
+#             }
+#         </style>
+#         """, unsafe_allow_html=True)
+
+
 # Streamlit Layout: Move Filters on Top of Map
 st.sidebar.markdown("""
     <h1 style="font-size: 22px; color: white; font-weight: bold;">

@@ -1,0 +1,6 @@
+[theme]
+base="dark"
+primaryColor="#74C365"  # Matcha green
+backgroundColor="#1E1E1E"
+secondaryBackgroundColor="#333333"
+textColor="#FFFFFF"
