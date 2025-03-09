@@ -7,12 +7,24 @@ from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
 from api import artist_suggestion,find_events_artist,save_events_to_csv
-
+import time 
 from dateutil.relativedelta import relativedelta
+
+from st_keyup import st_keyup
+
 
 
 
 st.set_page_config(layout="wide",initial_sidebar_state="expanded",page_title="MatchaDaddy selects💚",page_icon="🚀")
+
+
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebarNav"] {display: none !important;}
+    </style>
+    """,
+    unsafe_allow_html=True)
 
 st.markdown("""
     <style>
@@ -36,10 +48,7 @@ def load_data():
     return data.sort_values('date'),unique_artists
 
 
-
-
-
-artist_suggestion=['A$AP Rocky', 'A$AP Ferg', 'A$AP Nast', 'A$AP Twelvyy', 'A$AP Ant', 'A$AP TyY', 'A$AP Bari']
+    
 data,unique_artists = load_data()
 
 # Get min/max datesv
@@ -50,69 +59,14 @@ browser_width=st_javascript("""window.innerWidth;""")
 
 
 
-
-# if browser_width > 700:
-#     st.markdown("""
-#         <style>
-#             /* Force Sidebar to Stay Expanded */
-#             [data-testid="stSidebar"] {
-#                 width: 300px !important;
-#                 min-width: 300px !important;
-#                 max-width: 300px !important;
-#                 transition: none !important;
-#                 position: fixed !important;  /* Prevents repositioning */
-#                 left: 0 !important;
-#                 top: 0 !important;
-#                 height: 100% !important;
-#                 z-index: 999 !important;  /* Ensures it stays on top */
-#             }
-
-#             /* Hide the Sidebar Collapse Button */
-#             [data-testid="stBaseButton-headerNoPadding"] {
-#                 display: none !important;
-#             }
-
-#             /* Fix layout issues when sidebar is locked */
-#             .block-container {
-#                 margin-left: 320px !important; /* Ensures main content does not overlap */
-#             }
-#         </style>
-#         """, unsafe_allow_html=True)
-# else:
-#     st.markdown("""
-#         <style>
-#             /* Restore default sidebar behavior */
-#             [data-testid="stSidebar"] {
-#                 width: auto !important;
-#                 min-width: unset !important;
-#                 max-width: unset !important;
-#             }
-
-#             /* Show the Sidebar Collapse Button */
-#             [data-testid="stBaseButton-headerNoPadding"] {
-#                 display: block !important;
-#             }
-
-#             /* Reset main content layout */
-#             .block-container {
-#                 margin-left: unset !important;
-#             }
-#         </style>
-#         """, unsafe_allow_html=True)
-
-
 # Streamlit Layout: Move Filters on Top of Map
 st.sidebar.markdown("""
     <h1 style="font-size: 22px; color: white; font-weight: bold;">
         MatchaDaddy selects💚
     </h1>
 """, unsafe_allow_html=True)
-# Date Range Slider
-# selected_date_range = st.sidebar.date_input(
-#     "Select Date Range",
-#     [min_date, max_date],
-#     min_value=min_date,
-#     max_value=max_date,on_change =date_change)
+
+
 
 selected_date_range = st.sidebar.slider(
     "Select Date Range",
@@ -121,12 +75,14 @@ selected_date_range = st.sidebar.slider(
     value=(min_date, max_date),
     format="YYYY-MM-DD")
 
-
-# Location Filter
-selected_locations = st.sidebar.multiselect("Filter Location", sorted(data['location'].unique()))
-
-# Artist Filter
 selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
+
+
+
+# Sidebar Button to Open New Page
+if st.sidebar.button("Add new artist"):
+    st.switch_page("pages/Add_Artist.py")  # Navigate to the new page
+
 
 
 start_date = pd.to_datetime(selected_date_range[0])
@@ -135,9 +91,6 @@ end_date = pd.to_datetime(selected_date_range[1])
 filtered_data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
 
 
-# Convert date filters
-if selected_locations:
-    filtered_data = filtered_data[filtered_data['location'].isin(selected_locations)]
 
 if selected_artists:
     filtered_data = filtered_data[filtered_data['artist'].apply(lambda x: any(sub in x for sub in selected_artists))]

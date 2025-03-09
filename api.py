@@ -48,7 +48,7 @@ def artist_suggestion(search_term):
 
     data=json.loads(response.text)  
 
-    matched_artists = {item["id"]: item["value"] for item in data["data"]['search']}
+    matched_artists = {item["value"] : item["id"] for item in data["data"]['search'][:3]}
 
     return matched_artists
 
@@ -105,7 +105,7 @@ def find_events_artist(artist_name,id):
 def save_events_to_csv(event_list):
     df = pd.DataFrame(event_list, columns=['artist','title','date','eventUrl','artists','venue_name','area_name','country_name','image'])
     # Load the CSV data into a DataFrame
-    df['location'] = np.where(~df['area_name'].isin(["North", "South", "East", "West", "All", "South East","South West","South + East"]),
+    df['location'] = np.where(~df['area_name'].isin(["North", "South", "East", "West", "All", "South East","South West","South + East","Central"]),
         df['area_name'] + ', ' + df['country_name'],df['venue_name'] + ', ' + df['country_name'])
 
     coord_file = "coordinates.json"
