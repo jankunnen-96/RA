@@ -810,5 +810,29 @@
     "Lille, France": [
         50.6365654,
         3.0635282
+    ],
+    "Tel Aviv, Israel": [
+        32.0852997,
+        34.7818064
+    ],
+    "Cocoric\u00f2, Italy": [
+        43.98734614999999,
+        12.656780849999995
+    ],
+    "Pedreira Paulo Leminski, Brazil": [
+        -25.3839428,
+        -49.27699263572514
+    ],
+    "Later Aan Zee, Netherlands": [
+        52.40381205,
+        4.5440779220742105
+    ],
+    "TBA - PARK MLADE\u017dI, Croatia": [
+        43.5116383,
+        16.4399659
+    ],
+    "TBA - Park Mladezi, Croatia": [
+        43.5116383,
+        16.4399659
     ]
 }

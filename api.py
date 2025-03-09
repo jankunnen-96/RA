@@ -154,3 +154,4 @@ def get_events_followed_profiles():
 
     save_events_to_csv(event_list)
 
+# get_events_followed_profiles()
