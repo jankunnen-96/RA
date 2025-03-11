@@ -102,25 +102,34 @@ for i, row in events.iterrows():
             border-radius: 10px;
         }
 
-        /* Ensure horizontal layout on mobile */
+        /* Default font sizes */
+        .event-title { font-size: 22px; font-weight: bold; }
+        .event-date { font-size: 16px; color: #555; }
+        .event-artists { font-size: 14px; color: #333; }
+
+        /* Adjust font size for tablets & mobile screens */
         @media only screen and (max-width: 768px) {
             .event-container {
                 flex-direction: row !important;  /* Force row on mobile */
                 align-items: center;
             }
             .image-container {
-                max-width: 40%;  /* Ensure image doesn't take too much space */
+                max-width: 40%;
             }
             .details-container {
                 flex: 2;
-                font-size: 14px;
             }
+            /* Reduce font sizes for smaller screens */
+            .event-title { font-size: 18px; }  
+            .event-date { font-size: 14px; }
+            .event-artists { font-size: 12px; }
         }
 
         </style>
-        """,
-        unsafe_allow_html=True
-    )
+        """, unsafe_allow_html=True)
+
+
+
 
 if st.button('BACK', key=f"back"):
     st.switch_page("app.py")  # Return to the main page
