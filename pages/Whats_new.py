@@ -108,7 +108,7 @@ for i, row in events.iterrows():
         .event-artists { font-size: 14px; color: #333; }
 
         /* Adjust font size for tablets & mobile screens */
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 1200px) {
             .event-container {
                 flex-direction: row !important;  /* Force row on mobile */
                 align-items: center;
@@ -120,9 +120,9 @@ for i, row in events.iterrows():
                 flex: 2;
             }
             /* Reduce font sizes for smaller screens */
-            .event-title { font-size: 14px; }  
-            .event-date { font-size: 10px; }
-            .event-artists { font-size: 8px; }
+            .event-title { font-size: 12px; }  
+            .event-date { font-size: 8px; }
+            .event-artists { font-size: 6px; color: #0056b3; }
         }
 
         </style>
