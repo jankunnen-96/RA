@@ -44,45 +44,94 @@ st.title("Whats New")
 
 
 
-events= load_data()
+import streamlit as st
+import pandas as pd
 
-for i,row in events.iterrows():
-    image=row['image'] if row['image'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
-    formatted_date=pd.to_datetime(row['date']).strftime('%A %d %B %Y')
-    location=row['location']
-    artist_string= row['artists']
+events = load_data()
 
-    with st.container():
-        col1, col2 = st.columns([2, 5])  # Two-column layout (image + details)
+for i, row in events.iterrows():
+    image = row['image'] if row['image'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
+    formatted_date = pd.to_datetime(row['date']).strftime('%A %d %B %Y')
+    location = row['location']
+    artist_string = row['artists']
 
-        with col1:
-            # Display the event image
-            st.image(image, use_container_width =True)
+    # 🛠️ Use an HTML container instead of st.columns() for better mobile control
+    st.markdown(
+        f"""
+        <div class="event-container">
+            <div class="image-container">
+                <img src="{image}" class="event-image">
+            </div>
+            <div class="details-container">
+                <h4>{formatted_date}  |  {location}</h4>
+                <h2>{row['title']}</h2>
+                <p>{"Click to view full lineup" if len(artist_string) > 150 else artist_string}</p>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-        with col2:
-            st.markdown(f"#### {formatted_date}  |   {location}", unsafe_allow_html=True)
-            st.markdown(f"### {row['title']}")
+    # 🛠️ Expandable artist lineup if too long
+    if len(artist_string) > 150:
+        with st.expander("Click here for Full Lineup"):
+            st.markdown(artist_string)
 
-            if len(artist_string)>150:
-                with st.expander("Click here for Full Lineup"):
-                    st.markdown(artist_string)
-            else:
-                st.markdown(artist_string)
-
-    st.markdown("""
+    # Inject CSS to enforce side-by-side layout on mobile
+    st.markdown(
+        """
         <style>
-        /* Ensure the columns stay side-by-side on mobile */
-        @media only screen and (max-width: 600px) {
-            .st-emotion-cache-ocqkz7 { 
-                display: flex;
-                flex-direction: row !important;
+        .event-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+            gap: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .image-container {
+            flex: 1;
+            max-width: 30%;
+        }
+        .details-container {
+            flex: 2;
+        }
+        .event-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Ensure horizontal layout on mobile */
+        @media only screen and (max-width: 768px) {
+            .event-container {
+                flex-direction: row !important;  /* Force row on mobile */
                 align-items: center;
-                gap: 10px;
+            }
+            .image-container {
+                max-width: 40%;  /* Ensure image doesn't take too much space */
+            }
+            .details-container {
+                flex: 2;
+                font-size: 14px;
+            }
+        }
+
+        /* Extra Small Screens */
+        @media only screen and (max-width: 480px) {
+            .event-container {
+                flex-direction: column !important; /* Stack if too small */
+                text-align: center;
+            }
+            .image-container {
+                max-width: 100%;
             }
         }
         </style>
-    """, unsafe_allow_html=True)
-            
+        """,
+        unsafe_allow_html=True
+    )
+
 if st.button('BACK', key=f"back"):
     st.switch_page("app.py")  # Return to the main page
 
