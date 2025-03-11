@@ -69,7 +69,19 @@ for i,row in events.iterrows():
             else:
                 st.markdown(artist_string)
 
-
+    st.markdown("""
+        <style>
+        /* Ensure the columns stay side-by-side on mobile */
+        @media only screen and (max-width: 768px) {
+            .st-emotion-cache-ocqkz7 { 
+                display: flex;
+                flex-direction: row !important;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+        </style>
+    """, unsafe_allow_html=True)
             
 if st.button('BACK', key=f"back"):
     st.switch_page("app.py")  # Return to the main page
