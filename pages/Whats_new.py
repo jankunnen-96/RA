@@ -120,9 +120,9 @@ for i, row in events.iterrows():
                 flex: 2;
             }
             /* Reduce font sizes for smaller screens */
-            .event-title { font-size: 18px; }  
-            .event-date { font-size: 14px; }
-            .event-artists { font-size: 12px; }
+            .event-title { font-size: 14px; }  
+            .event-date { font-size: 10px; }
+            .event-artists { font-size: 8px; }
         }
 
         </style>
