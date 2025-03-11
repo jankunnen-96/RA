@@ -108,7 +108,7 @@ for i, row in events.iterrows():
         .event-artists { font-size: 14px; color: #333; }
 
         /* Adjust font size for tablets & mobile screens */
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (max-width: 1400px) {
             .event-container {
                 flex-direction: row !important;  /* Force row on mobile */
                 align-items: center;
