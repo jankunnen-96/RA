@@ -72,7 +72,7 @@ for i,row in events.iterrows():
     st.markdown("""
         <style>
         /* Ensure the columns stay side-by-side on mobile */
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 600px) {
             .st-emotion-cache-ocqkz7 { 
                 display: flex;
                 flex-direction: row !important;
