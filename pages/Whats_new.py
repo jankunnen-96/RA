@@ -1,6 +1,5 @@
 import streamlit as st
 from st_keyup import st_keyup
-from api import artist_suggestion,find_events_artist,save_events_to_csv
 import pandas as pd
 
 
@@ -82,7 +81,7 @@ for i, row in events.iterrows():
                 <img src="{image}" class="event-image">
             </div>
             <div class="details-container">
-                <h4>{formatted_date}  |  {location}</h4>
+                <h4>{formatted_date}  |2  {location}</h4>
                 <h2>{row['title']}</h2>
                 <p>{"Click to view full lineup" if len(artist_string) > 150 else artist_string}</p>
             </div>
@@ -127,7 +126,7 @@ for i, row in events.iterrows():
         .event-artists { font-size: 14px; color: blue; }
 
         /* Adjust font size for tablets & mobile screens */
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (max-width: 500spx) {
             .event-container {
                 flex-direction: row !important;  /* Force row on mobile */
                 align-items: center;
@@ -141,7 +140,7 @@ for i, row in events.iterrows():
             /* Reduce font sizes for smaller screens */
             .event-title { font-size: 12px; }  
             .event-date { font-size: 8px; }
-            .event-artists { font-size: 6px; color: #0056b3; }
+            .event-artists { font-size: 6px; color: blue; }
         }
 
         </style>
