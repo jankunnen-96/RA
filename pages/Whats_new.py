@@ -49,6 +49,25 @@ import pandas as pd
 
 events = load_data()
 
+import streamlit.components.v1 as components
+
+# Inject JavaScript via HTML component
+components.html(
+    """
+    <script>
+        function updateWidth() {
+            let width = window.innerWidth;
+            document.getElementById("screen-width").innerText = "Current Screen Width: " + width + "px";
+        }
+        window.onload = updateWidth;
+        window.onresize = updateWidth;
+    </script>
+    <p id="screen-width" style="font-size:16px; color:red; font-weight:bold;">Current Screen Width: Loading...</p>
+    """,
+    height=50
+)
+
+
 for i, row in events.iterrows():
     image = row['image'] if row['image'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
     formatted_date = pd.to_datetime(row['date']).strftime('%A %d %B %Y')
@@ -105,7 +124,7 @@ for i, row in events.iterrows():
         /* Default font sizes */
         .event-title { font-size: 22px; font-weight: bold; }
         .event-date { font-size: 16px; color: #555; }
-        .event-artists { font-size: 14px; color: #333; }
+        .event-artists { font-size: 14px; color: blue; }
 
         /* Adjust font size for tablets & mobile screens */
         @media only screen and (max-width: 1400px) {
