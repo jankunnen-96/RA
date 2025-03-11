@@ -117,16 +117,6 @@ for i, row in events.iterrows():
             }
         }
 
-        /* Extra Small Screens */
-        @media only screen and (max-width: 480px) {
-            .event-container {
-                flex-direction: column !important; /* Stack if too small */
-                text-align: center;
-            }
-            .image-container {
-                max-width: 100%;
-            }
-        }
         </style>
         """,
         unsafe_allow_html=True
