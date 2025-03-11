@@ -123,7 +123,7 @@ for i, row in events.iterrows():
         /* Default font sizes */
         .event-title { font-size: 22px; font-weight: bold; }
         .event-date { font-size: 16px; color: #555; }
-        .event-artists { font-size: 14px; color: blue; }
+        .event-artists { font-size: 14px; }
 
         /* Adjust font size for tablets & mobile screens */
         @media only screen and (max-width: 500px) {
@@ -140,7 +140,7 @@ for i, row in events.iterrows():
             /* Reduce font sizes for smaller screens */
             .event-title { font-size: 12px; }  
             .event-date { font-size: 8px; }
-            .event-artists { font-size: 6px; color: blue; }
+            .event-artists { font-size: 2px; }
         }
 
         </style>
