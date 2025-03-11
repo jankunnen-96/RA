@@ -1,19 +1,20 @@
-import pandas as pd 
-import re 
-from date_transform import convert_dates, get_coordinates
+import pandas as pd
+from datetime import datetime
+import streamlit as st
+from st_keyup import st_keyup
+from api import artist_suggestion,find_events_artist,save_events_to_csv
+import pandas as pd
 
-df =  pd.read_csv('events_new.csv')
-df['area_name_country']=df['area_name']+', '+df['country_name']
+@st.cache_data
+def load_data():
+    data = pd.read_csv('events.csv')
+    data['date'] = pd.to_datetime(data['date'])
+    data=data[data['date_added']==max(data['date_added'])]
+    column_to_merge = 'artist'
+    # Merge duplicate rows except for the artist column
+    data = data.groupby(data.columns.difference([column_to_merge]).tolist(), as_index=False)[column_to_merge].agg(' | '.join)
+    data['artists']=data['artists'].str.replace('_'," | ")
+    return data.sort_values('date')
+    
+data = load_data()
 
-
-pattern = r'\b(north|south|east|west|all)\b|\+'
-df['location'] = df['area_name_country'].str.replace(pattern, '', flags=re.IGNORECASE, regex=True).str.replace(r'^\s*,\s*', '', regex=True).str.strip()
-print('Looking for coordinates')
-coordinate_dict={}
-for location in df['location'].unique():
-    coordinate_dict['location']=get_coordinates(location)
-
-df['latitude'], df['longitude'] = zip(*df['location'].map(coordinate_dict))
-
-# Save the DataFrame to a CSV file (without the index)
-df.to_csv("events_new.csv", index=False)

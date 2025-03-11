@@ -6,6 +6,7 @@ from date_transform import convert_dates, get_coordinates
 import os
 import json
 import numpy as np
+from datetime import datetime
 
 def artist_suggestion(search_term):
     url = "https://ra.co/graphql"
@@ -109,34 +110,33 @@ def save_events_to_csv(event_list):
         df['area_name'] + ', ' + df['country_name'],df['venue_name'] + ', ' + df['country_name'])
 
     coord_file = "coordinates.json"
-    # Load the coordinate dictionary from file if it exists, otherwise initialize an empty dictionary.
     if os.path.exists(coord_file):
         with open(coord_file, "r") as f:
             coordinate_dict = json.load(f)
     else:
         coordinate_dict = {}
-
-    # Update the dictionary with any new locations that aren't already in it.
-    for location in df['location'].unique():
+    
+    for location in new_df['location'].unique():
         if location not in coordinate_dict:
             coordinates = get_coordinates(location)
-            # If coordinates are None, ask the user for an input
             while coordinates == (None, None):
                 new_location = input(f"Could not find '{location}'. Please enter a corrected location (press Enter to keep '{location}'): ") or location
                 coordinates = get_coordinates(new_location)
-
-            # Store the successful coordinates
             coordinate_dict[location] = coordinates
-
-    # Save the updated coordinate dictionary back to the file.
+    
     with open(coord_file, "w") as f:
         json.dump(coordinate_dict, f, indent=4)
-
-    # Map the coordinates to the DataFrame.
-    df['latitude'], df['longitude'] = zip(*df['location'].map(coordinate_dict))
-
-    # Save the DataFrame to a CSV file (without the index)
-    df.to_csv("events_new.csv", index=False)
+    
+    new_df['latitude'], new_df['longitude'] = zip(*new_df['location'].map(coordinate_dict))
+    new_df['date_added'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    if os.path.exists(csv_file):
+        existing_df = pd.read_csv(csv_file)
+    else:
+        existing_df = pd.DataFrame(columns=new_df.columns)
+    
+    combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['artist', 'title', 'date'], keep='first')
+    combined_df.to_csv(csv_file, index=False)
 
 
 def get_events_followed_profiles():

@@ -37,7 +37,7 @@ st.markdown("""
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv('events_new.csv')
+    data = pd.read_csv('events.csv')
     data['date'] = pd.to_datetime(data['date'])
 
     column_to_merge = 'artist'
@@ -83,7 +83,8 @@ selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
 if st.sidebar.button("Add new artist"):
     st.switch_page("pages/Add_Artist.py")  # Navigate to the new page
 
-
+if st.sidebar.button('Whats New?', key=f"back"):
+    st.switch_page("pages/Whats_new.py") 
 
 start_date = pd.to_datetime(selected_date_range[0])
 end_date = pd.to_datetime(selected_date_range[1])
