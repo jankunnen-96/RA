@@ -4,8 +4,9 @@ from api import artist_suggestion,find_events_artist,save_events_to_csv
 import pandas as pd
 import re
 
-def highlight_names(text, names):
-    for name in names:
+def highlight_names(text):
+    followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
+    for name in followed_artists:
         pattern = re.escape(name)  # Ensure special characters are treated properly
         text = re.sub(pattern, f'<span style="color:#74C365; font-weight:bold;">{name}</span>', text)
     return text
@@ -20,7 +21,6 @@ st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="M
 
 
 
-followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
 
 
 
@@ -107,7 +107,7 @@ for i, artist in enumerate(filtered_artists):
             image=i['images'][0]['filename'] if i['images'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
             formatted_date=pd.to_datetime(i['date']).strftime('%A %d %B %Y')
             location=f"{i['venue']['name']}, {i['venue']['area']['name']}, {i['venue']['area']['country']['name']}"
-            artist_string=highlight_names(' | '.join([j['name'] for j in i['artists']]),followed_artists) 
+            artist_string=highlight_names(' | '.join([j['name'] for j in i['artists']])) 
 
 
             st.markdown(

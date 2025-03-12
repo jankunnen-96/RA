@@ -5,12 +5,12 @@ import re
 
 st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
 
-def highlight_names(text, names):
-    for name in names:
+def highlight_names(text):
+    followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
+    for name in followed_artists:
         pattern = re.escape(name)  # Ensure special characters are treated properly
         text = re.sub(pattern, f'<span style="color:#74C365; font-weight:bold;">{name}</span>', text)
     return text
-
 
 @st.cache_data
 def load_data():
@@ -24,7 +24,6 @@ def load_data():
     return data.sort_values('date')
     
 events = load_data()
-followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
 
 
 
@@ -110,7 +109,7 @@ for i, row in events.iterrows():
     image = row['image'] if row['image'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
     formatted_date = pd.to_datetime(row['date']).strftime('%A %d %B %Y')
     location = row['location']
-    artist_string =  highlight_names(row['artists'],followed_artists)
+    artist_string =  highlight_names(row['artists'])
 
 
 

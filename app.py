@@ -7,7 +7,7 @@ from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
 from api import artist_suggestion,find_events_artist,save_events_to_csv
-import time 
+import re 
 from dateutil.relativedelta import relativedelta
 
 from st_keyup import st_keyup
@@ -17,21 +17,30 @@ from st_keyup import st_keyup
 
 st.set_page_config(layout="wide",initial_sidebar_state="expanded",page_title="MatchaDaddy selects💚",page_icon="🚀")
 
-
-st.markdown(
-    """
-    <style>
-        [data-testid="stSidebarNav"] {display: none !important;}
-    </style>
-    """,
-    unsafe_allow_html=True)
+def highlight_names(text):
+    followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
+    for name in followed_artists:
+        pattern = re.escape(name)  # Ensure special characters are treated properly
+        text = re.sub(pattern, f'<span style="color:#74C365; font-weight:bold;">{name}</span>', text)
+    return text
 
 st.markdown("""
     <style>
+            
+
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
     * {
         font-family: 'Poppins', sans-serif !important;
     }
+            
+        [data-testid="stSidebarNav"] {display: none !important;}
+
+            
+
+        .fullScreenFrame {height: 85vh !important; width: 90vw !important;}
+        .block-container {padding-left: 10px; padding-right: 10px;} /* Removes side padding */
+        .st-emotion-cache-1kyxreq {padding: 0 !important;} /* Fixes extra margin */
+            
     </style>
     """, unsafe_allow_html=True)
 
@@ -44,7 +53,7 @@ def load_data():
     unique_artists = data['artist'].unique()
     # Merge duplicate rows except for the artist column
     data = data.groupby(data.columns.difference([column_to_merge]).tolist(), as_index=False)[column_to_merge].agg(' | '.join)
-    data['artists']=data['artists'].str.replace('_'," | ")
+    data['artists']=[highlight_names(i) for i in data['artists'].replace('_'," | ")]
     return data.sort_values('date'),unique_artists
 
 
@@ -110,7 +119,7 @@ for _, row in filtered_data.iterrows():
     if browser_width<600:
         popup_text = (
             f'<div style="display: flex; align-items: center; background-color: #333;font-size:9px; color: white; padding: 0px; border-radius: 15px;">'
-                f'<div style="margin-right: 5px;">'
+                f'<div style="margin-right: 0px;">'
                     f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
                         f'<img src="{row["image"]}" alt="Event Image" style="width:130px; height:auto; border-radius: 5px;">'
                     f'</a>'
@@ -118,8 +127,7 @@ for _, row in filtered_data.iterrows():
                 f'<div style="flex: 1;">'
                     f"<b>{row['date'].strftime('%A %#d %B %Y')}</b><br>"
                     f"<b>{row['title']}</b><br>"
-                    f"{row['artist']}<br>"
-                    f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
+                    f"{row['artists']}<br>"
                 f'</div>'
             f'</div>'
         )
@@ -129,21 +137,20 @@ for _, row in filtered_data.iterrows():
     else:
         popup_text = (
             f'<div style="display: flex; align-items: center; background-color: #333;font-size:18px; color: white; padding: 0px; border-radius: 15px;">'
-                f'<div style="margin-right: 5px;">'
+                f'<div style="margin-right: 0px;">'
                     f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
-                        f'<img src="{row["image"]}" alt="Event Image" style="width:130px; height:auto; border-radius: 5px;">'
+                        f'<img src="{row["image"]}" alt="Event Image" style="width:230px; height:auto; border-radius: 5px;">'
                     f'</a>'
                 f'</div>'
                 f'<div style="flex: 1;">'
                     f"<b>{row['date'].strftime('%A %#d %B %Y')}</b><br>"
                     f"<b>{row['title']}</b><br>"
-                    f"{row['artist']}<br>"
-                    f"<details><summary><b><u>Click here for Full Lineup</u></b></summary>{row['artists']}</details><br>"
+                    f"{row['artists']}<br>"
                 f'</div>'
             f'</div>'
         )
         if not grouped_data[key]:
-            grouped_data[key].append(f'<div style="width:800px; max-height:500px; overflow-y:auto;">')
+            grouped_data[key].append(f'<div style="width:900px; max-height:500px; overflow-y:auto;">')
             grouped_data[key].append(f"<b style='font-size:20px;'>{row['location']}</b><br><br>")
 
     grouped_data[key].append(popup_text)
@@ -168,7 +175,7 @@ function(cluster) {
         }
 
         popupContent = String(popupContent).replace(/\s+/g, ' ').trim(); // Normalize whitespace
-        var clickCount = (popupContent.match(/Click here for Full Lineup/gi) || []).length; // Case-insensitive search
+        var clickCount = (popupContent.match(/Event Image/gi) || []).length; // Case-insensitive search
 
         return sum + clickCount;
     }, 0);
@@ -205,18 +212,6 @@ for (lat, lon), events in grouped_data.items():
             text_color='black',
             inner_icon_style='font-size:12px;',number=len(events)-3)).add_to(marker_cluster)
 
-# Display Fullscreen Map
-st.markdown(
-    """
-    <style>
-        .fullScreenFrame {height: 85vh !important; width: 90vw !important;}
-        .block-container {padding-left: 10px; padding-right: 10px;} /* Removes side padding */
-        .st-emotion-cache-1kyxreq {padding: 0 !important;} /* Fixes extra margin */
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 
 
 # Replace folium_static with st_folium
@@ -224,13 +219,5 @@ st.markdown(
 folium_static(m, width=browser_width, height=700)
 
 
-
-
-
-# if st.session_state.is_mobile:
-#     folium_static(m, width=browser_width, height=750)
-
-# else:
-#     folium_static(m, width=1200, height=750)
 
 
