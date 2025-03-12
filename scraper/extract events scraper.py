@@ -5,7 +5,7 @@ import pandas as pd
 import time
 from fake_useragent import UserAgent
 import undetected_chromedriver as uc
-from date_transform import convert_dates, get_coordinates
+from util import convert_dates, get_coordinates
 from datetime import datetime
     
 def get_artist_events(artist_slug):

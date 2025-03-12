@@ -4,39 +4,6 @@ from geopy.exc import GeocoderTimedOut
 import time
 import requests
 
-day_mapping = {
-    "MAA": "Mon",
-    "DIN": "Tue",
-    "WOE": "Wed",
-    "DON": "Thu",
-    "VRI": "Fri",
-    "ZAT": "Sat",
-    "ZON": "Sun"
-}
-
-month_mapping = {
-    "JAN.": "Jan", "FEB.": "Feb", "MRT.": "Mar", "APR.": "Apr", "MEI": "May",
-    "JUN.": "Jun", "JUL.": "Jul", "AUG.": "Aug", "SEP.": "Sep", "OKT.": "Oct",
-    "NOV.": "Nov", "DEC.": "Dec"
-}
-
-# Function to parse dates
-def parse_dutch_date(date_str):
-    # Replace Dutch month abbreviations with English ones
-
-    for dutch_month, eng_month in month_mapping.items():
-        date_str = date_str.replace(dutch_month, eng_month)
-    
-    # Remove the day abbreviation (e.g., "VRI, ", "ZAT, ") for parsing
-    date_str = date_str.split(", ")[-1]
-
-    # Parse the date string
-    try:
-        # Try parsing with the year, if present
-        return datetime.strptime(date_str, "%d %b %Y")
-    except ValueError:
-        # If no year is present, assume the current year
-        return datetime.strptime(date_str + f" {datetime.now().year}", "%d %b %Y")
 
 # Convert all dates
 def convert_dates(dates):
@@ -96,4 +63,3 @@ def get_osm_coordinates(query):
         print(f"OSM Error: {e}")
         return (None, None)
 
-print(get_osm_coordinates("Dour Festival, Belgium"))
