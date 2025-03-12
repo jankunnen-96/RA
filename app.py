@@ -119,7 +119,7 @@ for _, row in filtered_data.iterrows():
     if browser_width<600:
         popup_text = (
             f'<div style="display: flex; align-items: center; background-color: #333;font-size:9px; color: white; padding: 0px; border-radius: 15px;">'
-                f'<div style="margin-right: 0px;">'
+                f'<div style="margin-right: 5px;">'
                     f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
                         f'<img src="{row["image"]}" alt="Event Image" style="width:130px; height:auto; border-radius: 5px;">'
                     f'</a>'
@@ -132,12 +132,12 @@ for _, row in filtered_data.iterrows():
             f'</div>'
         )
         if not grouped_data[key]:
-            grouped_data[key].append(f'<div style="width:350px; max-height:500px; overflow-y:auto;">')
+            grouped_data[key].append(f'<div style="width:{int(browser_width*.95)}px; max-height:500px; overflow-y:auto;">')
             grouped_data[key].append(f"<b style='font-size:16px;'>{row['location']}</b><br><br>")
     else:
         popup_text = (
             f'<div style="display: flex; align-items: center; background-color: #333;font-size:18px; color: white; padding: 0px; border-radius: 15px;">'
-                f'<div style="margin-right: 0px;">'
+                f'<div style="margin-right: 15px;">'
                     f'<a href="{row["image"]}" target="_blank">'  # Link to full-size image
                         f'<img src="{row["image"]}" alt="Event Image" style="width:230px; height:auto; border-radius: 5px;">'
                     f'</a>'
@@ -150,7 +150,7 @@ for _, row in filtered_data.iterrows():
             f'</div>'
         )
         if not grouped_data[key]:
-            grouped_data[key].append(f'<div style="width:900px; max-height:500px; overflow-y:auto;">')
+            grouped_data[key].append(f'<div style="width:{int(browser_width*.95)}px; max-height:500px; overflow-y:auto;">')
             grouped_data[key].append(f"<b style='font-size:20px;'>{row['location']}</b><br><br>")
 
     grouped_data[key].append(popup_text)
