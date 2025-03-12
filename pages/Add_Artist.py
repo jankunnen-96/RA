@@ -20,7 +20,7 @@ st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="M
 
 
 
-followed_artists =  list(pd.read_csv(r'get_artists\followed_profiles.csv')['name'])
+followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
 
 
 

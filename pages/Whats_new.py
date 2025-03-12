@@ -24,7 +24,7 @@ def load_data():
     return data.sort_values('date')
     
 events = load_data()
-followed_artists =  list(pd.read_csv(r'get_artists\followed_profiles.csv')['name'])
+followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
 
 
 
