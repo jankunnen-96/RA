@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd
 import re
 
+
+st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
+
 def highlight_names(text, names):
     for name in names:
         pattern = re.escape(name)  # Ensure special characters are treated properly
         text = re.sub(pattern, f'<span style="color:#74C365; font-weight:bold;">{name}</span>', text)
     return text
-
-
-
 
 
 @st.cache_data
@@ -27,7 +27,6 @@ events = load_data()
 followed_artists =  list(pd.read_csv(r'get_artists\followed_profiles.csv')['name'])
 
 
-st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
 
 
 st.markdown("""
