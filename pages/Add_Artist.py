@@ -77,8 +77,8 @@ st.markdown(
         }
         /* Reduce font sizes for smaller screens */
         .event-title { font-size: 12px !important; }  
-        .event-date { font-size: 8px !important; }
-        .event-artists { font-size: 6px !important; }
+        .event-date { font-size: 10px !important; }
+        .event-artists { font-size: 8px !important; }
     }
 
     </style>
