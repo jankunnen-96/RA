@@ -104,10 +104,10 @@ def find_events_artist(artist_name,id):
 
 
 def save_events_to_csv(event_list):
-    df = pd.DataFrame(event_list, columns=['artist','title','date','eventUrl','artists','venue_name','area_name','country_name','image'])
+    new_df = pd.DataFrame(event_list, columns=['artist','title','date','eventUrl','artists','venue_name','area_name','country_name','image'])
     # Load the CSV data into a DataFrame
-    df['location'] = np.where(~df['area_name'].isin(["North", "South", "East", "West", "All", "South East","South West","South + East","Central"]),
-        df['area_name'] + ', ' + df['country_name'],df['venue_name'] + ', ' + df['country_name'])
+    new_df['location'] = np.where(~new_df['area_name'].isin(["North", "South", "East", "West", "All", "South East","South West","South + East","Central"]),
+        new_df['area_name'] + ', ' + new_df['country_name'],new_df['venue_name'] + ', ' + new_df['country_name'])
 
     coord_file = "coordinates.json"
     if os.path.exists(coord_file):
@@ -130,6 +130,7 @@ def save_events_to_csv(event_list):
     new_df['latitude'], new_df['longitude'] = zip(*new_df['location'].map(coordinate_dict))
     new_df['date_added'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
+    csv_file = "events.csv"
     if os.path.exists(csv_file):
         existing_df = pd.read_csv(csv_file)
     else:
@@ -154,3 +155,4 @@ def get_events_followed_profiles():
 
     save_events_to_csv(event_list)
 
+get_events_followed_profiles()

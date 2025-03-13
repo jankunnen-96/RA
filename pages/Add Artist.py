@@ -19,11 +19,6 @@ def artist_input(artist_query):
 
 st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
 
-
-
-
-
-
 # Hide the default multipage navigation with CSS
 st.markdown(
     """
@@ -33,8 +28,6 @@ st.markdown(
     * {font-family: 'Poppins', sans-serif !important;}   
 
 
-    
-        [data-testid="stSidebarNav"] {display: none !important;}
         
 
         .event-container {
@@ -86,7 +79,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Add New Artist")
+st.title("Upcoming Events by Your DJ")
 
 artist_query = st_keyup(" ", debounce=100,key="artist_query")
 
@@ -102,32 +95,32 @@ for i, artist in enumerate(filtered_artists):
             if events ==None:
                 st.write(f' No event found for {artist}')
 
-    try:
-        for i in events:
-            image=i['images'][0]['filename'] if i['images'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
-            formatted_date=pd.to_datetime(i['date']).strftime('%A %d %B %Y')
-            location=f"{i['venue']['name']}, {i['venue']['area']['name']}, {i['venue']['area']['country']['name']}"
-            artist_string=highlight_names(' | '.join([j['name'] for j in i['artists']])) 
+try:
+    for i in events:
+        image=i['images'][0]['filename'] if i['images'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
+        formatted_date=pd.to_datetime(i['date']).strftime('%A %d %B %Y')
+        location=f"{i['venue']['name']}, {i['venue']['area']['name']}, {i['venue']['area']['country']['name']}"
+        artist_string=highlight_names(' | '.join([j['name'] for j in i['artists']])) 
 
-
-            st.markdown(
-                f"""
-                <div class="event-container">
-                    <div class="image-container">
-                        <img src="{image}" class="event-image">
-                    </div>
-                    <div class="details-container">
-                        <h4 class="event-date">{formatted_date}  |  {location}</h4>
-                        <h2 class="event-title">{i['title']}</h2>
-                        <p class="event-artists">{artist_string}</p>
-                    </div>
+        print(i['title'])
+        st.markdown(
+            f"""
+            <div class="event-container">
+                <div class="image-container">
+                    <img src="{image}" class="event-image">
                 </div>
-                """,
-                unsafe_allow_html=True
-            )
+                <div class="details-container">
+                    <h4 class="event-date">{formatted_date}  |  {location}</h4>
+                    <h2 class="event-title">{i['title']}</h2>
+                    <p class="event-artists">{artist_string}</p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
-    except:
-        pass
+except:
+    pass
                 
 if st.button('BACK', key=f"back"):
     st.switch_page("app.py")  # Return to the main page

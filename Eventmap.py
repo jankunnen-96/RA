@@ -84,16 +84,19 @@ selected_date_range = st.sidebar.slider(
     value=(min_date, max_date),
     format="YYYY-MM-DD")
 
-selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists)
+selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists) 
 
 
 
+    
 # Sidebar Button to Open New Page
-if st.sidebar.button("Add new artist"):
-    st.switch_page("pages/Add_Artist.py")  # Navigate to the new page
+if st.sidebar.button("Missing Your Favorite DJ?"):
+    st.switch_page("pages/Add Artist.py")  # Navigate to the new page
 
-if st.sidebar.button('Whats New?', key=f"back"):
-    st.switch_page("pages/Whats_new.py") 
+if st.sidebar.button('Show Events Last Added', key=f"back"):
+    st.switch_page("pages/Whats new.py") 
+
+print(st.session_state)
 
 start_date = pd.to_datetime(selected_date_range[0])
 end_date = pd.to_datetime(selected_date_range[1])

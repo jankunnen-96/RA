@@ -37,15 +37,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Hide the default multipage navigation with CSS
-st.markdown(
-    """
-    <style>
-        [data-testid="stSidebarNav"] {display: none !important;}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 
 
