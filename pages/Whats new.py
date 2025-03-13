@@ -123,6 +123,6 @@ for i, row in events.iterrows():
 
 
 if st.button('BACK', key=f"back"):
-    st.switch_page("app.py")  # Return to the main page
+    st.switch_page("Eventmap.py")  # Return to the main page
 
 
