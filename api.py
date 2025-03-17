@@ -136,7 +136,11 @@ def save_events_to_csv(event_list):
     else:
         existing_df = pd.DataFrame(columns=new_df.columns)
     
-    combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['artist', 'title', 'date'], keep='first')
+
+    combined_df  = new_df.merge(existing_df[['artist', 'title', 'date','date_added']], on=['artist', 'title', 'date'], how='left', suffixes=('', '_old'))
+    combined_df['date_added'] = combined_df['date_added_old'].combine_first(combined_df['date_added'])
+
+    combined_df.drop(columns=['date_added_old'], inplace=True)
     combined_df.to_csv(csv_file, index=False)
 
 
