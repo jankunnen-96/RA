@@ -3,6 +3,7 @@ from st_keyup import st_keyup
 from api import artist_suggestion,find_events_artist,save_events_to_csv
 import pandas as pd
 import re
+import datetime
 
 def highlight_names(text):
     followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
@@ -15,6 +16,14 @@ def highlight_names(text):
 def artist_input(artist_query):
     sug=artist_suggestion(artist_query)
     return sug
+
+
+
+# Function to log user inputs
+def log_input(user_input):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("user_inputs.log", "a") as file:
+        file.write(f"{timestamp} - {user_input}\n")
 
 
 st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
@@ -79,9 +88,13 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Upcoming Events by Your DJ")
+st.title("Search Upcoming Events by DJ")
 
-artist_query = st_keyup(" ", debounce=100,key="artist_query")
+
+
+
+artist_query = st_keyup('',placeholder="Artist", debounce=100,key="artist_query")
+
 
 if artist_query:
     filtered_artists = artist_input(artist_query)
@@ -92,6 +105,7 @@ for i, artist in enumerate(filtered_artists):
     with cols[i]:
         if st.button(artist, key=f"artist_{artist}"):
             events=find_events_artist(artist,filtered_artists[artist])['data']['listing']['data']
+            log_input(' - '.join((artist,filtered_artists[artist])))
             if events ==None:
                 st.write(f' No event found for {artist}')
 

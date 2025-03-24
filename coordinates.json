@@ -894,5 +894,61 @@
     "TBA - La Estacion Indoor, Cordoba, Argentina": [
         -31.4166867,
         -64.1834193
+    ],
+    "Sofia, Bulgaria": [
+        42.6977028,
+        23.3217359
+    ],
+    "Sicily, Italy": [
+        37.587794,
+        14.155048
+    ],
+    "Bilbao, Spain": [
+        43.2630018,
+        -2.9350039
+    ],
+    "Nantes, France": [
+        47.2186371,
+        -1.5541362
+    ],
+    "FOMO, Azerbaijan": [
+        40.3755885,
+        49.8328009
+    ],
+    "TBA - Secret Central Milton Keynes Location, United Kingdom": [
+        52.0406502,
+        -0.7594092
+    ],
+    "Spoorzone, Netherlands": [
+        52.003484099999994,
+        4.357489380757095
+    ],
+    "Freiburg, Germany": [
+        47.9960901,
+        7.8494005
+    ],
+    "Sheffield, United Kingdom": [
+        53.3806626,
+        -1.4702278
+    ],
+    "Newcastle, United Kingdom": [
+        54.9738474,
+        -1.6131572
+    ],
+    "Les Ar\u00e8nes de N\u00eemes / Amphitheatre of N\u00eemes, France": [
+        43.8374249,
+        4.3600687
+    ],
+    "Hanoi, Vietnam": [
+        21.0283334,
+        105.854041
+    ],
+    "Masseria Capece, Italy": [
+        40.650847049999996,
+        15.574857642676768
+    ],
+    "French Riviera, France": [
+        43.9525507,
+        7.479428251496097
     ]
 }

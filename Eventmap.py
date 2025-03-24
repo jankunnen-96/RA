@@ -86,6 +86,7 @@ selected_date_range = st.sidebar.slider(
 
 selected_artists = st.sidebar.multiselect("Filter Artist", unique_artists) 
 
+only_show_new = st.sidebar.checkbox("Only Show New", value=False)
 
 
     
@@ -103,6 +104,8 @@ end_date = pd.to_datetime(selected_date_range[1])
 # Apply Filters
 filtered_data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
 
+if only_show_new:
+    filtered_data=data[data['date_added']==max(data['date_added'])]
 
 
 if selected_artists:
