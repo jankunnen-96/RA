@@ -96,7 +96,7 @@ if st.sidebar.button("Missing Your Favorite DJ?"):
     st.switch_page("pages/Add Artist.py")  # Navigate to the new page
 
 if st.sidebar.button('Whats going on in my city?'):
-    st.switch_page("pages/Whats in my city.py") 
+    st.switch_page("pages/What's in my city.py") 
 
 if st.sidebar.button('Show Events Last Added'):
     st.switch_page("pages/Whats new.py") 
