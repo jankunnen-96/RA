@@ -6,7 +6,7 @@ from streamlit_folium import st_folium,folium_static
 from collections import defaultdict
 from streamlit_javascript import st_javascript
 from user_agents import parse
-from api import artist_suggestion,find_events_artist,save_events_to_csv
+from api import suggestion,find_events_artist,save_events_to_csv
 import re 
 from dateutil.relativedelta import relativedelta
 
@@ -48,16 +48,17 @@ st.markdown("""
 def load_data():
     data = pd.read_csv('events.csv')
     data['date'] = pd.to_datetime(data['date'])
+    data['date_added'] = pd.to_datetime(data['date_added'])
 
-    column_to_merge = 'artist'
     unique_artists = data['artist'].unique()
-    # Merge duplicate rows except for the artist column
-    data = data.groupby(data.columns.difference([column_to_merge]).tolist(), as_index=False)[column_to_merge].agg(' | '.join)
+    # Merge duplicate rows, combining artists and keeping the latest date_added
+    data = data.groupby(data.columns.difference(['artist', 'date_added']).tolist(), as_index=False).agg({
+        'artist': ' | '.join,
+        'date_added': 'max'
+    })
     data['artists']=[highlight_names(i) for i in data['artists'].replace('_'," | ")]
     return data.sort_values('date'),unique_artists
 
-
-    
 data,unique_artists = load_data()
 
 # Get min/max datesv
@@ -94,7 +95,10 @@ only_show_new = st.sidebar.checkbox("Only Show New", value=False)
 if st.sidebar.button("Missing Your Favorite DJ?"):
     st.switch_page("pages/Add Artist.py")  # Navigate to the new page
 
-if st.sidebar.button('Show Events Last Added', key=f"back"):
+if st.sidebar.button('Whats going on in my city?'):
+    st.switch_page("pages/Whats in my city.py") 
+
+if st.sidebar.button('Show Events Last Added'):
     st.switch_page("pages/Whats new.py") 
 
 print(st.session_state)

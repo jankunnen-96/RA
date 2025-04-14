@@ -6,9 +6,19 @@ from util import get_coordinates
 import os
 import json
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timedelta
 
-def artist_suggestion(search_term):
+def suggestion(search_term,index):
+    """
+    Search for artist suggestions using the RA GraphQL API.
+    
+    Args:
+        search_term (str): The search term to find matching artists
+        index (str): The type of search index to use (currently only "AREA" is used)
+    
+    Returns:
+        dict: Dictionary mapping artist names to their IDs for the top 3 matches
+    """
     url = "https://ra.co/graphql"
 
     payload = json.dumps({
@@ -37,7 +47,7 @@ def artist_suggestion(search_term):
         }""",
         "variables": {
             "searchTerm": search_term,
-            "indices": ["ARTIST"]
+            "indices": [index]
         }
     })
     headers = {
@@ -56,7 +66,18 @@ def artist_suggestion(search_term):
 
 
 def find_events_artist(artist_name,id):
+    """
+    Find upcoming events for a specific artist using the RA GraphQL API.
+    
+    Args:
+        artist_name (str): Name of the artist to search for
+        id (str): The RA artist ID
+    
+    Returns:
+        dict: JSON response containing event data from the RA API
+    """
     url = "https://ra.co/graphql"
+    yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
     payload = json.dumps({
     "query": "query GET_DEFAULT_EVENTS_LISTING($indices: [IndexType!], $aggregations: [ListingAggregationType!], $filters: [FilterInput], $pageSize: Int, $page: Int, $sortField: FilterSortFieldType, $sortOrder: FilterSortOrderType, $baseFilters: [FilterInput]) {\n  listing(\n    indices: $indices\n    aggregations: []\n    filters: $filters\n    pageSize: $pageSize\n    page: $page\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    data {\n      ...eventFragment\n      __typename\n    }\n    totalResults\n    __typename\n  }\n  aggregations: listing(\n    indices: $indices\n    aggregations: $aggregations\n    filters: $baseFilters\n    pageSize: 0\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    aggregations {\n      type\n      values {\n        value\n        name\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment eventFragment on Event {\n  id\n  title\n date\n  contentUrl\n   images {\n   filename\n  }\n  artists {\n    name\n  }\n  venue {\n     name\n    contentUrl\n   area {\n    name\n        country {\n   name\n     }\n     }\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  __typename\n}\n",
     "variables": {
@@ -71,7 +92,7 @@ def find_events_artist(artist_name,id):
         },
         {
         "type": "DATERANGE",
-        "value": "{\"gte\":\"2025-02-20T13:41:00.000Z\"}"
+        "value": f"{{\"gte\":\"{yesterday}\"}}"
         }
     ],
     "baseFilters": [
@@ -81,7 +102,7 @@ def find_events_artist(artist_name,id):
         },
         {
         "type": "DATERANGE",
-        "value": "{\"gte\":\"2025-02-20T13:41:00.000Z\"}"
+        "value": f"{{\"gte\":\"{yesterday}\"}}"
         }
     ],
     "sortField": "DATE",
@@ -103,7 +124,86 @@ def find_events_artist(artist_name,id):
 
 
 
+def find_events_area(area,id):
+    """
+    Find upcoming events for a specific artist using the RA GraphQL API.
+    
+    Args:
+        artist_name (str): Name of the artist to search for
+        id (str): The RA artist ID
+    
+    Returns:
+        dict: JSON response containing event data from the RA API
+    """
+
+    url = "https://ra.co/graphql"
+#todo make date dynamic
+    yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    payload = json.dumps({
+    "operationName": "GET_EVENT_LISTINGS",
+    "variables": {
+        "filters": {
+        "areas": {
+            "eq": int(id)
+        },
+        "listingDate": {
+            "gte": yesterday
+        }
+        },
+        "filterOptions": {
+        "genre": True,
+        "eventType": True
+        },
+        "pageSize": 60,
+        "page": 1,
+        "sort": {
+        "listingDate": {
+            "order": "ASCENDING"
+        },
+        "score": {
+            "order": "DESCENDING"
+        },
+        "titleKeyword": {
+            "order": "ASCENDING"
+        }
+        }
+    },
+    "query": "query GET_EVENT_LISTINGS($filters: FilterInputDtoInput, $filterOptions: FilterOptionsInputDtoInput, $page: Int, $pageSize: Int, $sort: SortInputDtoInput) {\n  eventListings(\n    filters: $filters\n    filterOptions: $filterOptions\n    pageSize: $pageSize\n    page: $page\n    sort: $sort\n  ) {\n    data {\n      id\n      listingDate\n      event {\n        ...eventListingsFields\n        __typename\n      }\n      __typename\n    }\n    filterOptions {\n      genre {\n        label\n        value\n        count\n        __typename\n      }\n      eventType {\n        value\n        count\n        __typename\n      }\n      location {\n        value {\n          from\n          to\n          __typename\n        }\n        count\n        __typename\n      }\n      __typename\n    }\n    totalResults\n    __typename\n  }\n}\n\nfragment eventListingsFields on Event {\n  id\n  date\n  startTime\n  endTime\n  title\n  contentUrl\n  flyerFront\n  isTicketed\n  interestedCount\n  isSaved\n  isInterested\n  queueItEnabled\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    __typename\n  }\n  promoters {\n    id\n    __typename\n  }\n  artists {\n    id\n    name\n    __typename\n  }\n  tickets(queryType: AVAILABLE) {\n    validType\n    onSaleFrom\n    onSaleUntil\n    __typename\n  }\n  __typename\n}\n"
+    })
+    headers = {
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0'
+    }
+
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+
+    return json.loads(response.text)  
+
+
+
+
+
+
+
+
+
+
 def save_events_to_csv(event_list):
+    """
+    Save event data to a CSV file, handling coordinate lookup and deduplication.
+    
+    Args:
+        event_list (list): List of event data tuples containing:
+            [artist, title, date, eventUrl, artists, venue_name, area_name, country_name, image]
+    
+    The function:
+    1. Creates a DataFrame from the event list
+    2. Handles location coordinate lookup and caching
+    3. Deduplicates events based on artist, title, and date
+    4. Saves the combined data to events.csv
+    """
     new_df = pd.DataFrame(event_list, columns=['artist','title','date','eventUrl','artists','venue_name','area_name','country_name','image'])
     # Load the CSV data into a DataFrame
     new_df['location'] = np.where(~new_df['area_name'].isin(["North", "South", "East", "West", "All", "South East","South West","South + East","Central"]),
@@ -145,6 +245,13 @@ def save_events_to_csv(event_list):
 
 
 def get_events_followed_profiles():
+    """
+    Fetch events for all artists in the followed_profiles.csv file.
+    
+    Reads the followed profiles CSV, fetches events for each artist,
+    and saves the results using save_events_to_csv().
+    Prints a message if no events are found for an artist.
+    """
     event_list = []
     artists =  pd.read_csv(r'get_artists\followed_profiles.csv')
     for artist in artists.iterrows():
@@ -158,3 +265,50 @@ def get_events_followed_profiles():
     print(event_list)
 
     save_events_to_csv(event_list)
+
+# url = "https://ra.co/graphql"
+# payload = json.dumps({
+# "query": "query GET_DEFAULT_EVENTS_LISTING($indices: [IndexType!], $aggregations: [ListingAggregationType!], $filters: [FilterInput], $pageSize: Int, $page: Int, $sortField: FilterSortFieldType, $sortOrder: FilterSortOrderType, $baseFilters: [FilterInput]) {\n  listing(\n    indices: $indices\n    aggregations: []\n    filters: $filters\n    pageSize: $pageSize\n    page: $page\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    data {\n      ...eventFragment\n      __typename\n    }\n    totalResults\n    __typename\n  }\n  aggregations: listing(\n    indices: $indices\n    aggregations: $aggregations\n    filters: $baseFilters\n    pageSize: 0\n    sortField: $sortField\n    sortOrder: $sortOrder\n  ) {\n    aggregations {\n      type\n      values {\n        value\n        name\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment eventFragment on Event {\n  id\n  title\n date\n  contentUrl\n   images {\n   filename\n  }\n  artists {\n    name\n  }\n  venue {\n     name\n    contentUrl\n   area {\n    name\n        country {\n   name\n     }\n     }\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  __typename\n}\n",
+# "variables": {
+# "indices": ["EVENT"],
+# "pageSize": 30,
+# "page": 1,
+# "aggregations": [],
+# "filters": [
+#     {
+#     "type": "AREA",
+#     "value": str(404)
+#     },
+#     {
+#     "type": "DATERANGE",
+#     "value": "{\"gte\":\"2025-03-20T13:41:00.000Z\"}"
+#     }
+# ],
+# "baseFilters": [
+#     {
+#     "type": "AREA",
+#     "value": str(404)
+#     },
+#     {
+#     "type": "DATERANGE",
+#     "value": "{\"gte\":\"2025-03-20T13:41:00.000Z\"}"
+#     }
+# ],
+# "sortField": "DATE",
+# "sortOrder": "ASCENDING"
+# }
+# })
+
+
+# headers = {
+# 'Content-Type': 'application/json',
+# 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0'
+# }
+
+# response = requests.request("POST", url, headers=headers, data=payload)
+
+# print(json.loads(response.text))  
+
+
+
+# {"operationName":"GET_EVENT_LISTINGS","variables":{"filters":{"areas":{"eq":404},"listingDate":{"gte":"2025-03-25"}},"filterOptions":{"genre":true,"eventType":true},"pageSize":20,"page":1,"sort":{"listingDate":{"order":"ASCENDING"},"score":{"order":"DESCENDING"},"titleKeyword":{"order":"ASCENDING"}}},"query":"query GET_EVENT_LISTINGS($filters: FilterInputDtoInput, $filterOptions: FilterOptionsInputDtoInput, $page: Int, $pageSize: Int, $sort: SortInputDtoInput) {\n  eventListings(\n    filters: $filters\n    filterOptions: $filterOptions\n    pageSize: $pageSize\n    page: $page\n    sort: $sort\n  ) {\n    data {\n      id\n      listingDate\n      event {\n        ...eventListingsFields\n        __typename\n      }\n      __typename\n    }\n    filterOptions {\n      genre {\n        label\n        value\n        count\n        __typename\n      }\n      eventType {\n        value\n        count\n        __typename\n      }\n      location {\n        value {\n          from\n          to\n          __typename\n        }\n        count\n        __typename\n      }\n      __typename\n    }\n    totalResults\n    __typename\n  }\n}\n\nfragment eventListingsFields on Event {\n  id\n  date\n  startTime\n  endTime\n  title\n  contentUrl\n  flyerFront\n  isTicketed\n  interestedCount\n  isSaved\n  isInterested\n  queueItEnabled\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    __typename\n  }\n  promoters {\n    id\n    __typename\n  }\n  artists {\n    id\n    name\n    __typename\n  }\n  tickets(queryType: AVAILABLE) {\n    validType\n    onSaleFrom\n    onSaleUntil\n    __typename\n  }\n  __typename\n}\n"}

@@ -9,7 +9,22 @@
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "internalConsole"
+        },
+
+        {
+            "name": "Python:Streamlit",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                 "run",
+                 "Eventmap.py",
+                 "--server.port",
+                 "8501"
+            ]
         }
     ]
 }
+
+
