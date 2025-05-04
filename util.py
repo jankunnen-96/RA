@@ -33,9 +33,46 @@ def get_coordinates(location):
         # Retry once after a small delay if a timeout occurs
         time.sleep(1)
         return get_coordinates(location)
+    
     except Exception as e:
         print(f"Error fetching coordinates for {location}: {e}")
         return None, None
+
+
+def get_coordinates_opencage(location):
+    """
+    Uses the OpenCage Geocoder API to convert a location string to coordinates.
+    API key must be set in the OPENCAGE_API_KEY environment variable.
+    Returns a (latitude, longitude) tuple.
+    """
+    api_key = '8436072271a64854b3b70361b3d78e70'
+    if not api_key:
+        raise ValueError("Missing OPENCAGE_API_KEY environment variable")
+
+    try:
+        url = "https://api.opencagedata.com/geocode/v1/json"
+        params = {
+            "q": location,
+            "key": api_key,
+            "limit": 1,
+        }
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+
+        data = response.json()
+        results = data.get("results", [])
+        if results:
+            lat = results[0]["geometry"]["lat"]
+            lng = results[0]["geometry"]["lng"]
+            return (lat, lng)
+        else:
+            print(f"No results found for: {location}")
+            return (None, None)
+
+    except Exception as e:
+        print(f"Error during geocoding: {e}")
+        return (None, None)
+
 
 
 
