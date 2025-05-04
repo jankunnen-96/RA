@@ -98,7 +98,7 @@ if st.sidebar.button("Missing Your Favorite DJ?"):
 if st.sidebar.button('Whats going on in my city?'):
     st.switch_page("pages/What's in my city.py") 
 
-if st.sidebar.button('Show Events Last Added'):
+if st.sidebar.button('Show Recently Added Events'):
     st.switch_page("pages/Whats new.py") 
 
 print(st.session_state)

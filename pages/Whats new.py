@@ -94,7 +94,7 @@ st.markdown(
 
 st.title("Whats New")
 events = load_data()
-
+events = events[events['date'] >= pd.Timestamp.today()]
 
 for i, row in events.iterrows():
     image = row['image'] if row['image'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
