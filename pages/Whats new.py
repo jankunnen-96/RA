@@ -21,6 +21,10 @@ def load_data():
     # Merge duplicate rows except for the artist column
     data = data.groupby(data.columns.difference([column_to_merge]).tolist(), as_index=False)[column_to_merge].agg(' | '.join)
     data['artists']=data['artists'].str.replace('_'," | ")
+
+
+    data = data[data['date'] >= pd.Timestamp.today()]
+
     return data.sort_values('date')
     
 events = load_data()
@@ -94,7 +98,6 @@ st.markdown(
 
 st.title("Whats New")
 events = load_data()
-events = events[events['date'] >= pd.Timestamp.today()]
 
 for i, row in events.iterrows():
     image = row['image'] if row['image'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'

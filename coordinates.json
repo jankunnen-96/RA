@@ -1433,5 +1433,70 @@
         56.1496278,
         10.2134046,
         false
+    ],
+    "Evenementenstrand, Belgium": [
+        51.3433866,
+        3.2884738,
+        false
+    ],
+    "Salle des Bourdaines, France": [
+        43.68866,
+        -1.37328,
+        false
+    ],
+    "Shanghai, China": [
+        31.2312707,
+        121.4700152,
+        false
+    ],
+    "Vermont, United States of America": [
+        44.5990718,
+        -72.5002608,
+        false
+    ],
+    "Marmande, France": [
+        44.5007939,
+        0.164274,
+        false
+    ],
+    "Philadelphia, United States of America": [
+        39.9527237,
+        -75.1635262,
+        false
+    ],
+    "777 Years Wartensee Castle, Switzerland": [
+        47.4716607,
+        9.5307941,
+        false
+    ],
+    "Bootleg Social, United Kingdom": [
+        53.819385,
+        -3.0500877,
+        false
+    ],
+    "TBA -  \u00d3pera de Arme, Curitiba, Brazil": [
+        -25.4295963,
+        -49.2712724,
+        false
+    ],
+    "Club Phoenix - Gianpula Village, Malta": [
+        35.8885993,
+        14.4476911,
+        false
+    ],
+    "Ankara, Turkey": [
+        39.9207759,
+        32.8540497,
+        false
+    ],
+    "Kyverneio, Greece": [
+        41.13805,
+        24.8864089,
+        false
+    ],
+    "Lilly\u2019s Club Monaco, Monaco": [
+        43.7323492,
+        7.4276832,
+        false
     ]
 }
