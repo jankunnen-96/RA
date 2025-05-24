@@ -1498,5 +1498,75 @@
         43.7323492,
         7.4276832,
         false
+    ],
+    "TBA - Port of Belgrade, Serbia": [
+        44.0243229,
+        21.0765743,
+        true
+    ],
+    "Mykonos, Greece": [
+        37.4513936,
+        25.3923149,
+        false
+    ],
+    "Shenzhen, China": [
+        22.5445741,
+        114.0545429,
+        false
+    ],
+    "Vanduo Marse, Lithuania": [
+        54.9909118,
+        23.8619588,
+        false
+    ],
+    "Canary Islands, Spain": [
+        28.2863989,
+        -16.7960118,
+        false
+    ],
+    "Yuc\u00e1tan, Mexico": [
+        20.6845957,
+        -88.8755669,
+        false
+    ],
+    "Baja California Sur, Mexico": [
+        25.5818014,
+        -111.5706164,
+        false
+    ],
+    "Cork, Ireland": [
+        51.8985136,
+        -8.4726423,
+        false
+    ],
+    "Texas, United States of America": [
+        31.2638905,
+        -98.5456116,
+        false
+    ],
+    "Wellington, New Zealand": [
+        -41.2887953,
+        174.7772114,
+        false
+    ],
+    "The Georgian Theatre, United Kingdom": [
+        54.5645202,
+        -1.3118893,
+        false
+    ],
+    "Wroclaw, Poland": [
+        51.1089776,
+        17.0326689,
+        false
+    ],
+    "TBA, Greece": [
+        38.9953683,
+        21.9877132,
+        true
+    ],
+    "Lake View Locarno, Switzerland": [
+        46.7985624,
+        8.2319736,
+        true
     ]
 }
