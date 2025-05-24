@@ -1,0 +1,3 @@
+from api import get_events_followed_profiles
+
+get_events_followed_profiles()

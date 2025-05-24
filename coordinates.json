@@ -1,838 +1,1572 @@
 {
     "Medellin, Colombia": [
         6.269732449999999,
-        -75.60255965090315
+        -75.60255965090315,
+        false
     ],
     "Mumbai, India": [
         19.054999,
-        72.8692035
+        72.8692035,
+        false
     ],
     "London, United Kingdom": [
         51.5074456,
-        -0.1277653
+        -0.1277653,
+        false
     ],
     "Berlin, Germany": [
         52.510885,
-        13.3989367
+        13.3989367,
+        false
     ],
     "San Jose, United States of America": [
         37.3361663,
-        -121.890591
+        -121.890591,
+        false
     ],
     "Rio de Janeiro, Brazil": [
         -22.9110137,
-        -43.2093727
+        -43.2093727,
+        false
     ],
     "Istanbul, Turkey": [
         41.006381,
-        28.9758715
+        28.9758715,
+        false
     ],
     "Bali, Indonesia": [
         -8.2271303,
-        115.1919203
+        115.1919203,
+        false
     ],
     "Sydney, Australia": [
         -33.8698439,
-        151.2082848
+        151.2082848,
+        false
     ],
     "Melbourne, Australia": [
         -37.8142454,
-        144.9631732
+        144.9631732,
+        false
     ],
     "Buenos Aires, Argentina": [
         -34.6083696,
-        -58.4440583
+        -58.4440583,
+        false
     ],
     "New York City, United States of America": [
         40.7127281,
-        -74.0060152
+        -74.0060152,
+        false
     ],
     "Chicago, United States of America": [
         41.8755616,
-        -87.6244212
+        -87.6244212,
+        false
     ],
     "Ibiza, Spain": [
         38.974390099999994,
-        1.4197463178515335
+        1.4197463178515335,
+        false
     ],
     "Barcelona, Spain": [
         41.3828939,
-        2.1774322
+        2.1774322,
+        false
     ],
     "Lisbon, Portugal": [
         38.7077507,
-        -9.1365919
+        -9.1365919,
+        false
     ],
     "Turin, Italy": [
         45.0677551,
-        7.6824892
+        7.6824892,
+        false
     ],
     "Midlands, United Kingdom": [
         52.505432,
-        -1.9646781758425385
+        -1.9646781758425385,
+        false
     ],
     "Lac De Montendre, France": [
         45.2710299,
-        -0.39555819149446386
+        -0.39555819149446386,
+        false
     ],
     "Rome, Italy": [
         41.8933203,
-        12.4829321
+        12.4829321,
+        false
     ],
     "Eindhoven, Netherlands": [
         51.4392648,
-        5.478633
+        5.478633,
+        false
     ],
     "Belgrade, Serbia": [
         44.8178131,
-        20.4568974
+        20.4568974,
+        false
     ],
     "Madrid, Spain": [
         40.4167047,
-        -3.7035825
+        -3.7035825,
+        false
     ],
     "Munich, Germany": [
         48.1371079,
-        11.5753822
+        11.5753822,
+        false
     ],
     "Prague, Czech Republic": [
         50.0596288,
-        14.446459273258009
+        14.446459273258009,
+        false
     ],
     "Bronze Beach, Netherlands": [
         52.4050157,
-        4.5448128
+        4.5448128,
+        false
     ],
     "Mexico City, Mexico": [
         19.4326296,
-        -99.1331785
+        -99.1331785,
+        false
     ],
     "Miami, United States of America": [
         25.7741728,
-        -80.19362
+        -80.19362,
+        false
     ],
     "M\u00fcnster, Germany": [
         51.9625101,
-        7.6251879
+        7.6251879,
+        false
     ],
     "Edinburgh, United Kingdom": [
         55.9533456,
-        -3.1883749
+        -3.1883749,
+        false
     ],
     "Amsterdam, Netherlands": [
         52.3730796,
-        4.8924534
+        4.8924534,
+        false
     ],
     "Utrecht, Netherlands": [
         52.0907006,
-        5.1215634
+        5.1215634,
+        false
     ],
     "Copenhagen, Denmark": [
         55.6867243,
-        12.5700724
+        12.5700724,
+        false
     ],
     "Dortmund / Essen, Germany": [
         51.4549925,
-        7.0214361
+        7.0214361,
+        false
     ],
     "Bavaria, Germany": [
         48.9467562,
-        11.4038717
+        11.4038717,
+        false
     ],
     "Hannover, Germany": [
         52.3744779,
-        9.7385532
+        9.7385532,
+        false
     ],
     "The Hague, Netherlands": [
         52.07494555,
-        4.2696802205364515
+        4.2696802205364515,
+        false
     ],
     "Leipzig, Germany": [
         51.3406321,
-        12.3747329
+        12.3747329,
+        false
     ],
     "Zrce Beach, Croatia": [
         44.53924205,
-        14.914611112838296
+        14.914611112838296,
+        false
     ],
     "Hamburg, Germany": [
         53.550341,
-        10.000654
+        10.000654,
+        false
     ],
     "Antwerp, Belgium": [
         51.2211097,
-        4.3997081
+        4.3997081,
+        false
     ],
     "Stuttgart, Germany": [
         48.7784485,
-        9.1800132
+        9.1800132,
+        false
     ],
     "Mannheim, Germany": [
         49.4892913,
-        8.4673098
+        8.4673098,
+        false
     ],
     "Lyon, France": [
         45.7578137,
-        4.8320114
+        4.8320114,
+        false
     ],
     "Be Mine, Belgium": [
         51.0684671624652,
-        5.223936318362567
+        5.223936318362567,
+        false
     ],
     "Zeefgebouw, Netherlands": [
         53.2103879,
-        6.5375171189710795
+        6.5375171189710795,
+        false
     ],
     "Leeds, United Kingdom": [
         53.7974185,
-        -1.5437941
+        -1.5437941,
+        false
     ],
     "Nijmegen, Netherlands": [
         51.8474946,
-        5.8637771
+        5.8637771,
+        false
     ],
     "Kelchterhoef, Belgium": [
         51.0337546,
-        5.4171754
+        5.4171754,
+        false
     ],
     "Paris, France": [
         48.8588897,
-        2.3200410217200766
+        2.3200410217200766,
+        false
     ],
     "Stroombroek, Braamt, Netherlands": [
         51.935753000000005,
-        6.26779898944779
+        6.26779898944779,
+        false
     ],
     "Beekse Bergen, Netherlands": [
         51.52925999282132,
-        5.126089981429852
+        5.126089981429852,
+        false
     ],
     "The Garden Tisno, Croatia": [
         43.8000969,
-        15.6571124
+        15.6571124,
+        false
     ],
     "Manchester, United Kingdom": [
         53.4794892,
-        -2.2451148
+        -2.2451148,
+        false
     ],
     "Vliegbasis Twenthe, Netherlands": [
         52.2654862,
-        6.897014
+        6.897014,
+        false
     ],
     "Marseille, France": [
         43.2961743,
-        5.3699525
+        5.3699525,
+        false
     ],
     "Kobetamendi, Spain": [
         43.2583792,
-        -2.963528953155195
+        -2.963528953155195,
+        false
     ],
     "Helsinki, Finland": [
         60.1674881,
-        24.9427473
+        24.9427473,
+        false
     ],
     "Belfast, United Kingdom": [
         54.596391,
-        -5.9301829
+        -5.9301829,
+        false
     ],
     "Cape Town, South Africa": [
         -33.9288301,
-        18.4172197
+        18.4172197,
+        false
     ],
     "Atlanta, United States of America": [
         33.7489924,
-        -84.3902644
+        -84.3902644,
+        false
     ],
     "Dubai, United Arab Emirates": [
         25.074282349999997,
-        55.18853865430702
+        55.18853865430702,
+        false
     ],
     "Bogot\u00e1, Colombia": [
         4.711011,
-        -74.0720917
+        -74.0720917,
+        false
     ],
     "Brighton, United Kingdom": [
         50.8214626,
-        -0.1400561
+        -0.1400561,
+        false
     ],
     "La Sirene, France": [
         48.00649575,
-        0.19872736626928048
+        0.19872736626928048,
+        false
     ],
     "Montevideo, Uruguay": [
         -34.9058916,
-        -56.1913095
+        -56.1913095,
+        false
     ],
     "Detroit, United States of America": [
         42.3315509,
-        -83.0466403
+        -83.0466403,
+        false
     ],
     "B\u0142onia \u0141\u00f3dzkie, Poland": [
         52.0169028,
-        19.4708702
+        19.4708702,
+        false
     ],
     "Forte Santiago da Barra, Portugal": [
         41.6890726,
-        -8.838219329515304
+        -8.838219329515304,
+        false
     ],
     "Le Touquet-Paris-Plage, France": [
         50.5211202,
-        1.5909325
+        1.5909325,
+        false
     ],
     "Athens, Greece": [
         37.9755648,
-        23.7348324
+        23.7348324,
+        false
     ],
     "San Diego, United States of America": [
         32.7174202,
-        -117.162772
+        -117.162772,
+        false
     ],
     "Heidelberg, Germany": [
         49.4093582,
-        8.694724
+        8.694724,
+        false
     ],
     "Karlsruhe, Germany": [
         49.0068705,
-        8.4034195
+        8.4034195,
+        false
     ],
     "Rotterdam, Netherlands": [
         51.9244424,
-        4.47775
+        4.47775,
+        false
     ],
     "Complex Maastricht, Netherlands": [
         50.8522573,
-        5.6976653
+        5.6976653,
+        false
     ],
     "North Rhine-Westphalia, Germany": [
         51.4789205,
-        7.5543751
+        7.5543751,
+        false
     ],
     "Brussels, Belgium": [
         50.8465573,
-        4.351697
+        4.351697,
+        false
     ],
     "Porto, Portugal": [
         41.1494512,
-        -8.6107884
+        -8.6107884,
+        false
     ],
     "Mecklenburg-Vorpommern, Germany": [
         53.7735064,
-        12.5755471
+        12.5755471,
+        false
     ],
     "Bielefeld, Germany": [
         52.0191005,
-        8.531007
+        8.531007,
+        false
     ],
     "Basel, Switzerland": [
         47.5581077,
-        7.5878261
+        7.5878261,
+        false
     ],
     "Dublin, Ireland": [
         53.3493795,
-        -6.2605593
+        -6.2605593,
+        false
     ],
     "Glasgow, United Kingdom": [
         55.861155,
-        -4.2501687
+        -4.2501687,
+        false
     ],
     "Cologne, Germany": [
         50.938361,
-        6.959974
+        6.959974,
+        false
     ],
     "Universiteit Enschede, Netherlands": [
         52.24332675,
-        6.850915739203856
+        6.850915739203856,
+        false
     ],
     "UNO MALTA, Malta": [
         35.8885993,
-        14.4476911
+        14.4476911,
+        false
     ],
     "Los Angeles, United States of America": [
         34.0536909,
-        -118.242766
+        -118.242766,
+        false
     ],
     "Vilnius, Lithuania": [
         54.6870458,
-        25.2829111
+        25.2829111,
+        false
     ],
     "Canberra, Australia": [
         -35.2975906,
-        149.1012676
+        149.1012676,
+        false
     ],
     "Frankfurt, Germany": [
         50.1106444,
-        8.6820917
+        8.6820917,
+        false
     ],
     "Sao Paulo, Brazil": [
         -23.5506507,
-        -46.6333824
+        -46.6333824,
+        false
     ],
     "Geusseltpark, Maastricht, Netherlands": [
         50.8581181,
-        5.7197368
+        5.7197368,
+        false
     ],
     "MTP Poznan, Poland": [
         52.47137035,
-        16.791630787243882
+        16.791630787243882,
+        false
     ],
     "Warsaw, Poland": [
         52.2337172,
-        21.071432235636493
+        21.071432235636493,
+        false
     ],
     "Ljubljana, Slovenia": [
         46.0500268,
-        14.5069289
+        14.5069289,
+        false
     ],
     "Zagreb, Croatia": [
         45.8130967,
-        15.9772795
+        15.9772795,
+        false
     ],
     "Cardiff, United Kingdom": [
         51.4816546,
-        -3.1791934
+        -3.1791934,
+        false
     ],
     "Montreal, Canada": [
         45.5031824,
-        -73.5698065
+        -73.5698065,
+        false
     ],
     "Bordeaux, France": [
         44.841225,
-        -0.5800364
+        -0.5800364,
+        false
     ],
     "Neushoorn, Netherlands": [
         53.2005593,
-        5.7902345
+        5.7902345,
+        false
     ],
     "Lijm & Cultuur, Netherlands": [
         51.99616205,
-        4.369146234568248
+        4.369146234568248,
+        false
     ],
     "Bristol, United Kingdom": [
         51.4538022,
-        -2.5972985
+        -2.5972985,
+        false
     ],
     "Nottingham, United Kingdom": [
         52.9534193,
-        -1.1496461
+        -1.1496461,
+        false
     ],
     "\u2018T Zoet Breda, Netherlands": [
         51.5947343,
-        4.7642523951082225
+        4.7642523951082225,
+        false
     ],
     "Airport Trencin, Slovakia": [
         48.86651275,
-        18.00611620481591
+        18.00611620481591,
+        false
     ],
     "Bucharest, Romania": [
         44.4361414,
-        26.1027202
+        26.1027202,
+        false
     ],
     "Tokyo, Japan": [
         35.6768601,
-        139.7638947
+        139.7638947,
+        false
     ],
     "Kyushu, Japan": [
         32.48214205,
-        131.10089656440624
+        131.10089656440624,
+        false
     ],
     "Chubu, Japan": [
         36.586766,
-        137.34392238081682
+        137.34392238081682,
+        false
     ],
     "Chamonix, France": [
         45.9246705,
-        6.8727506
+        6.8727506,
+        false
     ],
     "Ifevi, Spain": [
         42.22448505,
-        -8.638248360173215
+        -8.638248360173215,
+        false
     ],
     "Victoria, Australia": [
         -36.5986096,
-        144.6780052
+        144.6780052,
+        false
     ],
     "Brisbane, Australia": [
         -27.4689682,
-        153.0234991
+        153.0234991,
+        false
     ],
     "Liverpool, United Kingdom": [
         53.4071991,
-        -2.99168
+        -2.99168,
+        false
     ],
     "Washington DC, United States of America": [
         38.8950368,
-        -77.0365427
+        -77.0365427,
+        false
     ],
     "Santiago de Quer\u00e9taro, Mexico": [
         20.5922997,
-        -100.3917424
+        -100.3917424,
+        false
     ],
     "Palm Springs, United States of America": [
         33.8246269,
-        -116.540303
+        -116.540303,
+        false
     ],
     "Monterrey, Mexico": [
         25.6802019,
-        -100.315258
+        -100.315258,
+        false
     ],
     "Vienna, Austria": [
         48.2083537,
-        16.3725042
+        16.3725042,
+        false
     ],
     "N\u00fcrnberg, Germany": [
         49.453872,
-        11.077298
+        11.077298,
+        false
     ],
     "Dour Festival, Belgium": [
         50.3963781,
-        3.7786762
+        3.7786762,
+        false
     ],
     "Gianpula Village, Malta": [
         35.8885993,
-        14.4476911
+        14.4476911,
+        false
     ],
     "TBA - Liege, Belgium": [
         50.47081585,
-        5.773545903524977
+        5.773545903524977,
+        false
     ],
     "TBA - Megapolis Convention Center, Panama": [
         30.1586518,
-        -85.6602936
+        -85.6602936,
+        false
     ],
     "Cry d'Er \u2013 Club d'Altitude, Switzerland": [
         46.3304899,
-        7.526435803722132
+        7.526435803722132,
+        false
     ],
     "Rhineland-Palatinate, Germany": [
         49.9531599,
-        7.310646
+        7.310646,
+        false
     ],
     "Milan, Italy": [
         45.4641943,
-        9.1896346
+        9.1896346,
+        false
     ],
     "Alpe d'Huez, France": [
         45.092401,
-        6.0699443
+        6.0699443,
+        false
     ],
     "Folie Douce Les Arcs, France": [
         45.5731149,
-        6.7780477
+        6.7780477,
+        false
     ],
     "Le Bikini, France": [
         45.7784615,
-        3.0899454
+        3.0899454,
+        false
     ],
     "Medane Beach, Croatia": [
         45.0195884,
-        14.631247
+        14.631247,
+        false
     ],
     "Dreamland Margate, United Kingdom": [
         51.38515855,
-        1.3772397467725002
+        1.3772397467725002,
+        false
     ],
     "TBA - various venues in Tignes, France": [
         45.4697293,
-        6.907594
+        6.907594,
+        false
     ],
     "Zeebrugge Beach, Belgium": [
         51.3312211,
-        3.207561
+        3.207561,
+        false
     ],
     "Zurich, Switzerland": [
         47.3744489,
-        8.5410422
+        8.5410422,
+        false
     ],
     "Budapest, Hungary": [
         47.48138955,
-        19.14609412691246
+        19.14609412691246,
+        false
     ],
     "Tbilisi, Georgia": [
         41.6934591,
-        44.8014495
+        44.8014495,
+        false
     ],
     "Mdlr, Singapore": [
         1.357107,
-        103.8194992
+        103.8194992,
+        false
     ],
     "TBA, France": [
         -17.5301941,
-        -149.5672422
+        -149.5672422,
+        false
     ],
     "San Francisco/Oakland, United States of America": [
         37.79713724477815,
-        -122.37900765709006
+        -122.37900765709006,
+        false
     ],
     "Austin, United States of America": [
         30.2711286,
-        -97.7436995
+        -97.7436995,
+        false
     ],
     "Hawaii, United States of America": [
         19.593801499999998,
-        -155.42837009716908
+        -155.42837009716908,
+        false
     ],
     "Taipei, Taiwan": [
         25.0375198,
-        121.5636796
+        121.5636796,
+        false
     ],
     "Montanejos, Spain": [
         40.068152,
-        -0.522929
+        -0.522929,
+        false
     ],
     "West + Wales, United Kingdom": [
         53.27816025,
-        -4.347871127822403
+        -4.347871127822403,
+        false
     ],
     "Minnesota, United States of America": [
         45.9896587,
-        -94.6113288
+        -94.6113288,
+        false
     ],
     "Kloster Graefenthal, Netherlands": [
         51.6755765,
-        6.1593045
+        6.1593045,
+        false
     ],
     "Dallas/Fort Worth, United States of America": [
         32.89651945,
-        -97.0465220537124
+        -97.0465220537124,
+        false
     ],
     "Paradigm, Netherlands": [
         53.2190652,
-        6.5680077
+        6.5680077,
+        false
     ],
     "Hesse, Germany": [
         50.6080651,
-        9.0284647
+        9.0284647,
+        false
     ],
     "Toronto, Canada": [
         43.6534817,
-        -79.3839347
+        -79.3839347,
+        false
     ],
     "Kyoto, Japan": [
         35.021041,
-        135.7556075
+        135.7556075,
+        false
     ],
     "Perth, Australia": [
         -31.9558933,
-        115.8605855
+        115.8605855,
+        false
     ],
     "TBA - Residenzplatz Salzburg, Austria": [
         47.7981346,
-        13.0464806
+        13.0464806,
+        false
     ],
     "Bremen, Germany": [
         53.0758196,
-        8.8071646
+        8.8071646,
+        false
     ],
     "Vancouver, Canada": [
         49.2608724,
-        -123.113952
+        -123.113952,
+        false
     ],
     "TBA - Castillo de Piria, Piriapolis, Uruguay": [
         -34.8689037,
-        -55.2724472
+        -55.2724472,
+        false
     ],
     "Ghent, Belgium": [
         51.0538286,
-        3.7250121
+        3.7250121,
+        false
     ],
     "TBA - 4 Venues Over Malta, Malta": [
         35.8885993,
-        14.4476911
+        14.4476911,
+        false
     ],
     "Galderse Meren, Netherlands": [
         51.522515999999996,
-        4.756552975576676
+        4.756552975576676,
+        false
     ],
     "TBA - Bodega la Rotativa  Cl. 42 #50-80, Nte. Centro Historico, Barranquilla, Colombia": [
         11.0101922,
-        -74.8231794084391
+        -74.8231794084391,
+        false
     ],
     "Naples, Italy": [
         40.8358846,
-        14.2487679
+        14.2487679,
+        false
     ],
     "Pandora Sevilla, Spain": [
         37.3914132,
-        -5.9953027
+        -5.9953027,
+        false
     ],
     "Thessaloniki, Greece": [
         40.6403167,
-        22.9352716
+        22.9352716,
+        false
     ],
     "Mille Club, France": [
         45.444381050000004,
-        4.3897990911319305
+        4.3897990911319305,
+        false
     ],
     "Denver, United States of America": [
         39.7392364,
-        -104.984862
+        -104.984862,
+        false
     ],
     "Stade des Alpes - Virage Ouest, France": [
         45.1875602,
-        5.7357819
+        5.7357819,
+        false
     ],
     "Sacramento, United States of America": [
         38.5810606,
-        -121.493895
+        -121.493895,
+        false
     ],
     "TBA - Parador P12, Florianopolis, Brazil": [
         -27.5973002,
-        -48.5496098
+        -48.5496098,
+        false
     ],
     "Fundo Mamacona, Peru": [
         -12.26502005,
-        -76.90520528005305
+        -76.90520528005305,
+        false
     ],
     "Strasbourg, France": [
         48.584614,
-        7.7507127
+        7.7507127,
+        false
     ],
     "Erfurt, Germany": [
         50.9777974,
-        11.0287364
+        11.0287364,
+        false
     ],
     "Poznan, Poland": [
         52.4006632,
-        16.91973259178088
+        16.91973259178088,
+        false
     ],
     "Kassel, Germany": [
         51.3157833,
-        9.4978479
+        9.4978479,
+        false
     ],
     "Malaga, Spain": [
         36.7213028,
-        -4.4216366
+        -4.4216366,
+        false
     ],
     "Helmut List Halle, Austria": [
         47.0796989,
-        15.411992562762524
+        15.411992562762524,
+        false
     ],
     "Dom im Berg, Austria": [
         47.0734725,
-        15.43808178456758
+        15.43808178456758,
+        false
     ],
     "Adelaide, Australia": [
         -34.9281805,
-        138.5999312
+        138.5999312,
+        false
     ],
     "Osaka, Japan": [
         34.6937569,
-        135.5014539
+        135.5014539,
+        false
     ],
     "Malmo, Sweden": [
         55.6052931,
-        13.0001566
+        13.0001566,
+        false
     ],
     "Liquid Club, Malta": [
         35.9093052,
-        14.4788042
+        14.4788042,
+        false
     ],
     "Campo Lago, Costa Rica": [
         9.918215,
-        -84.19161021849993
+        -84.19161021849993,
+        false
     ],
     "Galway, Ireland": [
         53.2744122,
-        -9.0490601
+        -9.0490601,
+        false
     ],
     "Limerick, Ireland": [
         52.661252,
-        -8.6301239
+        -8.6301239,
+        false
     ],
     "Auditorija, Lithuania": [
         54.8256764,
-        24.0184987
+        24.0184987,
+        false
     ],
     "Petrovaradin Fortress, Serbia": [
         45.2520816,
-        19.863868156511757
+        19.863868156511757,
+        false
     ],
     "Dh\u00ebrmi Beach, Albania": [
         40.151199,
-        19.6414118
+        19.6414118,
+        false
     ],
     "Surreal Park, Brazil": [
         -5.6770977,
-        -35.2733538
+        -35.2733538,
+        false
     ],
     "TBA - Brickell Rooftop, Dominican Republic": [
         18.4801972,
-        -69.942111
+        -69.942111,
+        false
     ],
     "Auditorio M\u00e1laga Cortijo de Torres, Spain": [
         36.7213028,
-        -4.4216366
+        -4.4216366,
+        false
     ],
     "Sunwaves Beach, Romania": [
         44.1767161,
-        28.6507598
+        28.6507598,
+        false
     ],
     "Lido Ascona, Switzerland": [
         46.1473126,
-        8.7820066
+        8.7820066,
+        false
     ],
     "California, United States of America": [
         36.7014631,
-        -118.755997
+        -118.755997,
+        false
     ],
     "Nieuwe Nor, Netherlands": [
         50.88792875,
-        5.981221266690563
+        5.981221266690563,
+        false
     ],
     "Luxor Live, Netherlands": [
         51.9835992,
-        5.9044769
+        5.9044769,
+        false
     ],
     "Verbier, Switzerland": [
         46.0961011,
-        7.2286765
+        7.2286765,
+        false
     ],
     "Dresden, Germany": [
         51.0493286,
-        13.7381437
+        13.7381437,
+        false
     ],
     "Sound Department, Italy": [
         40.54881555,
-        17.08058012454743
+        17.08058012454743,
+        false
     ],
     "Guadalajara, Mexico": [
         20.6720375,
-        -103.338396
+        -103.338396,
+        false
     ],
     "Nokal, Philippines": [
         14.5631178,
-        121.0314592
+        121.0314592,
+        false
     ],
     "Central, Italy": [
         45.0691722,
-        7.6821593
+        7.6821593,
+        false
     ],
     "Lille, France": [
         50.6365654,
-        3.0635282
+        3.0635282,
+        false
     ],
-    "Tel Aviv, Israel": [
-        32.0852997,
-        34.7818064
+    "Lausanne, Switzerland": [
+        46.5218269,
+        6.6327025,
+        false
+    ],
+    "TBA - Paradies Garten Festival - Schlo\u00df Prugg 2, 2460 Gemeinde Bruck an der Leitha, Austria": [
+        48.0255094,
+        16.7790041,
+        false
+    ],
+    "Baden-W\u00fcrttemberg, Germany": [
+        48.53775,
+        9.041169,
+        false
+    ],
+    "Sotocje, Tolmin, Slovenia": [
+        46.1733804,
+        13.7402312,
+        false
+    ],
+    "Gothenburg, Sweden": [
+        57.7072326,
+        11.9670171,
+        false
+    ],
+    "Oslo, Norway": [
+        59.9133301,
+        10.7389701,
+        false
+    ],
+    "Montpellier, France": [
+        43.6112422,
+        3.8767337,
+        false
+    ],
+    "Santiago, Chile": [
+        -33.4377756,
+        -70.6504502,
+        false
+    ],
+    "Club Cultural Lima, Peru": [
+        -12.20900975,
+        -77.0231042973871,
+        false
     ],
     "Cocoric\u00f2, Italy": [
         43.98734614999999,
-        12.656780849999995
+        12.656780849999995,
+        false
     ],
     "Pedreira Paulo Leminski, Brazil": [
         -25.3839428,
-        -49.27699263572514
+        -49.27699263572514,
+        false
     ],
     "Later Aan Zee, Netherlands": [
         52.40381205,
-        4.5440779220742105
+        4.5440779220742105,
+        false
     ],
     "TBA - PARK MLADE\u017dI, Croatia": [
         43.5116383,
-        16.4399659
+        16.4399659,
+        false
     ],
     "TBA - Park Mladezi, Croatia": [
         43.5116383,
-        16.4399659
+        16.4399659,
+        false
+    ],
+    "Eur Social Park, Italy": [
+        41.8933203,
+        12.4829321,
+        false
+    ],
+    "TBA - Mercado La California, Costa Rica": [
+        9.9325427,
+        -84.0795782,
+        false
+    ],
+    "TBA - San Jose, Costa Rica, Costa Rica": [
+        9.9325427,
+        -84.0795782,
+        false
+    ],
+    "De Schorre, Belgium": [
+        51.0897779,
+        4.384296868479014,
+        false
+    ],
+    "Stockholm, Sweden": [
+        59.3251172,
+        18.0710935,
+        false
+    ],
+    "TBA - Brest - Various venues, France": [
+        48.3905283,
+        -4.4860088,
+        false
+    ],
+    "TBA - La Estacion Indoor, Cordoba, Argentina": [
+        -31.4166867,
+        -64.1834193,
+        false
+    ],
+    "Sofia, Bulgaria": [
+        42.6977028,
+        23.3217359,
+        false
+    ],
+    "Sicily, Italy": [
+        37.587794,
+        14.155048,
+        false
+    ],
+    "Bilbao, Spain": [
+        43.2630018,
+        -2.9350039,
+        false
+    ],
+    "Nantes, France": [
+        47.2186371,
+        -1.5541362,
+        false
+    ],
+    "FOMO, Azerbaijan": [
+        40.3755885,
+        49.8328009,
+        false
+    ],
+    "TBA - Secret Central Milton Keynes Location, United Kingdom": [
+        52.0406502,
+        -0.7594092,
+        false
+    ],
+    "Spoorzone, Netherlands": [
+        52.003484099999994,
+        4.357489380757095,
+        false
+    ],
+    "Freiburg, Germany": [
+        47.9960901,
+        7.8494005,
+        false
+    ],
+    "Sheffield, United Kingdom": [
+        53.3806626,
+        -1.4702278,
+        false
+    ],
+    "Newcastle, United Kingdom": [
+        54.9738474,
+        -1.6131572,
+        false
+    ],
+    "Les Ar\u00e8nes de N\u00eemes / Amphitheatre of N\u00eemes, France": [
+        43.8374249,
+        4.3600687,
+        false
+    ],
+    "Hanoi, Vietnam": [
+        21.0283334,
+        105.854041,
+        false
+    ],
+    "Masseria Capece, Italy": [
+        40.650847049999996,
+        15.574857642676768,
+        false
+    ],
+    "French Riviera, France": [
+        43.9525507,
+        7.479428251496097,
+        false
+    ],
+    "TBA - Green river - New Administrative Capital , Egypt": [
+        30.023829,
+        31.7549459,
+        false
+    ],
+    "Geneva, Switzerland": [
+        46.2017559,
+        6.1466014,
+        false
+    ],
+    "Cacao Beach, Bulgaria": [
+        42.6729844,
+        27.7118459,
+        false
+    ],
+    "Thuringia, Germany": [
+        50.9014721,
+        11.0377839,
+        false
+    ],
+    "Aquasella, Spain": [
+        43.3136138,
+        -5.065850290011571,
+        false
+    ],
+    "South Island, New Zealand": [
+        -43.586562,
+        171.21232939964904,
+        false
+    ],
+    "Seoul, South Korea": [
+        37.5666791,
+        126.9782914,
+        false
+    ],
+    "Peiraios 260, Greece": [
+        37.96157875,
+        23.688501544169455,
+        false
+    ],
+    "Castle Grimbergen, Belgium": [
+        50.9457843,
+        4.38909669976362,
+        false
+    ],
+    "D\u00e1dpuszta, Hungary": [
+        46.7695424,
+        18.4379274,
+        false
+    ],
+    "Seattle, United States of America": [
+        47.6038321,
+        -122.330062,
+        false
+    ],
+    "Lenox, Luxembourg": [
+        49.6016089,
+        6.1342564,
+        false
+    ],
+    "Garbicz Festival, Poland": [
+        52.3138586,
+        15.0828279,
+        false
+    ],
+    "Augsburg, Germany": [
+        48.3690341,
+        10.8979522,
+        false
+    ],
+    "54 Dreamy Night, Greece": [
+        39.591337,
+        19.859618918733858,
+        false
+    ],
+    "Gebroeders Van Raemdonckpark, Kortrijk, Belgium": [
+        50.825168000000005,
+        3.2852943433733257,
+        false
+    ],
+    "Hong Kong, China": [
+        22.350627,
+        114.1849161,
+        false
+    ],
+    "Jena, Germany": [
+        50.9281717,
+        11.5879359,
+        false
+    ],
+    "Cullera Beach ( Valencia ), Spain": [
+        39.4697065,
+        -0.3763353,
+        false
+    ],
+    "Crato, Portugal": [
+        39.2851221,
+        -7.6454266,
+        false
+    ],
+    "Auckland, New Zealand": [
+        -36.852095,
+        174.7631803,
+        false
+    ],
+    "Glendalough Estate, Ireland": [
+        53.0105539,
+        -6.3273703,
+        false
+    ],
+    "Valencia, Spain": [
+        39.4697065,
+        -0.3763353,
+        false
+    ],
+    "Darmstadt, Germany": [
+        49.8851869,
+        8.6736295,
+        false
+    ],
+    "TBA - MDLBEAST Festival Site, Saudi Arabia": [
+        23.333333,
+        45.333333,
+        false
+    ],
+    "TBA, Croatia": [
+        45.3658443,
+        15.6575209,
+        false
+    ],
+    "Frac Franche-Comt\u00e9, France": [
+        47.2358809,
+        6.0339579,
+        false
+    ],
+    "Porat, Croatia": [
+        45.1211832,
+        14.4933535,
+        false
+    ],
+    "Hobart, Australia": [
+        -42.8825088,
+        147.3281233,
+        false
+    ],
+    "Wakana, Spain": [
+        36.5297438,
+        -6.2928976,
+        false
+    ],
+    "Florida, United States of America": [
+        27.7567667,
+        -81.4639835,
+        false
+    ],
+    "Sevilla, Spain": [
+        37.3886303,
+        -5.9953403,
+        false
+    ],
+    "Tramkade, Netherlands": [
+        51.696773,
+        5.2986957,
+        false
+    ],
+    "Bangkok, Thailand": [
+        13.7524938,
+        100.4935089,
+        false
+    ],
+    "Complejo Embrujo, Spain": [
+        37.1734995,
+        -3.5995337,
+        false
+    ],
+    "Tallinn, Estonia": [
+        59.4334368,
+        24.7522084,
+        false
+    ],
+    "le Th\u00e9\u00e2tre Antique d'Orange, France": [
+        44.1371311,
+        4.8078783,
+        false
+    ],
+    "Voormalig Floriadeterrein, Netherlands": [
+        52.3507789,
+        4.6782318,
+        false
+    ],
+    "Etko, Cyprus": [
+        34.6614067,
+        33.0203395,
+        false
+    ],
+    "TBA - Lomme/Lille, France": [
+        50.6365654,
+        3.0635282,
+        false
+    ],
+    "TBA - BOTOXE ARENA, Greece": [
+        37.9755648,
+        23.7348324,
+        false
+    ],
+    "Clorophilla, Italy": [
+        45.0651597,
+        7.6959977,
+        false
+    ],
+    "Mogli Marbella, Spain": [
+        36.508976,
+        -4.88562,
+        false
+    ],
+    "Montreux Music & Convention Center, Switzerland": [
+        46.4310831,
+        6.9129921,
+        false
+    ],
+    "Arizona, United States of America": [
+        34.395342,
+        -111.763275,
+        false
+    ],
+    "Kanto, Japan": [
+        35.3028999,
+        139.8340282,
+        false
+    ],
+    "TBA - Masseria Torre Rossa, Italy": [
+        40.9842539,
+        16.6210027,
+        false
+    ],
+    "Visio Area, Finland": [
+        60.1868173,
+        24.9776954,
+        false
+    ],
+    "Aarhus, Denmark": [
+        56.1496278,
+        10.2134046,
+        false
+    ],
+    "Evenementenstrand, Belgium": [
+        51.3433866,
+        3.2884738,
+        false
+    ],
+    "Salle des Bourdaines, France": [
+        43.68866,
+        -1.37328,
+        false
+    ],
+    "Shanghai, China": [
+        31.2312707,
+        121.4700152,
+        false
+    ],
+    "Vermont, United States of America": [
+        44.5990718,
+        -72.5002608,
+        false
+    ],
+    "Marmande, France": [
+        44.5007939,
+        0.164274,
+        false
+    ],
+    "Philadelphia, United States of America": [
+        39.9527237,
+        -75.1635262,
+        false
+    ],
+    "777 Years Wartensee Castle, Switzerland": [
+        47.4716607,
+        9.5307941,
+        false
+    ],
+    "Bootleg Social, United Kingdom": [
+        53.819385,
+        -3.0500877,
+        false
+    ],
+    "TBA -  \u00d3pera de Arme, Curitiba, Brazil": [
+        -25.4295963,
+        -49.2712724,
+        false
+    ],
+    "Club Phoenix - Gianpula Village, Malta": [
+        35.8885993,
+        14.4476911,
+        false
+    ],
+    "Ankara, Turkey": [
+        39.9207759,
+        32.8540497,
+        false
+    ],
+    "Kyverneio, Greece": [
+        41.13805,
+        24.8864089,
+        false
+    ],
+    "Lilly\u2019s Club Monaco, Monaco": [
+        43.7323492,
+        7.4276832,
+        false
+    ],
+    "TBA - Port of Belgrade, Serbia": [
+        44.0243229,
+        21.0765743,
+        true
+    ],
+    "Mykonos, Greece": [
+        37.4513936,
+        25.3923149,
+        false
+    ],
+    "Shenzhen, China": [
+        22.5445741,
+        114.0545429,
+        false
+    ],
+    "Vanduo Marse, Lithuania": [
+        54.9909118,
+        23.8619588,
+        false
+    ],
+    "Canary Islands, Spain": [
+        28.2863989,
+        -16.7960118,
+        false
+    ],
+    "Yuc\u00e1tan, Mexico": [
+        20.6845957,
+        -88.8755669,
+        false
+    ],
+    "Baja California Sur, Mexico": [
+        25.5818014,
+        -111.5706164,
+        false
+    ],
+    "Cork, Ireland": [
+        51.8985136,
+        -8.4726423,
+        false
+    ],
+    "Texas, United States of America": [
+        31.2638905,
+        -98.5456116,
+        false
+    ],
+    "Wellington, New Zealand": [
+        -41.2887953,
+        174.7772114,
+        false
+    ],
+    "The Georgian Theatre, United Kingdom": [
+        54.5645202,
+        -1.3118893,
+        false
+    ],
+    "Wroclaw, Poland": [
+        51.1089776,
+        17.0326689,
+        false
+    ],
+    "TBA, Greece": [
+        38.9953683,
+        21.9877132,
+        true
+    ],
+    "Lake View Locarno, Switzerland": [
+        46.7985624,
+        8.2319736,
+        true
     ]
 }
