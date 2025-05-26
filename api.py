@@ -258,7 +258,6 @@ def get_events_followed_profiles():
                 event_list.append([artist_name,i['title'],i['date'],i['contentUrl'],' | '.join([j['name'] for j in i['artists']]),i['venue']["name"],i['venue']["area"]["name"],i['venue']["area"]["country"]["name"],i['images'][0]['filename'] if i['images'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'])
         except:
             print(f' No event found for {artist_name}')
-    print(event_list)
 
     save_events_to_csv(event_list)
 
