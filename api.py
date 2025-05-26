@@ -249,7 +249,7 @@ def get_events_followed_profiles():
     Prints a message if no events are found for an artist.
     """
     event_list = []
-    artists =  pd.read_csv(r'get_artists/followed_profiles.csv')
+    artists =  pd.read_csv('get_artists/followed_profiles.csv')
     for artist in artists.iterrows():
         id,artist_name=artist[1]['id'],artist[1]['name']
         data = find_events_artist(artist_name,id)
