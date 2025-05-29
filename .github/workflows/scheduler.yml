@@ -18,8 +18,17 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: python update.py
-      - name: Upload events.csv
-        uses: actions/upload-artifact@v4
-        with:
-          name: dataframe-csv
-          path: events2.csv
+
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add events2.csv
+          git commit -m "Update CSV file [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          # Needed to allow GitHub Actions to push code
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+
