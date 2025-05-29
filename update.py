@@ -5,3 +5,6 @@ import numpy as np
 
 df_events = get_events_followed_profiles()
 
+df_events.to_csv("events2.csv", index=False)
+
+
