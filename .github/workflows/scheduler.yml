@@ -2,7 +2,7 @@ name: Run Python script periodically
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour (use cron syntax)
+    - cron: '13 * * * *'  # Runs every hour (use cron syntax)
 
 jobs:
   run-script:
