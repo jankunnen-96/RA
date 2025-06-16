@@ -225,15 +225,16 @@ def save_events_to_csv(event_list):
     
     new_df['latitude'], new_df['longitude'],_ = zip(*new_df['location'].map(coordinate_dict))
     new_df['date_added'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
+    new_df.drop_duplicates(inplace=True)
+
     csv_file = "events.csv"
     if os.path.exists(csv_file):
-        existing_df = pd.read_csv(csv_file)
+        existing_df = pd.read_csv(csv_file).drop_duplicates()
     else:
         existing_df = pd.DataFrame(columns=new_df.columns)
     
 
-    combined_df  = new_df.merge(existing_df[['artist', 'title', 'date','date_added']], on=['artist', 'title', 'date'], how='left', suffixes=('', '_old'))
+    combined_df  = new_df.merge(existing_df[['artist', 'title', 'date', 'location','date_added']], on=['artist', 'title', 'date', 'location'], how='left', suffixes=('', '_old'))
     combined_df['date_added'] = combined_df['date_added_old'].combine_first(combined_df['date_added'])
 
     combined_df.drop(columns=['date_added_old'], inplace=True)
