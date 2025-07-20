@@ -1,8 +1,9 @@
 name: Run Python script periodically
 
 on:
+  workflow_dispatch: 
   schedule:
-    - cron: '0 * * * *'  # Runs every hour (use cron syntax)
+    - cron: '0 0 * * *'  # Runs every hour (use cron syntax)
 
 jobs:
   run-script:
@@ -18,3 +19,17 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run script
         run: python update.py
+
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add events.csv
+          git commit -m "Update CSV file [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          # Needed to allow GitHub Actions to push code
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+

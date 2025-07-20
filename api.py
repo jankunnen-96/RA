@@ -225,15 +225,16 @@ def save_events_to_csv(event_list):
     
     new_df['latitude'], new_df['longitude'],_ = zip(*new_df['location'].map(coordinate_dict))
     new_df['date_added'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
+    new_df.drop_duplicates(inplace=True)
+
     csv_file = "events.csv"
     if os.path.exists(csv_file):
-        existing_df = pd.read_csv(csv_file)
+        existing_df = pd.read_csv(csv_file).drop_duplicates()
     else:
         existing_df = pd.DataFrame(columns=new_df.columns)
     
 
-    combined_df  = new_df.merge(existing_df[['artist', 'title', 'date','date_added']], on=['artist', 'title', 'date'], how='left', suffixes=('', '_old'))
+    combined_df  = new_df.merge(existing_df[['artist', 'title', 'date', 'location','date_added']], on=['artist', 'title', 'date', 'location'], how='left', suffixes=('', '_old'))
     combined_df['date_added'] = combined_df['date_added_old'].combine_first(combined_df['date_added'])
 
     combined_df.drop(columns=['date_added_old'], inplace=True)
@@ -249,7 +250,7 @@ def get_events_followed_profiles():
     Prints a message if no events are found for an artist.
     """
     event_list = []
-    artists =  pd.read_csv(r'get_artists\followed_profiles.csv')
+    artists =  pd.read_csv('get_artists/followed_profiles.csv')
     for artist in artists.iterrows():
         id,artist_name=artist[1]['id'],artist[1]['name']
         data = find_events_artist(artist_name,id)
@@ -258,7 +259,6 @@ def get_events_followed_profiles():
                 event_list.append([artist_name,i['title'],i['date'],i['contentUrl'],' | '.join([j['name'] for j in i['artists']]),i['venue']["name"],i['venue']["area"]["name"],i['venue']["area"]["country"]["name"],i['images'][0]['filename'] if i['images'] else 'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'])
         except:
             print(f' No event found for {artist_name}')
-    print(event_list)
 
     save_events_to_csv(event_list)
 
