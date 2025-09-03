@@ -4,6 +4,8 @@ from api import suggestion,find_events_artist,save_events_to_csv,find_events_are
 import pandas as pd
 import re
 import datetime
+from util import log_input
+
 
 def highlight_names(text):
     followed_artists =  list(pd.read_csv(r'get_artists/followed_profiles.csv')['name'])
@@ -19,11 +21,6 @@ def area_input(area_query):
 
 
 
-# Function to log user inputs
-def log_input(user_input):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("user_inputs_area.log", "a") as file:
-        file.write(f"{timestamp} - {user_input}\n")
 
 
 st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
@@ -105,8 +102,7 @@ for i, area in enumerate(filtered_areas):
     with cols[i]:
         if st.button(area, key=f"area{area}"):
             events=find_events_area(area,filtered_areas[area])['data']['eventListings']['data']
-            log_input(' - '.join((area,filtered_areas[area])))
-            print(events)
+            log_input(filtered_areas[area],area, "location_logs")
             if events ==None:
                 st.write(f' No event found for {area}')
 

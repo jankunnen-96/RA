@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+develop-eggs/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+pip-log.txt
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & coverage
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.cache/
+.pytest_cache/
+.tox/
+.nox/
+
+# Type checkers
+.mypy_cache/
+.pytype/
+.pyre/
+
+# Logs & temp files
+*.log
+logs/
+tmp/
+temp/
+*.bak
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors/IDEs
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Databases
+*.sqlite3
+*.db
+
+# Node (if present)
+node_modules/
+npm-debug.log*
+
+# Streamlit
+.streamlit/cache/
+.streamlit/**/cache/
+.streamlit/**/secrets.toml
+.streamlit/**/credentials.toml
+
+service_account.json
+

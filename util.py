@@ -1,9 +1,12 @@
 from datetime import datetime
+import json
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 import time
 import requests
-
+import pygsheets
+import pandas as pd
+import streamlit as st
 
 # Convert all dates
 def convert_dates(dates):
@@ -99,4 +102,18 @@ def get_osm_coordinates(query):
     except Exception as e:
         print(f"OSM Error: {e}")
         return (None, None)
+
+
+def log_input(id, name, log_type="artist_logs"):
+
+    creds = dict(st.secrets["gcp_service_account"])
+    # Normalize private key newlines for Google service account credentials
+    if "private_key" in creds and isinstance(creds["private_key"], str):
+        creds["private_key"] = creds["private_key"].replace("\\n", "\n")
+    gc = pygsheets.authorize(service_account_json=json.dumps(creds))
+    sh = gc.open_by_key("1fgSX9Z8qlpAm_ZVE-CCtsvn2IZV-PmnQ8UfP2g60HfY")
+    wks = sh.worksheet_by_title(log_type)
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    list =  [id, name, timestamp]
+    wks.append_table(list, start='A1', dimension='ROWS', overwrite=False)
 

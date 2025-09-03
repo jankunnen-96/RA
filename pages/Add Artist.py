@@ -1,6 +1,7 @@
 import streamlit as st
 from st_keyup import st_keyup
 from api import suggestion,find_events_artist,save_events_to_csv
+from util import log_input
 import pandas as pd
 import re
 import datetime
@@ -17,13 +18,6 @@ def artist_input(artist_query):
     sug=suggestion(artist_query,'ARTIST')
     return sug
 
-
-
-# Function to log user inputs
-def log_input(user_input):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("user_inputs_artist.log", "a") as file:
-        file.write(f"{timestamp} - {user_input}\n")
 
 
 st.set_page_config(layout="wide",initial_sidebar_state="collapsed",page_title="MatchaDaddy selects💚",page_icon="🚀")
@@ -105,7 +99,7 @@ for i, artist in enumerate(filtered_artists):
     with cols[i]:
         if st.button(artist, key=f"artist_{artist}"):
             events=find_events_artist(artist,filtered_artists[artist])['data']['listing']['data']
-            log_input(' - '.join((artist,filtered_artists[artist])))
+            log_input(filtered_artists[artist], artist,"artist_logs")
             if events ==None:
                 st.write(f' No event found for {artist}')
 
