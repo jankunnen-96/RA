@@ -7,6 +7,8 @@ import requests
 import pygsheets
 import pandas as pd
 import streamlit as st
+import concurrent.futures
+
 
 # Convert all dates
 def convert_dates(dates):
@@ -104,8 +106,9 @@ def get_osm_coordinates(query):
         return (None, None)
 
 
-def log_input(id, name, log_type="artist_logs"):
 
+def _log_input_task(id, name,log_type="artist_logs"):
+    """Original logic moved into a helper function."""
     creds = dict(st.secrets["gcp_service_account"])
     # Normalize private key newlines for Google service account credentials
     if "private_key" in creds and isinstance(creds["private_key"], str):
@@ -117,3 +120,17 @@ def log_input(id, name, log_type="artist_logs"):
     list =  [id, name, timestamp]
     wks.append_table(list, start='A1', dimension='ROWS', overwrite=False)
 
+
+def log_input(id, name, log_type="artist_logs", timeout=2):
+    """Run log_input with a time limit (default 3s)."""
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future = executor.submit(_log_input_task, id, name, log_type)
+        try:
+            return future.result(timeout=timeout)
+        except concurrent.futures.TimeoutError:
+            # Skip silently if it takes too long
+            return None
+        except Exception as e:
+            # Catch and return/log other errors
+            st.error(f"Logging failed: {e}")
+            return None
