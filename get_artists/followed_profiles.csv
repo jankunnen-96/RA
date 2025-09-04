@@ -1,8 +1,11 @@
 id,name,contentUrl
 6388,&ME,/dj/me
+141124,22 Interns,/dj/22interns
 4232,Adam Port,/dj/adamport
 107527,Adrian Mills,/dj/adrianmills
 8316,Adriatique,/dj/adriatique
+147172,Alba Franch,/dj/albafranch
+61166,Amelie Lens,/dj/amelielens
 44868,Anetha,/dj/anetha
 60409,ANOTR,/dj/anotr
 106675,ascendant vierge,/dj/ascendantvierge
@@ -17,6 +20,7 @@ id,name,contentUrl
 12215,Bonobo,/dj/bonobo
 56437,Boston Bun,/dj/bostonbun
 61073,Charlotte de Witte,/dj/charlottedewitte
+85915,Chloé Caillet,/dj/chloecaillet
 62077,Chris Stussy,/dj/chrisstussy
 33235,Claptone,/dj/claptone
 119382,Club Angel,/dj/clubangel
@@ -26,24 +30,30 @@ id,name,contentUrl
 83185,DJ Gigola,/dj/djgigola
 106818,DJ Heartstring,/dj/djheartstring
 93149,DJ Hyperdrive,/dj/djhyperdrive
+68616,DJ Seinfeld,/dj/djseinfeld
 85975,Eliza Rose,/dj/elizarose
 107592,EMILIJA,/dj/emilija
 805,Eric Prydz,/dj/ericprydz
 64056,Eris Drew,/dj/erisdrew
 134039,Eva Vrijdag,/dj/evavrijdag
 106583,Faster Horses,/dj/fasterhorses
+105525,Fenrick,/dj/fenrick
 55735,Folamour,/dj/folamour
 829,Four Tet,/dj/fourtet
 17453,Franky Rizardo,/dj/frankyrizardo
 94364,Fred again..,/dj/fredagain
 116608,Funk Tribu,/dj/funktribu
 3760,Gerd Janson,/dj/gerdjanson
+117184,Hannah Laing,/dj/hannahlaing
+119338,Helena Lauwaert,/dj/helenalauwaert
+64166,I Hate Models,/dj/ihatemodels
 41031,Indira Paganotto,/dj/indirapaganotto
 73737,Interplanetary Criminal,/dj/interplanetarycriminal
 17134,Jamie xx,/dj/jamiexx
 124162,Janis Zielinski,/dj/janiszielinski
 56786,Jayda G,/dj/jaydag
 26085,Job Jobse,/dj/jobjobse
+67905,Josh Baker,/dj/joshbaker
 96218,Juicy Romance,/dj/juicyromance
 43603,Kaytranada,/dj/kaytranada
 91226,Kazy Lambist,/dj/kazylambist
@@ -51,6 +61,7 @@ id,name,contentUrl
 77474,KETTAMA,/dj/kettama
 84447,KI/KI,/dj/ki-ki
 24430,Kolsch,/dj/kolsch
+122230,Kyle Starkey,/dj/kylestarkey
 46200,La Femme,/dj/la_femme
 114563,LAMMER,/dj/lammer
 64972,LB aka LABAT,/dj/lbakalabat
@@ -60,6 +71,7 @@ id,name,contentUrl
 86117,Marc Rebillet,/dj/marcrebillet
 34539,Marlon Hoffstadt,/dj/marlonhoffstadt
 85688,MCR-T,/dj/mcr-t
+119843,Mika Heggemann,/dj/heggemann
 122197,Mischluft,/dj/mischluft
 162,Moby,/dj/moby
 111294,Mochakk,/dj/mochakk
@@ -84,8 +96,11 @@ id,name,contentUrl
 87228,Sammy Virji,/dj/sammyvirji
 15000,SEF,/dj/sef
 74185,Shouse,/dj/shouse
+115904,Silva Bumpa,/dj/silvabumpa
+116510,sim0ne,/dj/sim0ne
 19835,Skrillex,/dj/skrillex
 1665,Solomun,/dj/solomun
+114223,southstar,/dj/southstar
 108064,Spacer Woman,/dj/spacerwoman
 679,Steve Angello,/dj/steveangello
 112808,Surf 2 Glory,/dj/surf2glory
@@ -94,4 +109,6 @@ id,name,contentUrl
 14891,The xx,/dj/thexx
 82485,Tirzah,/dj/tirzah
 76347,Trym,/dj/trym
+193,Underworld,/dj/underworld
 60607,VTSS,/dj/vtss
+58692,¥ØU$UK€ ¥UK1MAT$U,/dj/yosukeyukimatsu-jp
