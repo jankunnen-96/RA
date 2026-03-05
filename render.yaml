@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: matchadaddy-api
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ALLOWED_ORIGIN
+        sync: false  # set this to your frontend URL after first deploy
+      - key: GCP_SERVICE_ACCOUNT_JSON
+        sync: false  # optional: paste your GCP service account JSON string
+
+  - type: web
+    name: matchadaddy
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE
+        sync: false  # set this to your backend URL, e.g. https://matchadaddy-api.onrender.com

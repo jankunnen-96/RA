@@ -1,0 +1,79 @@
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+/* Custom map marker (individual location) — size set inline */
+.custom-marker {
+  background: #74C365;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom cluster icon (aggregated) — size set inline */
+.custom-cluster {
+  background: #74C365;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 3px solid white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Leaflet popup dark theme */
+.leaflet-popup-content-wrapper {
+  background: #1a1a1a !important;
+  color: white !important;
+  border-radius: 14px !important;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.leaflet-popup-tip {
+  background: #1a1a1a !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  max-width: none !important;
+}
+
+.leaflet-popup {
+  max-width: none !important;
+}
+
+/* Date input color fix */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}

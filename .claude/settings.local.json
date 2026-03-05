@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir C:\\\\Users\\\\JanKUNNEN\\\\Repos\\\\RA:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}
