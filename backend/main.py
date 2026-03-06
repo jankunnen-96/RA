@@ -32,17 +32,23 @@ app.add_middleware(
 
 
 def load_events():
-    data = pd.read_csv(EVENTS_CSV)
-    data['date'] = pd.to_datetime(data['date'])
-    data['date_added'] = pd.to_datetime(data['date_added'])
-    data['latitude'] = pd.to_numeric(data['latitude'], errors='coerce')
-    data['longitude'] = pd.to_numeric(data['longitude'], errors='coerce')
+    data = pd.read_csv(EVENTS_CSV).assign(
+        date=lambda df: pd.to_datetime(df['date']),
+        date_added=lambda df: pd.to_datetime(df['date_added']),
+        latitude=lambda df: pd.to_numeric(df['latitude'], errors='coerce'),
+        longitude=lambda df: pd.to_numeric(df['longitude'], errors='coerce'),
+    )
     data = data.groupby(
         data.columns.difference(['artist', 'date_added']).tolist(),
         as_index=False
     ).agg({'artist': ' | '.join, 'date_added': 'max'})
-    data['artists'] = data['artists'].replace('_', ' | ')
+    data = data.assign(artists=data['artists'].replace('_', ' | '))
     return data.sort_values('date')
+
+
+@app.get("/")
+def health_check():
+    return {"status": "ok"}
 
 
 @app.get("/api/events")
@@ -68,8 +74,10 @@ def get_events(
         artist_list = [a.strip() for a in artists.split(',')]
         data = data[data['artist'].apply(lambda x: any(a in str(x) for a in artist_list))]
 
-    data['date'] = data['date'].dt.strftime('%Y-%m-%d')
-    data['date_added'] = data['date_added'].dt.strftime('%Y-%m-%d %H:%M:%S')
+    data = data.assign(
+        date=data['date'].dt.strftime('%Y-%m-%d'),
+        date_added=data['date_added'].dt.strftime('%Y-%m-%d %H:%M:%S'),
+    )
     return data.where(pd.notna(data), None).to_dict(orient='records')
 
 
@@ -78,8 +86,10 @@ def get_new_events():
     data = load_events()
     data = data[data['date_added'] == data['date_added'].max()]
     data = data[data['date'] >= pd.Timestamp.today()]
-    data['date'] = data['date'].dt.strftime('%Y-%m-%d')
-    data['date_added'] = data['date_added'].dt.strftime('%Y-%m-%d %H:%M:%S')
+    data = data.assign(
+        date=data['date'].dt.strftime('%Y-%m-%d'),
+        date_added=data['date_added'].dt.strftime('%Y-%m-%d %H:%M:%S'),
+    )
     return data.where(pd.notna(data), None).to_dict(orient='records')
 
 
