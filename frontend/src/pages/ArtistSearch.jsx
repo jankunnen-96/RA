@@ -37,7 +37,7 @@ export default function ArtistSearch() {
     setQuery(name)
     setLoading(true)
     const data = await fetch(
-      `/api/artist/${id}/events?name=${encodeURIComponent(name)}`
+      `${API_BASE}/api/artist/${id}/events?name=${encodeURIComponent(name)}`
     ).then((r) => r.json())
     setEvents(data)
     setLoading(false)

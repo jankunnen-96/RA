@@ -142,11 +142,11 @@ export default function MapView() {
               icon={makeIcon(locEvents.length)}
             >
               <Popup
-                maxWidth={Math.min(window.innerWidth * 0.85, 640)}
+                maxWidth={Math.min(window.innerWidth * 0.85, 1200)}
                 autoPanPadding={[20, 20]}
               >
                 {(() => {
-                  const popupW = Math.min(window.innerWidth * 0.85, 640)
+                  const popupW = Math.min(window.innerWidth * 0.85, 1200)
                   return (
                     <div style={{ width: popupW, display: 'flex', flexDirection: 'column', maxHeight: '65vh' }}>
                       {/* Sticky header */}
@@ -159,7 +159,7 @@ export default function MapView() {
                         alignItems: 'center',
                         background: '#1a1a1a',
                       }}>
-                        <div style={{ fontWeight: 700, fontSize: '16px', color: '#74C365', marginRight: '10px' }}>
+                        <div style={{ fontWeight: 700, fontSize: popupW < 400 ? '14px' : '25px', color: '#74C365', marginRight: '10px' }}>
                           {location}
                         </div>
                         <div style={{
@@ -168,7 +168,7 @@ export default function MapView() {
                           color: '#000',
                           borderRadius: '20px',
                           padding: '3px 11px',
-                          fontSize: '12px',
+                          fontSize: popupW < 400 ? '12px' : '20px',
                           fontWeight: 700,
                         }}>
                           {locEvents.length} event{locEvents.length !== 1 ? 's' : ''}
@@ -181,7 +181,7 @@ export default function MapView() {
                           const href = ev.eventUrl
                             ? (ev.eventUrl.startsWith('http') ? ev.eventUrl : `https://ra.co${ev.eventUrl}`)
                             : null
-                          const imgSize = popupW < 400 ? 100 : 130
+                          const imgSize = popupW < 400 ? 100 : 200
                           const card = (
                             <div style={{
                               display: 'flex',
@@ -211,7 +211,7 @@ export default function MapView() {
                                   display: 'inline-block',
                                   background: '#252525',
                                   color: '#9ca3af',
-                                  fontSize: '11px',
+                                  fontSize: popupW < 400 ? '12px' : '17px',
                                   fontWeight: 600,
                                   padding: '3px 10px',
                                   borderRadius: '6px',
@@ -222,7 +222,7 @@ export default function MapView() {
                                 </div>
                                 <div style={{
                                   fontWeight: 700,
-                                  fontSize: popupW < 400 ? '15px' : '17px',
+                                  fontSize: popupW < 400 ? '14px' : '20px',
                                   lineHeight: 1.25,
                                   marginBottom: '7px',
                                   color: '#fff',
@@ -233,7 +233,7 @@ export default function MapView() {
                                   {ev.title}
                                 </div>
                                 <div
-                                  style={{ fontSize: '13px', color: '#9ca3af', lineHeight: 1.5 }}
+                                  style={{ fontSize: popupW < 400 ? '11px' : '17px', color: '#9ca3af', lineHeight: 1.5 }}
                                   dangerouslySetInnerHTML={{ __html: highlightArtists(ev.artists, followed) }}
                                 />
                               </div>

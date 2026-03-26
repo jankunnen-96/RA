@@ -17,12 +17,12 @@ export default function Navbar() {
           to={to}
           end={to === '/'}
           className={({ isActive }) =>
-            `flex-1 flex flex-col items-center py-2.5 gap-0.5 text-xs font-medium transition-colors ${
+            `flex-1 flex flex-col items-center py-2 sm:py-3 md:py-4 gap-0.5 sm:gap-1 text-xs sm:text-sm md:text-base font-medium transition-colors ${
               isActive ? 'text-[#74C365]' : 'text-gray-500'
             }`
           }
         >
-          <Icon size={22} strokeWidth={1.8} />
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" strokeWidth={1.8} />
           <span>{label}</span>
         </NavLink>
       ))}

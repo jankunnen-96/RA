@@ -37,7 +37,7 @@ export default function CitySearch() {
     setQuery(name)
     setLoading(true)
     const data = await fetch(
-      `/api/area/${id}/events?name=${encodeURIComponent(name)}`
+      `${API_BASE}/api/area/${id}/events?name=${encodeURIComponent(name)}`
     ).then((r) => r.json())
     setEvents(data)
     setLoading(false)
