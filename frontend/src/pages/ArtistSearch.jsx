@@ -24,7 +24,7 @@ export default function ArtistSearch() {
       return
     }
     const t = setTimeout(() => {
-      fetch(`/api/search/artist?q=${encodeURIComponent(query)}`)
+      fetch(`${API_BASE}/api/search/artist?q=${encodeURIComponent(query)}`)
         .then((r) => r.json())
         .then(setSuggestions)
     }, 300)

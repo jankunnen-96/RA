@@ -80,7 +80,7 @@ export default function MapView() {
       new_only: newOnly,
     })
     if (selectedArtists.length) params.set('artists', selectedArtists.join(','))
-    fetch(`/api/events?${params}`)
+    fetch(`${API_BASE}/api/events?${params}`)
       .then((r) => r.json())
       .then(setEvents)
   }, [startDate, endDate, selectedArtists, newOnly])

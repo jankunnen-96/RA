@@ -24,7 +24,7 @@ export default function CitySearch() {
       return
     }
     const t = setTimeout(() => {
-      fetch(`/api/search/area?q=${encodeURIComponent(query)}`)
+      fetch(`${API_BASE}/api/search/area?q=${encodeURIComponent(query)}`)
         .then((r) => r.json())
         .then(setSuggestions)
     }, 300)
