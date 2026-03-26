@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Search } from 'lucide-react'
 import EventCard from '../components/EventCard'
 import { API_BASE } from '../lib/api'
@@ -13,12 +13,17 @@ export default function CitySearch() {
   const [selectedArea, setSelectedArea] = useState('')
   const [followed, setFollowed] = useState([])
   const [loading, setLoading] = useState(false)
+  const justSelected = useRef(false)
 
   useEffect(() => {
     fetch(`${API_BASE}/api/followed-artists`).then((r) => r.json()).then(setFollowed)
   }, [])
 
   useEffect(() => {
+    if (justSelected.current) {
+      justSelected.current = false
+      return
+    }
     if (query.length < 2) {
       setSuggestions({})
       return
@@ -32,6 +37,7 @@ export default function CitySearch() {
   }, [query])
 
   const selectArea = async (name, id) => {
+    justSelected.current = true
     setSelectedArea(name)
     setSuggestions({})
     setQuery(name)

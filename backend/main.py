@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Body
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 from typing import Optional
@@ -104,6 +104,21 @@ def get_unique_artists():
 def get_followed_artists():
     data = pd.read_csv(FOLLOWED_CSV)
     return data['name'].tolist()
+
+
+@app.post("/api/followed-artists")
+def add_followed_artist(
+    id: str = Body(...),
+    name: str = Body(...),
+    contentUrl: str = Body(default=""),
+):
+    data = pd.read_csv(FOLLOWED_CSV)
+    if str(id) in data['id'].astype(str).values:
+        return {"status": "already_exists"}
+    new_row = pd.DataFrame([{"id": id, "name": name, "contentUrl": contentUrl}])
+    data = pd.concat([data, new_row], ignore_index=True)
+    data.to_csv(FOLLOWED_CSV, index=False)
+    return {"status": "added"}
 
 
 @app.get("/api/search/artist")

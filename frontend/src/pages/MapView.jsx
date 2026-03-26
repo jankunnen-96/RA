@@ -353,7 +353,7 @@ export default function MapView() {
               />
 
               <div className="bg-[#252525] rounded-xl overflow-hidden max-h-52 overflow-y-auto border border-[#3d3d3d]">
-                {filteredArtistSuggestions.slice(0, 50).map((a) => (
+                {filteredArtistSuggestions.map((a) => (
                   <button
                     key={a}
                     onClick={() => {
