@@ -28,7 +28,7 @@ export default function App() {
     const poll = async () => {
       while (!cancelled) {
         try {
-          const res = await fetch('/api/events?limit=1')
+          const res = await fetch(`${API_BASE}/api/events?limit=1`)
           if (res.ok) {
             if (!cancelled) setIsBooting(false)
             return
