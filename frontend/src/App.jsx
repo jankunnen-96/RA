@@ -57,7 +57,7 @@ export default function App() {
 
     slideshowRef.current = setInterval(() => {
       setActiveImage((current) => (current + 1) % STOCK_IMAGES.length)
-    }, 3000)
+    }, 4000)
 
     poll()
 
