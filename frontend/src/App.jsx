@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import MapView from './pages/MapView'
 import ArtistSearch from './pages/ArtistSearch'
@@ -13,7 +13,7 @@ const STOCK_IMAGES = [
   'public/images/6.jpeg',
   'public/images/8.jpg',
   'public/images/9.jpg',
-  'public/images/10.jpg', 
+  'public/images/10.jpg',
   'public/images/11.jpg',
   'public/images/4.jfif',
 ]
@@ -22,16 +22,26 @@ export default function App() {
   const [isBooting, setIsBooting] = useState(true)
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
   const [activeImage, setActiveImage] = useState(0)
+  const timerRef = useRef(null)
+  const slideshowRef = useRef(null)
 
   useEffect(() => {
     let cancelled = false
+
+    const stopTimers = () => {
+      clearInterval(timerRef.current)
+      clearInterval(slideshowRef.current)
+    }
 
     const poll = async () => {
       while (!cancelled) {
         try {
           const res = await fetch(`${API_BASE}/api/events?limit=1`)
           if (res.ok) {
-            if (!cancelled) setIsBooting(false)
+            if (!cancelled) {
+              stopTimers()
+              setIsBooting(false)
+            }
             return
           }
         } catch {
@@ -41,24 +51,20 @@ export default function App() {
       }
     }
 
-    const timer = setInterval(() => {
+    timerRef.current = setInterval(() => {
       setElapsedSeconds((s) => s + 1)
     }, 1000)
+
+    slideshowRef.current = setInterval(() => {
+      setActiveImage((current) => (current + 1) % STOCK_IMAGES.length)
+    }, 3000)
 
     poll()
 
     return () => {
       cancelled = true
-      clearInterval(timer)
+      stopTimers()
     }
-  }, [])
-
-  useEffect(() => {
-    const slideshowInterval = setInterval(() => {
-      setActiveImage((current) => (current + 1) % STOCK_IMAGES.length)
-    }, 3000)
-
-    return () => clearInterval(slideshowInterval)
   }, [])
 
   if (isBooting) {
