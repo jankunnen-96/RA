@@ -12,6 +12,17 @@ from typing import Optional
 from api import suggestion, find_events_artist, find_events_area
 from util import log_input
 
+"""
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --reload
+Runs on http://localhost:8000
+
+cd frontend
+npm install  # if needed
+npm run dev
+Runs on http://localhost:5173
+"""
+
 ROOT = Path(__file__).parent.parent
 EVENTS_CSV = ROOT / "events.csv"
 FOLLOWED_CSV = ROOT / "get_artists" / "followed_profiles.csv"
