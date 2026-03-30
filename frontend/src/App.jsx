@@ -5,6 +5,7 @@ import ArtistSearch from './pages/ArtistSearch'
 import CitySearch from './pages/CitySearch'
 import WhatsNew from './pages/WhatsNew'
 import Navbar from './components/Navbar'
+import { API_BASE } from './lib/api'
 
 const STOCK_IMAGES = [
   '/images/2.jpeg',
