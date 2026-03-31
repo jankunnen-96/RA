@@ -8,14 +8,14 @@ import Navbar from './components/Navbar'
 import { API_BASE } from './lib/api'
 
 const STOCK_IMAGES = [
-  'public/images/2.jpeg',
-  'public/images/6.jfif',
-  'public/images/6.jpeg',
-  'public/images/8.jpg',
-  'public/images/9.jpg',
-  'public/images/10.jpg',
-  'public/images/11.jpg',
-  'public/images/4.jfif',
+  '/images/2.jpeg',
+  '/images/6.jfif',
+  '/images/6.jpeg',
+  '/images/8.jpg',
+  '/images/9.jpg',
+  '/images/10.jpg',
+  '/images/11.jpg',
+  '/images/4.jfif',
 ]
 
 export default function App() {
