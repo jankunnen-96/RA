@@ -29,15 +29,21 @@ class BotHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         parsed = urlparse(self.path)
-        if parsed.path == "/bot/activate":
-            params = parse_qs(parsed.query)
-            token = params.get("token", [None])[0]
+        params = parse_qs(parsed.query)
+        token = params.get("token", [None])[0]
+
+        if parsed.path in ("/bot/activate", "/bot/deactivate"):
             if not BOT_TOKEN or token != BOT_TOKEN:
                 self._send_json(403, {"detail": "Forbidden"})
                 return
-            FLAG_FILE.parent.mkdir(parents=True, exist_ok=True)
-            FLAG_FILE.touch()
-            self._send_json(200, {"status": "activated"})
+            if parsed.path == "/bot/activate":
+                FLAG_FILE.parent.mkdir(parents=True, exist_ok=True)
+                FLAG_FILE.touch()
+                self._send_json(200, {"status": "activated"})
+            else:
+                if FLAG_FILE.exists():
+                    FLAG_FILE.unlink()
+                self._send_json(200, {"status": "deactivated"})
         else:
             self._send_json(404, {"detail": "Not found"})
 
