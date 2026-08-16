@@ -3,21 +3,28 @@ import email as email_lib
 import re
 import json
 import os
+import time
+import threading
 import requests
 from pathlib import Path
 from datetime import datetime
 from html.parser import HTMLParser
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from urllib.parse import urlparse, parse_qs
 
 ROOT = Path(__file__).parent.parent
 FLAG_FILE = ROOT / "e-bot-mail" / "active"
 LOG_DIR = ROOT / "e-bot-mail" / "logs"
 
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+PORT = int(os.environ.get("BOT_PORT", 8001))
 IMAP_SERVER = os.environ.get("EMAIL_IMAP_SERVER", "webreus.email")
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 TRIGGER_SENDER = "noreply@deimmowinkel.be"
 TRIGGER_SUBJECT = "Nieuwe keuringsaanvraag"
+POLL_INTERVAL = 30
 
 
 class LinkExtractor(HTMLParser):
@@ -77,12 +84,9 @@ def follow_link(url):
         return {'error': str(e)}
 
 
-def run():
-    if not FLAG_FILE.exists():
-        return
-
+def check_inbox():
     if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
-        print("EMAIL_ADDRESS or EMAIL_PASSWORD not set in environment")
+        print("EMAIL_ADDRESS or EMAIL_PASSWORD not set", flush=True)
         return
 
     LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -135,17 +139,70 @@ def run():
 
         log_file = LOG_DIR / f"{timestamp}.json"
         log_file.write_text(json.dumps(log_entry, indent=2, ensure_ascii=False))
-        print(f"Done. Log saved to {log_file}")
+        print(f"Processed email. Log saved to {log_file}", flush=True)
 
         mail.store(mail_id, '+FLAGS', '\\Seen')
         mail.logout()
 
     except Exception as e:
-        print(f"Error: {e}")
-        return
-
-    FLAG_FILE.unlink()
+        print(f"Error checking inbox: {e}", flush=True)
 
 
-if __name__ == '__main__':
-    run()
+class BotHandler(BaseHTTPRequestHandler):
+
+    def _send_json(self, status, body):
+        payload = json.dumps(body).encode()
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", len(payload))
+        self.end_headers()
+        self.wfile.write(payload)
+
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        if parsed.path == "/bot/status":
+            self._send_json(200, {"active": FLAG_FILE.exists()})
+        else:
+            self._send_json(404, {"detail": "Not found"})
+
+    def do_POST(self):
+        parsed = urlparse(self.path)
+        params = parse_qs(parsed.query)
+        token = params.get("token", [None])[0]
+
+        if parsed.path in ("/bot/activate", "/bot/deactivate"):
+            if not BOT_TOKEN or token != BOT_TOKEN:
+                self._send_json(403, {"detail": "Forbidden"})
+                return
+            if parsed.path == "/bot/activate":
+                FLAG_FILE.parent.mkdir(parents=True, exist_ok=True)
+                FLAG_FILE.touch()
+                self._send_json(200, {"status": "activated"})
+            else:
+                if FLAG_FILE.exists():
+                    FLAG_FILE.unlink()
+                self._send_json(200, {"status": "deactivated"})
+        else:
+            self._send_json(404, {"detail": "Not found"})
+
+    def log_message(self, format, *args):
+        pass
+
+
+def run_server():
+    server = HTTPServer(("127.0.0.1", PORT), BotHandler)
+    print(f"API server running on port {PORT}", flush=True)
+    server.serve_forever()
+
+
+def run_monitor():
+    print("Email monitor started.", flush=True)
+    while True:
+        if FLAG_FILE.exists():
+            check_inbox()
+        time.sleep(POLL_INTERVAL)
+
+
+if __name__ == "__main__":
+    threading.Thread(target=run_server, daemon=True).start()
+    run_monitor()

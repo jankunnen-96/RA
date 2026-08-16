@@ -1,0 +1,14 @@
+[Unit]
+Description=e-bot-mail bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/matchadaddy/RA
+EnvironmentFile=/opt/matchadaddy/RA/.env
+ExecStart=/usr/bin/python3 /opt/matchadaddy/RA/e-bot-mail/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

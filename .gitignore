@@ -82,3 +82,7 @@ npm-debug.log*
 
 service_account.json
 
+# e-bot-mail runtime files
+e-bot-mail/active
+e-bot-mail/logs/
+
