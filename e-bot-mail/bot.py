@@ -22,6 +22,9 @@ IMAP_SERVER = os.environ.get("EMAIL_IMAP_SERVER", "webreus.email")
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
+ACCOUNT_EMAIL = os.environ.get("ACCOUNT_EMAIL")
+ACCOUNT_PASSWORD = os.environ.get("ACCOUNT_PASSWORD")
+
 TRIGGER_SENDER = "noreply@deimmowinkel.be"
 TRIGGER_SUBJECT = "Nieuwe keuringsaanvraag"
 POLL_INTERVAL = 30
@@ -84,6 +87,53 @@ def follow_link(url):
         return {'error': str(e)}
 
 
+def follow_link_authenticated(url, timestamp):
+    """Follow a link, logging in if redirected to a login page, and save the final page content."""
+    if not ACCOUNT_EMAIL or not ACCOUNT_PASSWORD:
+        return {'error': 'ACCOUNT_EMAIL or ACCOUNT_PASSWORD not set'}
+
+    session = requests.Session()
+    try:
+        response = session.get(url, timeout=15, allow_redirects=True)
+
+        if 'user/login' in response.url:
+            form_build_match = re.search(r'name="form_build_id"\s+value="([^"]+)"', response.text)
+            if not form_build_match:
+                return {'error': 'Could not find form_build_id on login page'}
+
+            parsed_login = urlparse(response.url)
+            params = parse_qs(parsed_login.query)
+            destination = params.get('destination', [None])[0]
+
+            login_url = f"{parsed_login.scheme}://{parsed_login.netloc}{parsed_login.path}"
+            if destination:
+                login_url += f"?destination={destination}"
+
+            login_data = {
+                'name': ACCOUNT_EMAIL,
+                'pass': ACCOUNT_PASSWORD,
+                'form_build_id': form_build_match.group(1),
+                'form_id': 'user_login_form',
+                'op': 'Inloggen',
+            }
+            response = session.post(login_url, data=login_data, timeout=15, allow_redirects=True)
+
+        title_match = re.search(r'<title>(.*?)</title>', response.text, re.IGNORECASE | re.DOTALL)
+        title = title_match.group(1).strip() if title_match else None
+
+        content_file = LOG_DIR / f"{timestamp}_accepteren.html"
+        content_file.write_text(response.text, encoding='utf-8')
+
+        return {
+            'status_code': response.status_code,
+            'final_url': response.url,
+            'page_title': title,
+            'content_saved_to': str(content_file),
+        }
+    except Exception as e:
+        return {'error': str(e)}
+
+
 def check_inbox():
     if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
         print("EMAIL_ADDRESS or EMAIL_PASSWORD not set", flush=True)
@@ -119,17 +169,19 @@ def check_inbox():
         all_links = extract_links(html_body)
 
         target_keywords = ['bekijk aanvraag', 'accepteren']
+        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         results = []
         for link in all_links:
             if any(kw in link['text'].lower() for kw in target_keywords) and link['url'].startswith('http'):
-                response = follow_link(link['url'])
+                if 'accepteren' in link['text'].lower():
+                    response = follow_link_authenticated(link['url'], timestamp)
+                else:
+                    response = follow_link(link['url'])
                 results.append({
                     'link_text': link['text'],
                     'url': link['url'],
                     'response': response,
                 })
-
-        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         log_entry = {
             'timestamp': timestamp,
             'subject': subject,
