@@ -85,4 +85,5 @@ service_account.json
 # e-bot-mail runtime files
 e-bot-mail/active
 e-bot-mail/logs/
+e-bot-mail/last_uid.txt
 

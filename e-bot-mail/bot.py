@@ -15,6 +15,7 @@ from urllib.parse import urlparse, parse_qs
 ROOT = Path(__file__).parent.parent
 FLAG_FILE = ROOT / "e-bot-mail" / "active"
 LOG_DIR = ROOT / "e-bot-mail" / "logs"
+LAST_UID_FILE = ROOT / "e-bot-mail" / "last_uid.txt"
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 PORT = int(os.environ.get("BOT_PORT", 8001))
@@ -134,6 +135,55 @@ def follow_link_authenticated(url, timestamp):
         return {'error': str(e)}
 
 
+def get_last_uid():
+    if LAST_UID_FILE.exists():
+        return int(LAST_UID_FILE.read_text().strip())
+    return None
+
+
+def save_last_uid(uid):
+    LAST_UID_FILE.write_text(str(uid))
+
+
+def process_message(mail, uid, msg):
+    subject = msg.get('Subject', '')
+    sender = msg.get('From', '')
+
+    if TRIGGER_SUBJECT not in subject:
+        return
+
+    html_body = get_html_body(msg)
+    all_links = extract_links(html_body)
+
+    target_keywords = ['bekijk aanvraag', 'accepteren']
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    results = []
+    for link in all_links:
+        if any(kw in link['text'].lower() for kw in target_keywords) and link['url'].startswith('http'):
+            if 'accepteren' in link['text'].lower():
+                response = follow_link_authenticated(link['url'], timestamp)
+            else:
+                response = follow_link(link['url'])
+            results.append({
+                'link_text': link['text'],
+                'url': link['url'],
+                'response': response,
+            })
+
+    log_entry = {
+        'timestamp': timestamp,
+        'subject': subject,
+        'sender': sender,
+        'links_followed': results,
+    }
+
+    log_file = LOG_DIR / f"{timestamp}.json"
+    log_file.write_text(json.dumps(log_entry, indent=2, ensure_ascii=False))
+    print(f"Processed email. Log saved to {log_file}", flush=True)
+
+    mail.uid('store', uid, '+FLAGS', '\\Seen')
+
+
 def check_inbox():
     if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
         print("EMAIL_ADDRESS or EMAIL_PASSWORD not set", flush=True)
@@ -146,54 +196,33 @@ def check_inbox():
         mail.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         mail.select('INBOX')
 
-        _, data = mail.search(None, f'(UNSEEN FROM "{TRIGGER_SENDER}")')
-        mail_ids = data[0].split()
+        _, data = mail.uid('search', None, f'(FROM "{TRIGGER_SENDER}")')
+        uids = [int(u) for u in data[0].split()]
 
-        if not mail_ids:
+        if not uids:
             mail.logout()
             return
 
-        mail_id = mail_ids[0]
-        _, msg_data = mail.fetch(mail_id, '(RFC822)')
-        raw_email = msg_data[0][1]
-        msg = email_lib.message_from_bytes(raw_email)
+        last_uid = get_last_uid()
 
-        subject = msg.get('Subject', '')
-        sender = msg.get('From', '')
-
-        if TRIGGER_SUBJECT not in subject:
+        if last_uid is None:
+            # First run: seed to the current newest UID so we don't process the historical backlog.
+            save_last_uid(max(uids))
             mail.logout()
             return
 
-        html_body = get_html_body(msg)
-        all_links = extract_links(html_body)
+        new_uids = sorted(u for u in uids if u > last_uid)
 
-        target_keywords = ['bekijk aanvraag', 'accepteren']
-        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        results = []
-        for link in all_links:
-            if any(kw in link['text'].lower() for kw in target_keywords) and link['url'].startswith('http'):
-                if 'accepteren' in link['text'].lower():
-                    response = follow_link_authenticated(link['url'], timestamp)
-                else:
-                    response = follow_link(link['url'])
-                results.append({
-                    'link_text': link['text'],
-                    'url': link['url'],
-                    'response': response,
-                })
-        log_entry = {
-            'timestamp': timestamp,
-            'subject': subject,
-            'sender': sender,
-            'links_followed': results,
-        }
+        for uid in new_uids:
+            _, msg_data = mail.uid('fetch', str(uid), '(RFC822)')
+            raw_email = msg_data[0][1]
+            msg = email_lib.message_from_bytes(raw_email)
+            try:
+                process_message(mail, str(uid), msg)
+            except Exception as e:
+                print(f"Error processing email uid {uid}: {e}", flush=True)
+            save_last_uid(uid)
 
-        log_file = LOG_DIR / f"{timestamp}.json"
-        log_file.write_text(json.dumps(log_entry, indent=2, ensure_ascii=False))
-        print(f"Processed email. Log saved to {log_file}", flush=True)
-
-        mail.store(mail_id, '+FLAGS', '\\Seen')
         mail.logout()
 
     except Exception as e:

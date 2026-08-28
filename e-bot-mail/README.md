@@ -10,9 +10,17 @@ A single script (`bot.py`) runs two things simultaneously:
 
 **HTTP server (always on)** — listens on port 8001. Manages a flag file (`e-bot-mail/active`) that acts as an on/off switch. The API is the only way to flip this switch.
 
-**Email monitor loop (always on)** — polls the IMAP inbox every 30 seconds. When the flag is on, it connects to the inbox, finds unseen trigger emails, extracts links, follows them, and logs the result to `e-bot-mail/logs/`. When the flag is off, it does nothing and waits for the next poll.
+**Email monitor loop (always on)** — polls the IMAP inbox every 30 seconds. When the flag is on, it connects to the inbox, finds new trigger emails, extracts links, follows them, and logs the result to `e-bot-mail/logs/`. When the flag is off, it does nothing and waits for the next poll.
 
 The bot stays running permanently. You control its behavior via the API.
+
+### Tracking which emails are new
+
+The bot does **not** rely on the IMAP "unseen" flag to decide which emails are new. That flag is shared across every mail client connected to the inbox (webmail, phone apps, etc.), and any of them can mark an email as read before the bot ever sees it — which would cause the bot to silently skip it.
+
+Instead, the bot tracks its own progress using IMAP UIDs (a permanent, ever-increasing ID per email) stored in `e-bot-mail/last_uid.txt`. Each cycle it looks at all emails from the trigger sender with a UID higher than the last one it processed, handles each one that matches the trigger subject, and advances the stored UID — regardless of read/unread state. This also means a single irrelevant email from the sender can no longer block newer relevant ones behind it (the old design got stuck reprocessing the same email forever if its subject didn't match).
+
+On first run (no `last_uid.txt` yet), the bot seeds itself to the current newest email and does not process the historical backlog.
 
 ---
 
