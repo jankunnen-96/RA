@@ -88,6 +88,57 @@ def follow_link(url):
         return {'error': str(e)}
 
 
+def _extract_attr(tag_html, attr):
+    m = re.search(rf'{attr}="([^"]*)"', tag_html)
+    return m.group(1) if m else None
+
+
+def compute_antibot_key(key):
+    """Replicate the Antibot module's client-side key transformation.
+
+    From antibot.js: reverse the whole key, split into 2-char chunks,
+    reverse each chunk, then join. Purely deterministic, no JS needed.
+    """
+    reversed_full = key[::-1]
+    chunks = [reversed_full[i:i + 2] for i in range(0, len(reversed_full), 2)]
+    return ''.join(chunk[::-1] for chunk in chunks)
+
+
+def submit_antibot_form(session, html, page_url, form_html_id):
+    """Find an Antibot-protected form by its HTML id and submit it directly,
+    computing the antibot_key the way antibot.js would after a real mousemove."""
+    for tag_match in re.finditer(r'<form([^>]*)>(.*?)</form>', html, re.DOTALL):
+        tag_attrs, form_body = tag_match.groups()
+        if _extract_attr(tag_attrs, 'id') != form_html_id:
+            continue
+
+        data_action = _extract_attr(tag_attrs, 'data-action')
+        if not data_action:
+            return None
+
+        settings_match = re.search(
+            r'"antibot":\{"forms":\{"' + re.escape(form_html_id) + r'":\{"id":"[^"]*","key":"([^"]+)"\}',
+            html,
+        )
+        if not settings_match:
+            return None
+
+        antibot_key = compute_antibot_key(settings_match.group(1))
+
+        fields = {}
+        for name, value in re.findall(r'name="([^"]+)"[^>]*value="([^"]*)"', form_body):
+            fields[name] = value
+        for value, name in re.findall(r'value="([^"]*)"[^>]*name="([^"]+)"', form_body):
+            fields.setdefault(name, value)
+        fields['antibot_key'] = antibot_key
+
+        parsed_page = urlparse(page_url)
+        action_url = data_action if data_action.startswith('http') else f"{parsed_page.scheme}://{parsed_page.netloc}{data_action}"
+        return session.post(action_url, data=fields, timeout=15, allow_redirects=True)
+
+    return None
+
+
 def follow_link_authenticated(url, timestamp):
     """Follow a link, logging in if redirected to a login page, and save the final page content."""
     if not ACCOUNT_EMAIL or not ACCOUNT_PASSWORD:
@@ -126,6 +177,13 @@ def follow_link_authenticated(url, timestamp):
             if destination and 'user/login' not in response.url:
                 destination_url = f"{parsed_login.scheme}://{parsed_login.netloc}{destination}"
                 response = session.get(destination_url, timeout=15, allow_redirects=True)
+
+        if 'inspection-request-confirmation-form' in response.text:
+            submit_response = submit_antibot_form(
+                session, response.text, response.url, 'inspection-request-confirmation-form'
+            )
+            if submit_response is not None:
+                response = submit_response
 
         title_match = re.search(r'<title>(.*?)</title>', response.text, re.IGNORECASE | re.DOTALL)
         title = title_match.group(1).strip() if title_match else None
