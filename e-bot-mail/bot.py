@@ -28,7 +28,7 @@ ACCOUNT_PASSWORD = os.environ.get("ACCOUNT_PASSWORD")
 
 TRIGGER_SENDER = "noreply@deimmowinkel.be"
 TRIGGER_SUBJECT = "Nieuwe keuringsaanvraag"
-POLL_INTERVAL = 30
+POLL_INTERVAL = 5
 
 
 class LinkExtractor(HTMLParser):
