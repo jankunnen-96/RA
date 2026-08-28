@@ -119,6 +119,14 @@ def follow_link_authenticated(url, timestamp):
             }
             response = session.post(login_url, data=login_data, timeout=15, allow_redirects=True)
 
+            # The login form's own redirect doesn't always honor `destination`
+            # (some Drupal setups resolve it client-side via JS after login).
+            # Explicitly re-fetch the destination page now that the session
+            # is authenticated, so the approve action actually gets triggered.
+            if destination and 'user/login' not in response.url:
+                destination_url = f"{parsed_login.scheme}://{parsed_login.netloc}{destination}"
+                response = session.get(destination_url, timeout=15, allow_redirects=True)
+
         title_match = re.search(r'<title>(.*?)</title>', response.text, re.IGNORECASE | re.DOTALL)
         title = title_match.group(1).strip() if title_match else None
 
