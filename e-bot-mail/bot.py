@@ -4,8 +4,10 @@ import re
 import json
 import os
 import time
+import smtplib
 import threading
 import requests
+from email.mime.text import MIMEText
 from pathlib import Path
 from datetime import datetime
 from html.parser import HTMLParser
@@ -22,6 +24,10 @@ PORT = int(os.environ.get("BOT_PORT", 8001))
 IMAP_SERVER = os.environ.get("EMAIL_IMAP_SERVER", "webreus.email")
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+
+SMTP_SERVER = os.environ.get("EMAIL_SMTP_SERVER", IMAP_SERVER)
+SMTP_PORT = int(os.environ.get("EMAIL_SMTP_PORT", 587))
+NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", "info@epb-philips.be")
 
 ACCOUNT_EMAIL = os.environ.get("ACCOUNT_EMAIL")
 ACCOUNT_PASSWORD = os.environ.get("ACCOUNT_PASSWORD")
@@ -201,6 +207,31 @@ def follow_link_authenticated(url, timestamp):
         return {'error': str(e)}
 
 
+def send_acceptance_notification(subject, case_url):
+    if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
+        print("Cannot send notification: EMAIL_ADDRESS or EMAIL_PASSWORD not set", flush=True)
+        return
+
+    body = (
+        f"Een keuringsaanvraag werd automatisch aanvaard.\n\n"
+        f"Aanvraag: {subject}\n"
+        f"Link: {case_url}\n"
+    )
+    msg = MIMEText(body)
+    msg['Subject'] = f"Aanvraag automatisch aanvaard: {subject}"
+    msg['From'] = EMAIL_ADDRESS
+    msg['To'] = NOTIFY_EMAIL
+
+    try:
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=15) as server:
+            server.starttls()
+            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            server.sendmail(EMAIL_ADDRESS, [NOTIFY_EMAIL], msg.as_string())
+        print(f"Sent acceptance notification to {NOTIFY_EMAIL}", flush=True)
+    except Exception as e:
+        print(f"Error sending acceptance notification: {e}", flush=True)
+
+
 def get_last_uid():
     if LAST_UID_FILE.exists():
         return int(LAST_UID_FILE.read_text().strip())
@@ -228,6 +259,8 @@ def process_message(mail, uid, msg):
         if any(kw in link['text'].lower() for kw in target_keywords) and link['url'].startswith('http'):
             if 'accepteren' in link['text'].lower():
                 response = follow_link_authenticated(link['url'], timestamp)
+                if response.get('status_code') == 200 and 'error' not in response:
+                    send_acceptance_notification(subject, response.get('final_url', link['url']))
             else:
                 response = follow_link(link['url'])
             results.append({
