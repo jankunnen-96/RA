@@ -34,7 +34,9 @@ On first run (no `last_uid.txt` yet), the bot seeds itself to the current newest
 
 The full final page (after login, destination re-fetch, and form submission) is saved to `e-bot-mail/logs/TIMESTAMP_accepteren.html` for verification.
 
-If the "accepteren" flow completes with a `200` response and no error, the bot sends a notification email (via SMTP, same mailbox credentials) to `NOTIFY_EMAIL` with the request subject and a link to the case page, so a human can double-check the outcome.
+If the "accepteren" flow completes with a `200` response and no error, the bot sends a notification email (via SMTP, same mailbox credentials) to both `NOTIFY_EMAIL` and `PERSONAL_NOTIFY_EMAIL` with the request subject and a link to the case page, so a human can double-check the outcome.
+
+If it does **not** succeed (e.g. a `403` because another party already claimed the request first, a login failure, or any other error), the bot instead sends a "missed" notification to `PERSONAL_NOTIFY_EMAIL` only, with the status code, page title, and error details, so you know a request was missed and why.
 
 ---
 
@@ -62,6 +64,7 @@ Stored in `/opt/matchadaddy/RA/.env` on the server. Use `.env.example` in the re
 | `EMAIL_SMTP_SERVER` | No | same as `EMAIL_IMAP_SERVER` | SMTP server hostname, used to send acceptance notifications |
 | `EMAIL_SMTP_PORT` | No | `587` | SMTP port (STARTTLS) |
 | `NOTIFY_EMAIL` | No | `info@epb-philips.be` | Address that receives a notification when a request is successfully accepted |
+| `PERSONAL_NOTIFY_EMAIL` | No | `jan.kunnen@hotmail.com` | Also receives success notifications, and is the sole recipient of "missed" notifications when an accepteren attempt fails |
 | `ACCOUNT_EMAIL` | Yes | — | dashboard.deimmowinkel.be login email, used to complete "accepteren" approvals |
 | `ACCOUNT_PASSWORD` | Yes | — | dashboard.deimmowinkel.be login password |
 
