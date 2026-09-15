@@ -7,6 +7,6 @@
       "Bash(git commit -m ' *)",
       "Bash(git pull *)",
       "Bash(git push *)"
-    ]
+  ]
   }
 }
