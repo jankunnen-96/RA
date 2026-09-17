@@ -87,3 +87,7 @@ e-bot-mail/active
 e-bot-mail/logs/
 e-bot-mail/last_uid.txt
 
+# followed artists is persistent runtime state on the VPS, not tracked code.
+# Backed up nightly via scripts/nightly-sync.sh instead.
+get_artists/followed_profiles.csv
+

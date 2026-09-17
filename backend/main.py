@@ -1,7 +1,5 @@
 import sys
 import os
-import io
-import base64
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -9,7 +7,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 from fastapi import FastAPI, Query, Body
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
-import requests
 from typing import Optional
 
 from api import suggestion, find_events_artist, find_events_area
@@ -102,9 +99,16 @@ def get_unique_artists():
     return sorted(data['artist'].dropna().unique().tolist())
 
 
+def load_followed():
+    if not FOLLOWED_CSV.exists():
+        FOLLOWED_CSV.parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(columns=["id", "name", "contentUrl"]).to_csv(FOLLOWED_CSV, index=False)
+    return pd.read_csv(FOLLOWED_CSV)
+
+
 @app.get("/api/followed-artists")
 def get_followed_artists():
-    data = pd.read_csv(FOLLOWED_CSV)
+    data = load_followed()
     return data['name'].tolist()
 
 
@@ -114,7 +118,7 @@ def add_followed_artist(
     name: str = Body(...),
     contentUrl: str = Body(default=""),
 ):
-    data = pd.read_csv(FOLLOWED_CSV)
+    data = load_followed()
     if str(id) in data['id'].astype(str).values:
         return {"status": "already_exists"}
     new_row = pd.DataFrame([{"id": id, "name": name, "contentUrl": contentUrl}])
