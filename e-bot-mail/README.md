@@ -10,9 +10,9 @@ A single script (`bot.py`) runs two things simultaneously:
 
 **HTTP server (always on)** — listens on port 8001. Manages a flag file (`e-bot-mail/active`) that acts as an on/off switch. The API is the only way to flip this switch.
 
-**Email monitor loop (always on)** — polls the IMAP inbox every 5 seconds. When the flag is on, it connects to the inbox, finds new trigger emails, extracts links, follows them, and logs the result to `e-bot-mail/logs/`. When the flag is off, it does nothing and waits for the next poll.
+**Email monitor loop (always on)** — polls the IMAP inbox every 3 seconds. When the flag is on, it connects to the inbox, searches for new trigger emails, waits 1 second, then processes anything found (extracts links, follows them, logs the result to `e-bot-mail/logs/`). When the flag is off, it does nothing and waits for the next poll.
 
-The bot stays running permanently. You control its behavior via the API. The poll interval is deliberately short (`POLL_INTERVAL` in `bot.py`) because the bot is racing to accept inspection requests before other agents do.
+The bot stays running permanently, but turns itself off automatically once a request is successfully accepted (see below) — you turn it back on via the API for the next one. The poll interval is deliberately short (`POLL_INTERVAL` in `bot.py`) because the bot is racing to accept inspection requests before other agents do.
 
 ### Tracking which emails are new
 
@@ -34,9 +34,9 @@ On first run (no `last_uid.txt` yet), the bot seeds itself to the current newest
 
 The full final page (after login, destination re-fetch, and form submission) is saved to `e-bot-mail/logs/TIMESTAMP_accepteren.html` for verification.
 
-If the "accepteren" flow completes with a `200` response and no error, the bot sends a notification email (via SMTP, same mailbox credentials) to both `NOTIFY_EMAIL` and `PERSONAL_NOTIFY_EMAIL` with the request subject and a link to the case page, so a human can double-check the outcome.
+If the "accepteren" flow completes with a `200` response and no error, the bot sends a notification email (via SMTP, same mailbox credentials) to both `NOTIFY_EMAIL` and `PERSONAL_NOTIFY_EMAIL` with the request subject and a link to the case page, and then **automatically deactivates itself** (deletes the flag file) — you need to reactivate via the API/shortcut before it will process the next request.
 
-If it does **not** succeed (e.g. a `403` because another party already claimed the request first, a login failure, or any other error), the bot instead sends a "missed" notification to `PERSONAL_NOTIFY_EMAIL` only, with the status code, page title, and error details, so you know a request was missed and why.
+If it does **not** succeed (e.g. a `403` because another party already claimed the request first, a login failure, or any other error), the bot instead sends a "missed" notification to `PERSONAL_NOTIFY_EMAIL` only, with the status code, page title, and error details, and stays active so it can keep trying on the next poll or the next email.
 
 ---
 
@@ -173,6 +173,6 @@ Defined as constants in `bot.py`:
 | `TRIGGER_SENDER` | `noreply@deimmowinkel.be` |
 | `TRIGGER_SUBJECT` | `Nieuwe keuringsaanvraag` |
 | `target_keywords` | `bekijk aanvraag`, `accepteren` |
-| `POLL_INTERVAL` | `5` (seconds) |
+| `POLL_INTERVAL` | `3` (seconds) |
 
-Only new emails (by UID, see above) matching both sender and subject are processed. Only links whose text contains one of the target keywords are followed.
+Only new emails (by UID, see above) matching both sender and subject are processed. Only links whose text contains one of the target keywords are followed. After the IMAP search runs each cycle, the bot waits 1 second before acting on the results.

@@ -35,7 +35,7 @@ ACCOUNT_PASSWORD = os.environ.get("ACCOUNT_PASSWORD")
 
 TRIGGER_SENDER = "noreply@deimmowinkel.be"
 TRIGGER_SUBJECT = "Nieuwe keuringsaanvraag"
-POLL_INTERVAL = 5
+POLL_INTERVAL = 3
 
 
 class LinkExtractor(HTMLParser):
@@ -279,6 +279,9 @@ def process_message(mail, uid, msg):
                 response = follow_link_authenticated(link['url'], timestamp)
                 if response.get('status_code') == 200 and 'error' not in response:
                     send_acceptance_notification(subject, response.get('final_url', link['url']))
+                    if FLAG_FILE.exists():
+                        FLAG_FILE.unlink()
+                    print("Acceptance succeeded, bot deactivated.", flush=True)
                 else:
                     send_missed_notification(subject, response)
             else:
@@ -316,6 +319,7 @@ def check_inbox():
         mail.select('INBOX')
 
         _, data = mail.uid('search', None, f'(FROM "{TRIGGER_SENDER}")')
+        time.sleep(1)
         uids = [int(u) for u in data[0].split()]
 
         if not uids:
