@@ -1,11 +1,10 @@
 import { NavLink } from 'react-router-dom'
-import { Map, Music, MapPin, Sparkles } from 'lucide-react'
+import { Map, Music, MapPin } from 'lucide-react'
 
 const tabs = [
   { to: '/', icon: Map, label: 'Map' },
   { to: '/artist', icon: Music, label: 'Artist' },
   { to: '/city', icon: MapPin, label: 'City' },
-  { to: '/new', icon: Sparkles, label: 'New' },
 ]
 
 export default function Navbar() {

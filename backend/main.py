@@ -1,5 +1,7 @@
 import sys
 import os
+import io
+import base64
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -7,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from fastapi import FastAPI, Query, Body
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
+import requests
 from typing import Optional
 
 from api import suggestion, find_events_artist, find_events_area
@@ -86,18 +89,6 @@ def get_events(
         artist_list = [a.strip() for a in artists.split(',')]
         data = data[data['artist'].apply(lambda x: any(a in str(x) for a in artist_list))]
 
-    data = data.assign(
-        date=data['date'].dt.strftime('%Y-%m-%d'),
-        date_added=data['date_added'].dt.strftime('%Y-%m-%d %H:%M:%S'),
-    )
-    return data.where(pd.notna(data), None).to_dict(orient='records')
-
-
-@app.get("/api/events/new")
-def get_new_events():
-    data = load_events()
-    data = data[data['date_added'] == data['date_added'].max()]
-    data = data[data['date'] >= pd.Timestamp.today()]
     data = data.assign(
         date=data['date'].dt.strftime('%Y-%m-%d'),
         date_added=data['date_added'].dt.strftime('%Y-%m-%d %H:%M:%S'),

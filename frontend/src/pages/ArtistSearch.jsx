@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
-import { Search, UserPlus, Check } from 'lucide-react'
+import { Search, Check } from 'lucide-react'
 import EventCard from '../components/EventCard'
 import { API_BASE } from '../lib/api'
 
 const FALLBACK_IMG =
   'https://cdn.sanity.io/images/6epsemdp/production/b7d83a32bba8e46b37bc22edd92ed71cef47b091-1920x1280.jpg?w=640&fit=clip&auto=format'
-
-const IS_LOCAL = !import.meta.env.VITE_API_BASE
 
 export default function ArtistSearch() {
   const [query, setQuery] = useState('')
@@ -16,7 +14,9 @@ export default function ArtistSearch() {
   const [selectedArtistId, setSelectedArtistId] = useState('')
   const [followed, setFollowed] = useState([])
   const [loading, setLoading] = useState(false)
+  const [secretFollowHint, setSecretFollowHint] = useState(false)
   const justSelected = useRef(false)
+  const tapTimestamps = useRef([])
 
   useEffect(() => {
     fetch(`${API_BASE}/api/followed-artists`).then((r) => r.json()).then(setFollowed)
@@ -64,6 +64,18 @@ export default function ArtistSearch() {
 
   const isFollowed = followed.includes(selectedArtist)
 
+  const handleArtistNameTap = () => {
+    if (!selectedArtist || isFollowed) return
+    const now = Date.now()
+    tapTimestamps.current = [...tapTimestamps.current.filter((t) => now - t < 600), now]
+    if (tapTimestamps.current.length >= 3) {
+      tapTimestamps.current = []
+      followArtist()
+      setSecretFollowHint(true)
+      setTimeout(() => setSecretFollowHint(false), 1500)
+    }
+  }
+
   return (
     <div className="h-full overflow-y-auto bg-[#0f0f0f]">
       <div className="p-4 sticky top-0 bg-[#0f0f0f] z-10 border-b border-[#2d2d2d]">
@@ -80,9 +92,16 @@ export default function ArtistSearch() {
               setQuery(e.target.value)
               setSelectedArtist('')
             }}
+            onClick={handleArtistNameTap}
             placeholder="Artist name..."
             className="w-full bg-[#1a1a1a] text-white border border-[#2d2d2d] rounded-xl pl-9 pr-4 py-3 text-sm"
           />
+          {secretFollowHint && (
+            <Check
+              size={16}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#74C365]"
+            />
+          )}
         </div>
         {Object.keys(suggestions).length > 0 && (
           <div className="mt-2 bg-[#1a1a1a] rounded-xl border border-[#2d2d2d] overflow-hidden">
@@ -96,20 +115,6 @@ export default function ArtistSearch() {
               </button>
             ))}
           </div>
-        )}
-        {IS_LOCAL && selectedArtist && !loading && (
-          <button
-            onClick={followArtist}
-            disabled={isFollowed}
-            className={`mt-3 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-              isFollowed
-                ? 'bg-[#1a1a1a] text-[#74C365] border border-[#74C365] cursor-default'
-                : 'bg-[#74C365] text-black hover:bg-[#5fa854]'
-            }`}
-          >
-            {isFollowed ? <Check size={15} /> : <UserPlus size={15} />}
-            {isFollowed ? 'Following' : `Follow ${selectedArtist}`}
-          </button>
         )}
       </div>
 

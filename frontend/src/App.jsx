@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import MapView from './pages/MapView'
 import ArtistSearch from './pages/ArtistSearch'
 import CitySearch from './pages/CitySearch'
-import WhatsNew from './pages/WhatsNew'
 import Navbar from './components/Navbar'
 import { API_BASE } from './lib/api'
 
@@ -89,7 +88,6 @@ export default function App() {
             <Route path="/" element={<MapView />} />
             <Route path="/artist" element={<ArtistSearch />} />
             <Route path="/city" element={<CitySearch />} />
-            <Route path="/new" element={<WhatsNew />} />
           </Routes>
         </div>
       </div>
