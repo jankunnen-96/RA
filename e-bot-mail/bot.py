@@ -36,6 +36,7 @@ ACCOUNT_PASSWORD = os.environ.get("ACCOUNT_PASSWORD")
 TRIGGER_SENDER = "noreply@deimmowinkel.be"
 TRIGGER_SUBJECT = "Nieuwe keuringsaanvraag"
 POLL_INTERVAL = 3
+ALREADY_ACCEPTED_MARKER = "reeds aanvaard"
 
 
 class LinkExtractor(HTMLParser):
@@ -198,12 +199,17 @@ def follow_link_authenticated(url, timestamp):
         content_file = LOG_DIR / f"{timestamp}_accepteren.html"
         content_file.write_text(response.text, encoding='utf-8')
 
-        return {
+        result = {
             'status_code': response.status_code,
             'final_url': response.url,
             'page_title': title,
             'content_saved_to': str(content_file),
         }
+
+        if ALREADY_ACCEPTED_MARKER in response.text:
+            result['error'] = 'Aanvraag was al aanvaard (door u of een andere partij) voordat deze poging werd verwerkt.'
+
+        return result
     except Exception as e:
         return {'error': str(e)}
 
